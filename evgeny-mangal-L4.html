@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мангальные зоны из металла — ПРОМСТРОЙ | Белгород, Москва</title>
+    <meta name="description" content="Производство мангальных зон из профтрубы. Классические и премиум модели. Монтаж под ключ. Гарантия 3 года. ПРОМСТРОЙ — Г.Строитель, Белгородская область.">
+    <meta name="keywords" content="мангальные зоны, мангалы из металла, производство мангалов, профтруба, навесы для мангала, Белгород">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Level Bar */
+        #level-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(249, 158, 11, 0.3);
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        #level-bar a {
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #level-bar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        #level-bar a.active {
+            color: #000;
+            background: #f59e0b;
+        }
+
+        /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+            animation: fadeOut 2s ease forwards;
+            animation-delay: 2s;
+        }
+
+        #loading-screen.hidden {
+            display: none;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        .loading-logo {
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+            animation: progress 2s ease;
+        }
+
+        @keyframes progress {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Fire Particles */
+        @keyframes float-up {
+            0% {
+                opacity: 1;
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) translateX(var(--tx));
+            }
+        }
+
+        .fire-particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            filter: blur(1px);
+            pointer-events: none;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+            padding-top: 50px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.1), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: clamp(60px, 12vw, 140px);
+            font-weight: 900;
+            letter-spacing: -4px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideUp 0.8s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+            opacity: 0.8;
+            animation: slideUp 0.8s ease 0.2s both;
+        }
+
+        .divider-line {
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #f59e0b, transparent);
+            margin: 32px auto 32px;
+            animation: expandLine 1.2s ease 0.4s forwards;
+        }
+
+        @keyframes expandLine {
+            to {
+                width: 200px;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-arrow {
+            font-size: 24px;
+            color: #f59e0b;
+            margin-bottom: 8px;
+        }
+
+        .scroll-text {
+            font-size: 12px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Horizontal Scroll Catalog */
+        .catalog {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, #000, #111);
+            position: relative;
+        }
+
+        .catalog-title {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .catalog-container {
+            width: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            display: flex;
+            gap: 32px;
+            padding: 0 40px;
+        }
+
+        .catalog-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .catalog-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .catalog-container::-webkit-scrollbar-thumb {
+            background: #f59e0b;
+            border-radius: 3px;
+        }
+
+        .card {
+            min-width: 380px;
+            height: 500px;
+            scroll-snap-align: center;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(249, 158, 11, 0.2);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50%, 50%);
+            }
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            border-color: #f59e0b;
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.3);
+        }
+
+        .card-number {
+            font-size: 180px;
+            font-weight: 900;
+            opacity: 0.08;
+            position: absolute;
+            top: -40px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #fbbf24;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .card-price {
+            font-size: 36px;
+            font-weight: 900;
+            color: #f59e0b;
+            margin-bottom: 8px;
+        }
+
+        .card-price-note {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* 3D Viewer */
+        .viewer {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #111, #000);
+            position: relative;
+        }
+
+        .viewer-title {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .viewer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .viewer-3d {
+            width: 400px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+
+        .model-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            cursor: grab;
+            transition: transform 0.03s linear;
+        }
+
+        .model-container:active {
+            cursor: grabbing;
+        }
+
+        .roof {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #d4a574, #a0826d);
+            left: 50px;
+            top: 50px;
+            border-radius: 10px 10px 0 0;
+            box-shadow:
+                -20px -20px 40px rgba(245, 158, 11, 0.2),
+                inset 0 -10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .column {
+            position: absolute;
+            width: 30px;
+            background: #2d2d2d;
+            border: 2px solid #444;
+            box-shadow: inset -2px 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .column-1 {
+            height: 150px;
+            left: 70px;
+            top: 250px;
+        }
+
+        .column-2 {
+            height: 150px;
+            right: 70px;
+            top: 250px;
+        }
+
+        .column-3 {
+            height: 120px;
+            left: 100px;
+            top: 280px;
+        }
+
+        .column-4 {
+            height: 120px;
+            right: 100px;
+            top: 280px;
+        }
+
+        .manger {
+            position: absolute;
+            width: 280px;
+            height: 80px;
+            left: 60px;
+            bottom: 60px;
+            background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
+            border: 3px solid #444;
+            border-radius: 8px;
+        }
+
+        .fire-glow {
+            position: absolute;
+            width: 200px;
+            height: 60px;
+            left: 100px;
+            bottom: 75px;
+            background: radial-gradient(ellipse, rgba(255, 100, 30, 0.4), transparent);
+            filter: blur(20px);
+            animation: fireFlicker 0.3s infinite;
+        }
+
+        @keyframes fireFlicker {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .viewer-controls {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .control-btn {
+            padding: 12px 24px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid #f59e0b;
+            color: #f59e0b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .control-btn:hover {
+            background: #f59e0b;
+            color: #000;
+        }
+
+        .control-btn.active {
+            background: #f59e0b;
+            color: #000;
+        }
+
+        .viewer-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .viewer-text strong {
+            color: #fbbf24;
+            display: block;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        /* Features Section */
+        .features {
+            background: #000;
+        }
+
+        .feature-row {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 80px 60px;
+            gap: 60px;
+            position: relative;
+        }
+
+        .feature-row.reverse {
+            direction: rtl;
+        }
+
+        .feature-row.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-row:nth-child(even) {
+            background: linear-gradient(180deg, #111, #000);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.05));
+            border-radius: 16px;
+            border: 2px solid rgba(249, 158, 11, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #f59e0b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(245,158,11,0.1)" stroke-width="1"/></pattern></defs><rect width="400" height="300" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .feature-text h3 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-text p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .feature-price {
+            font-size: 32px;
+            font-weight: 900;
+            color: #f59e0b;
+            margin-bottom: 32px;
+        }
+
+        .feature-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .feature-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Video Section */
+        .video-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                rgba(245, 158, 11, 0.05) 0%,
+                rgba(251, 191, 36, 0.02) 25%,
+                rgba(59, 130, 246, 0.02) 50%,
+                rgba(96, 165, 250, 0.05) 100%);
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .video-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .video-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .video-player {
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 16 / 9;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.2), transparent);
+            border-radius: 16px;
+            border: 2px solid rgba(249, 158, 11, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            margin: 0 auto 48px;
+            transition: all 0.3s ease;
+        }
+
+        .video-player:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.2);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: #f59e0b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #000;
+            position: relative;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 40px rgba(245, 158, 11, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+            }
+        }
+
+        .video-desc {
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        /* Comparison */
+        .comparison {
+            min-height: 100vh;
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #000, #111);
+        }
+
+        .comparison-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .comparison-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .comparison-col {
+            border-radius: 16px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(249, 158, 11, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .comparison-col.ours {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 20px 60px rgba(245, 158, 11, 0.2);
+        }
+
+        .comparison-header {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #fbbf24;
+        }
+
+        .comparison-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-label {
+            color: #cbd5e1;
+        }
+
+        .comparison-value {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .comparison-col.ours .comparison-value {
+            color: #f59e0b;
+        }
+
+        /* B2B Section */
+        .b2b {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            background: linear-gradient(180deg, #111, #000);
+            position: relative;
+        }
+
+        .b2b-border {
+            position: absolute;
+            inset: 60px 40px;
+            border: 2px solid #f59e0b;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .b2b-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .b2b-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .b2b-desc {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 48px;
+            line-height: 1.8;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(249, 158, 11, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #f59e0b;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: #64748b;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            min-height: 100vh;
+            padding: 80px 40px;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonials-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonial-carousel {
+            width: 100%;
+            max-width: 1200px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            gap: 32px;
+            padding-bottom: 20px;
+        }
+
+        .testimonial-carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .testimonial-carousel::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-carousel::-webkit-scrollbar-thumb {
+            background: #f59e0b;
+            border-radius: 3px;
+        }
+
+        .testimonial {
+            min-width: 380px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(249, 158, 11, 0.2);
+            border-radius: 16px;
+            scroll-snap-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+        }
+
+        .testimonial-stars {
+            color: #f59e0b;
+            margin-bottom: 16px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 24px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Counters */
+        .counters {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 80px 0;
+            padding: 40px;
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(249, 158, 11, 0.2);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .counter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .counter-number {
+            font-size: 56px;
+            font-weight: 900;
+            color: #f59e0b;
+            margin-bottom: 8px;
+        }
+
+        .counter-label {
+            font-size: 16px;
+            color: #cbd5e1;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            border-top: 1px solid rgba(249, 158, 11, 0.2);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        footer .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 32px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-block h4 {
+            font-size: 14px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .footer-block p {
+            font-size: 18px;
+            color: #fbbf24;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .footer-block a {
+            color: #f59e0b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-block a:hover {
+            color: #fbbf24;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* Cursor Trail */
+        .cursor-trail {
+            position: fixed;
+            pointer-events: none;
+            width: 8px;
+            height: 8px;
+            background: #f59e0b;
+            border-radius: 50%;
+            opacity: 0.6;
+            z-index: 9998;
+        }
+
+        /* Animations on Scroll */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInOnScroll 0.8s ease forwards;
+        }
+
+        @keyframes fadeInOnScroll {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-in {
+            opacity: 0;
+            animation: slideInOnScroll 0.8s ease forwards;
+        }
+
+        @keyframes slideInOnScroll {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .viewer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-col.ours {
+                transform: scale(1);
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr;
+                padding: 60px 40px;
+            }
+
+            .feature-row.reverse {
+                direction: ltr;
+            }
+
+            .counters {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .catalog-title,
+            .viewer-title,
+            .video-title,
+            .testimonials-title,
+            .comparison-title,
+            .b2b-title {
+                font-size: 32px;
+            }
+
+            .card {
+                min-width: 320px;
+                height: 400px;
+            }
+
+            .feature-text h3 {
+                font-size: 28px;
+            }
+
+            .feature-text p {
+                font-size: 16px;
+            }
+
+            .testimonial {
+                min-width: 300px;
+            }
+
+            .catalog-container {
+                padding: 0 20px;
+            }
+
+            #level-bar {
+                padding: 6px 8px;
+                font-size: 11px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="loading-screen">
+    <div class="loading-logo">ПРОМСТРОЙ</div>
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+<div id="level-bar">
+    <span style="color:#94a3b8;margin-right:8px;">Мангальные зоны ПРОМСТРОЙ:</span>
+    <a href="evgeny-mangal.html" style="padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;color:#94a3b8;background:rgba(255,255,255,0.1);transition:all 0.3s;display:inline-block;">Базовый</a>
+    <a href="evgeny-mangal-L2.html" style="padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;color:#94a3b8;background:rgba(255,255,255,0.1);transition:all 0.3s;display:inline-block;">Премиум</a>
+    <a href="evgeny-mangal-L3.html" style="padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;color:#94a3b8;background:rgba(255,255,255,0.1);transition:all 0.3s;display:inline-block;">Кинематический</a>
+    <a href="evgeny-mangal-L4.html" style="padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;color:#000;background:#f59e0b;display:inline-block;">Авард</a>
+    <span style="margin-left:12px;color:#94a3b8;font-size:11px;">|</span>
+    <a href="index.html" style="margin-left:4px;color:#f59e0b;text-decoration:none;font-size:12px;font-weight:500;">← Дашборд</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">МАНГАЛЬНЫЕ ЗОНЫ</h1>
+        <p class="hero-subtitle">Производим красоту из металла</p>
+        <div class="divider-line"></div>
+        <p style="font-size: 16px; color: #cbd5e1; letter-spacing: 1px;">Профессиональное производство. Премиум качество. Гарантия 3 года</p>
+    </div>
+    <div class="scroll-indicator">
+        <div class="scroll-arrow">↓</div>
+        <div class="scroll-text">Листайте вниз</div>
+    </div>
+</section>
+
+<!-- Catalog Horizontal Scroll -->
+<section class="catalog">
+    <h2 class="catalog-title">Наш каталог</h2>
+    <div class="catalog-container">
+        <div class="card">
+            <div class="card-number">01</div>
+            <div class="card-content">
+                <div class="card-name">Классик</div>
+                <div class="card-desc">Базовая модель с навесом и мангалом. Идеально для дачи и небольших участков.</div>
+                <div class="card-price">38 000 ₽</div>
+                <div class="card-price-note">+ доставка и монтаж</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">02</div>
+            <div class="card-content">
+                <div class="card-name">Комфорт</div>
+                <div class="card-desc">Увеличенная столешница, две лавки, защита от дождя. Комфорт для семьи из 5-6 человек.</div>
+                <div class="card-price">67 000 ₽</div>
+                <div class="card-price-note">+ доставка и монтаж</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">03</div>
+            <div class="card-content">
+                <div class="card-name">Семейный</div>
+                <div class="card-desc">Большая зона с барной стойкой, керамический гриль, встроенное освещение.</div>
+                <div class="card-price">98 000 ₽</div>
+                <div class="card-price-note">+ доставка и монтаж</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">04</div>
+            <div class="card-content">
+                <div class="card-name">Премиум</div>
+                <div class="card-desc">Премиум система с мебелью, ледогенератором, проводкой для гриля. До 10 человек.</div>
+                <div class="card-price">145 000 ₽</div>
+                <div class="card-price-note">+ доставка и монтаж</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">05</div>
+            <div class="card-content">
+                <div class="card-name">Парковый</div>
+                <div class="card-desc">Профессиональная система для парков, кафе, ресторанов. Большая вместимость и функциональность.</div>
+                <div class="card-price">От 180 000 ₽</div>
+                <div class="card-price-note">индивидуальный расчёт</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3D Viewer -->
+<section class="viewer">
+    <h2 class="viewer-title">3D просмотр модели</h2>
+    <div class="viewer-container">
+        <div class="viewer-3d">
+            <div class="model-container" id="modelContainer">
+                <div class="roof"></div>
+                <div class="column column-1"></div>
+                <div class="column column-2"></div>
+                <div class="column column-3"></div>
+                <div class="column column-4"></div>
+                <div class="manger"></div>
+                <div class="fire-glow"></div>
+            </div>
+            <div class="viewer-controls" style="position: absolute; bottom: 0; left: 0; right: 0;">
+                <button class="control-btn active" onclick="setView('front')">Спереди</button>
+                <button class="control-btn" onclick="setView('side')">Сбоку</button>
+                <button class="control-btn" onclick="setView('top')">Сверху</button>
+            </div>
+        </div>
+        <div class="viewer-text">
+            <strong>Конструкция мангальной зоны</strong>
+            Модульная система из профтрубы позволяет создавать как стандартные, так и индивидуальные конфигурации. Каждый элемент проходит тщательный контроль качества. Навес защищает от дождя и солнца, мангал безопасно размещается внутри, столешница занимает оптимальную площадь.
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="feature-row">
+        <div class="feature-image">📚</div>
+        <div class="feature-text">
+            <h3>Обучение сварке</h3>
+            <p>Если вы хотите научиться изготавливать мангалы самостоятельно, мы проводим курсы по сварке и работе с профтрубой. Опыт реальных мастеров.</p>
+            <div class="feature-price">5 000 ₽</div>
+            <p style="font-size: 14px; color: #94a3b8; margin-bottom: 32px;">за курс (3 дня)</p>
+            <a href="tel:+79045330303" class="feature-btn">Записаться на курс</a>
+        </div>
+    </div>
+
+    <div class="feature-row reverse">
+        <div class="feature-image">🛠️</div>
+        <div class="feature-text">
+            <h3>Выезд специалиста</h3>
+            <p>Наш специалист приедет к вам, проведёт замеры, поможет выбрать оптимальную модель и даст рекомендации по установке.</p>
+            <div class="feature-price">Бесплатно</div>
+            <p style="font-size: 14px; color: #94a3b8; margin-bottom: 32px;">по Белгородской области</p>
+            <a href="tel:+79045330303" class="feature-btn">Заказать выезд</a>
+        </div>
+    </div>
+
+    <div class="feature-row">
+        <div class="feature-image">⚙️</div>
+        <div class="feature-text">
+            <h3>Монтаж под ключ</h3>
+            <p>Полная установка на вашем участке: доставка, выравнивание, крепление, проверка. Мы гарантируем надёжность и долговечность конструкции.</p>
+            <div class="feature-price">От 10 000 ₽</div>
+            <p style="font-size: 14px; color: #94a3b8; margin-bottom: 32px;">в зависимости от модели</p>
+            <a href="tel:+79045330303" class="feature-btn">Заказать монтаж</a>
+        </div>
+    </div>
+
+    <div class="feature-row reverse">
+        <div class="feature-image">🎨</div>
+        <div class="feature-text">
+            <h3>Индивидуальный проект</h3>
+            <p>Не нашли подходящую модель? Мы разработаем именно то, что вам нужно. 3D-визуализация, расчёты, согласование деталей с вами.</p>
+            <div class="feature-price">Договорная</div>
+            <p style="font-size: 14px; color: #94a3b8; margin-bottom: 32px;">начиная с 3 000 ₽</p>
+            <a href="tel:+79045330303" class="feature-btn">Обсудить проект</a>
+        </div>
+    </div>
+
+    <div class="feature-row">
+        <div class="feature-image">✅</div>
+        <div class="feature-text">
+            <h3>Гарантия 3 года</h3>
+            <p>Все наши мангалы и конструкции имеют трёхлетнюю гарантию на сварку и конструктивные элементы. Мы отвечаем за качество.</p>
+            <div class="feature-price">100% гарантия</div>
+            <p style="font-size: 14px; color: #94a3b8; margin-bottom: 32px;">с документом</p>
+            <a href="tel:+79045330303" class="feature-btn">Запросить условия</a>
+        </div>
+    </div>
+</section>
+
+<!-- Counters -->
+<section style="padding: 80px 40px; background: #000;">
+    <div class="counters">
+        <div class="counter">
+            <div class="counter-number" data-count="500">0</div>
+            <div class="counter-label">установлено мангальных зон</div>
+        </div>
+        <div class="counter">
+            <div class="counter-number" data-count="50">0</div>
+            <div class="counter-label">городов по РФ</div>
+        </div>
+        <div class="counter">
+            <div class="counter-number" data-count="3">0</div>
+            <div class="counter-label">года гарантии</div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Section -->
+<section class="video-section">
+    <div class="video-bg"></div>
+    <div class="video-content">
+        <h2 class="video-title">Смотрите как мы создаём</h2>
+        <div class="video-player" onclick="alert('Видео монтажа мангальной зоны')">
+            <div class="play-button">▶</div>
+        </div>
+        <p class="video-desc">Процесс создания мангальной зоны от сварки первой детали до финального монтажа на участке заказчика</p>
+    </div>
+</section>
+
+<!-- Comparison -->
+<section class="comparison">
+    <h2 class="comparison-title">Почему именно мы?</h2>
+    <div class="comparison-grid">
+        <div class="comparison-col ours">
+            <div class="comparison-header">ПРОМСТРОЙ ⭐</div>
+            <div class="comparison-row">
+                <span class="comparison-label">Сварка</span>
+                <span class="comparison-value">Ручная + полуавт</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Гарантия</span>
+                <span class="comparison-value">3 года</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Окраска</span>
+                <span class="comparison-value">Порошковая эмаль</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Доставка</span>
+                <span class="comparison-value">Белгородская область</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Консультация</span>
+                <span class="comparison-value">Бесплатно</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">3D проект</span>
+                <span class="comparison-value">По запросу</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Цена</span>
+                <span class="comparison-value">Лучшая рынке</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Монтаж</span>
+                <span class="comparison-value">Включён</span>
+            </div>
+        </div>
+
+        <div class="comparison-col">
+            <div class="comparison-header">Перекупщики</div>
+            <div class="comparison-row">
+                <span class="comparison-label">Сварка</span>
+                <span class="comparison-value">Автоматическая</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Гарантия</span>
+                <span class="comparison-value">1 год</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Окраска</span>
+                <span class="comparison-value">Краска в баллонах</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Доставка</span>
+                <span class="comparison-value">Только в Москву</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Консультация</span>
+                <span class="comparison-value">Платная</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">3D проект</span>
+                <span class="comparison-value">Нет</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Цена</span>
+                <span class="comparison-value">Разметка 30%</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Монтаж</span>
+                <span class="comparison-value">Дополнительно</span>
+            </div>
+        </div>
+
+        <div class="comparison-col">
+            <div class="comparison-header">Гаражные мастера</div>
+            <div class="comparison-row">
+                <span class="comparison-label">Сварка</span>
+                <span class="comparison-value">Любительская</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Гарантия</span>
+                <span class="comparison-value">Нет</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Окраска</span>
+                <span class="comparison-value">Некачественная</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Доставка</span>
+                <span class="comparison-value">Сам везёшь</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Консультация</span>
+                <span class="comparison-value">По ходу работы</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">3D проект</span>
+                <span class="comparison-value">На бумаге</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Цена</span>
+                <span class="comparison-value">Очень низкая</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Монтаж</span>
+                <span class="comparison-value">Сам монтируешь</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- B2B Section -->
+<section class="b2b">
+    <div class="b2b-border"></div>
+    <div class="b2b-content">
+        <h2 class="b2b-title">B2B для застройщиков и парков</h2>
+        <p class="b2b-desc">Закупляйте мангальные зоны оптом с большой скидкой. Мы работаем с парками, скверами, жилыми комплексами и ресторанами.</p>
+
+        <form style="max-width: 100%;" onsubmit="handleB2BSubmit(event)">
+            <div class="form-group">
+                <label class="form-label">Название организации</label>
+                <input type="text" class="form-input" placeholder="ООО Строй и Партнёры" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">ИНН</label>
+                <input type="text" class="form-input" placeholder="7757789123" pattern="\d{10,12}" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Контактный телефон</label>
+                <input type="tel" class="form-input" placeholder="+7 (XXX) XXX-XX-XX" required>
+            </div>
+
+            <button type="submit" class="form-submit">Отправить запрос через WhatsApp</button>
+        </form>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <h2 class="testimonials-title">Отзывы наших клиентов</h2>
+
+    <div class="testimonial-carousel">
+        <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">«Отличная мангальная зона! Установили на даче за выходные. Качество сварки супер, краска держится. Уже четвёртый сезон жарим шашлычки.»</div>
+            <div class="testimonial-author">Виктор Петров</div>
+            <div class="testimonial-role">Клиент из Белгорода</div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">«Заказали большую зону «Премиум» для коттеджного поселка. Ребята работают оперативно, консультируют детально. Гарантия успокаивает.»</div>
+            <div class="testimonial-author">Сергей Кольцов</div>
+            <div class="testimonial-role">Застройщик, г. Воронеж</div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">«Спасибо за быструю доставку и монтаж! Мангал уже работает, все соседи уже просят такой же. Невероятно доволен ценой и качеством.»</div>
+            <div class="testimonial-author">Игорь Слободян</div>
+            <div class="testimonial-role">Хозяин база отдыха</div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">«Обучился на курсе сварки. Евгений отличный мастер, объясняет всё понятно. Теперь сам чиню и доделываю детали. Спасибо большое!»</div>
+            <div class="testimonial-author">Павел Ячменев</div>
+            <div class="testimonial-role">Студент курса</div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="logo">ПРОМСТРОЙ</div>
+    <div class="footer-content">
+        <div class="footer-block">
+            <h4>Телефон</h4>
+            <a href="tel:+79045330303">+7 904 533-03-03</a>
+            <p style="font-size: 14px; color: #64748b; margin-top: 12px;">пн-пт 9:00-18:00</p>
+        </div>
+
+        <div class="footer-block">
+            <h4>WhatsApp / Telegram</h4>
+            <a href="https://wa.me/79045330303">Написать в WhatsApp</a>
+            <p style="font-size: 14px; color: #64748b; margin-top: 12px;">быстрый ответ</p>
+        </div>
+
+        <div class="footer-block">
+            <h4>Адрес</h4>
+            <p style="font-weight: 400; color: #cbd5e1;">Г. Строитель, Белгородская область</p>
+            <p style="font-size: 12px; color: #64748b; margin-top: 8px;">РФ 309290</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 ПРОМСТРОЙ — Производство мангальных зон из профтрубы
+    </div>
+</footer>
+
+<script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loading-screen').classList.add('hidden');
+        }, 2000);
+    });
+
+    // Fire Particles Animation
+    function createFireParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'fire-particle';
+
+        const size = Math.random() * 15 + 5;
+        const x = Math.random() * window.innerWidth;
+        const duration = Math.random() * 3 + 2;
+        const tx = (Math.random() - 0.5) * 200;
+
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = x + 'px';
+        particle.style.top = window.innerHeight + 'px';
+        particle.style.setProperty('--tx', tx + 'px');
+        particle.style.animation = `float-up ${duration}s ease-in forwards`;
+
+        document.body.appendChild(particle);
+
+        setTimeout(() => particle.remove(), duration * 1000);
+    }
+
+    setInterval(createFireParticle, 200);
+
+    // Cursor Trail
+    const cursorTrails = [];
+
+    document.addEventListener('mousemove', (e) => {
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.left = e.clientX + 'px';
+        trail.style.top = e.clientY + 'px';
+
+        document.body.appendChild(trail);
+        cursorTrails.push({element: trail, life: 10});
+
+        setTimeout(() => trail.remove(), 300);
+    });
+
+    // Intersection Observer for Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-row, .testimonial').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+
+    // Counters Animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter-number');
+
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.count);
+            let count = 0;
+            const increment = target / 30;
+
+            const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                    counter.textContent = Math.floor(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            const observerCounter = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    updateCount();
+                    observerCounter.unobserve(counter);
+                }
+            });
+
+            observerCounter.observe(counter);
+        });
+    }
+
+    animateCounters();
+
+    // 3D Model Rotation
+    let rotationX = 0;
+    let rotationY = 0;
+    let isDragging = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    const modelContainer = document.getElementById('modelContainer');
+
+    modelContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        lastX = e.clientX;
+        lastY = e.clientY;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            const deltaX = e.clientX - lastX;
+            const deltaY = e.clientY - lastY;
+
+            rotationY += deltaX * 0.5;
+            rotationX += deltaY * 0.5;
+
+            modelContainer.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
+            lastX = e.clientX;
+            lastY = e.clientY;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    // Touch support for 3D rotation
+    modelContainer.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            const deltaX = e.touches[0].clientX - lastX;
+            const deltaY = e.touches[0].clientY - lastY;
+
+            rotationY += deltaX * 0.5;
+            rotationX += deltaY * 0.5;
+
+            modelContainer.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
+            lastX = e.touches[0].clientX;
+            lastY = e.touches[0].clientY;
+        }
+    });
+
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    // View Presets
+    function setView(view) {
+        const views = {
+            front: { x: 10, y: 0 },
+            side: { x: 10, y: 90 },
+            top: { x: -90, y: 0 }
+        };
+
+        const v = views[view];
+        rotationX = v.x;
+        rotationY = v.y;
+
+        modelContainer.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
+        document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    // B2B Form Submit
+    function handleB2BSubmit(e) {
+        e.preventDefault();
+        const phone = document.querySelector('input[type="tel"]').value;
+        const org = document.querySelector('input[placeholder*="ООО"]').value;
+        const inn = document.querySelector('input[placeholder*="775"]').value;
+
+        const message = `Новый B2B запрос:\nОрганизация: ${org}\nИНН: ${inn}\nТелефон: ${phone}`;
+        const whatsappUrl = `https://wa.me/79045330303?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, '_blank');
+    }
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Auto-scroll testimonials
+    const carousel = document.querySelector('.testimonial-carousel');
+    if (carousel) {
+        let scrollPos = 0;
+        setInterval(() => {
+            scrollPos += 1;
+            carousel.scrollLeft = scrollPos;
+        }, 30);
+    }
+</script>
+
+</body>
+</html>
