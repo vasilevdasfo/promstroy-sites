@@ -1,0 +1,62 @@
+====================================================================
+PROMSTROY-SITES: QUICKSTART FOR GITHUB PAGES DEPLOYMENT
+====================================================================
+
+LOCAL REPO: /sessions/gallant-ecstatic-brahmagupta/promstroy-deploy/
+
+STATUS:
+✅ 8 files ready (metal L1/L2/L3, mangal L1/L2/L3, promstroy, dashboard)
+✅ Git initialized (main branch)
+✅ First 2 commits done
+⏳ NEXT: Push to GitHub
+
+====================================================================
+STEP-BY-STEP (10 minutes)
+====================================================================
+
+### STEP 1: Create empty repo on GitHub.com
+
+Go to https://github.com/new
+
+- Repository name: promstroy-sites
+- Public
+- DO NOT initialize with README
+
+Click "Create repository"
+
+### STEP 2: Add remote & push
+
+cd /sessions/gallant-ecstatic-brahmagupta/promstroy-deploy
+
+git remote add origin https://github.com/vasilevdasfo/promstroy-sites.git
+git push -u origin main
+
+### STEP 3: Enable GitHub Pages
+
+1. GitHub repo → Settings → Pages
+2. Source: "Deploy from a branch"
+3. Branch: main / folder: / (root)
+4. Save
+
+Wait 1-2 minutes.
+
+### STEP 4: Done!
+
+Site lives at:
+https://vasilevdasfo.github.io/promstroy-sites/
+
+====================================================================
+FASTER: Use GitHub CLI (if installed)
+
+gh auth login  # if not logged in
+
+cd /sessions/gallant-ecstatic-brahmagupta/promstroy-deploy
+
+gh repo create vasilevdasfo/promstroy-sites --public --source=. --push
+
+gh api repos/vasilevdasfo/promstroy-sites/pages -X POST \
+  -f build_type=legacy -f 'source={"branch":"main","path":"/"}'
+
+Done. Site: https://vasilevdasfo.github.io/promstroy-sites/
+
+====================================================================
