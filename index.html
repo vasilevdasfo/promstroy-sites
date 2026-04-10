@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд сайтов — Дмитрий Васильев | Все проекты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f0f4f8; color: #1a202c; min-height: 100vh; }
+
+        .header { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header h1 { font-size: 20px; font-weight: 700; color: #1a202c; }
+        .header .stats { display: flex; gap: 24px; }
+        .stat { text-align: center; }
+        .stat-num { font-size: 28px; font-weight: 700; color: #2563eb; }
+        .stat-label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+        .section-title { font-size: 14px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; padding-left: 4px; }
+
+        .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-bottom: 40px; }
+
+        .card { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; transition: all 0.2s; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+
+        .card-badge { position: absolute; top: 16px; right: 16px; font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-client { background: #dbeafe; color: #1d4ed8; }
+        .badge-my { background: #f0fdf4; color: #16a34a; }
+        .badge-base { background: #f1f5f9; color: #475569; }
+        .badge-premium { background: #fef3c7; color: #92400e; }
+        .badge-cinematic { background: #fce7f3; color: #be185d; }
+
+        .card-client { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .card-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+        .card-desc { font-size: 13px; color: #64748b; line-height: 1.5; margin-bottom: 16px; }
+
+        .card-meta { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+        .meta-item { font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 4px; }
+
+        .card-features { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+        .feature { font-size: 11px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 3px 8px; border-radius: 4px; color: #475569; }
+
+        .card-actions { display: flex; gap: 8px; }
+        .btn { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; text-align: center; transition: all 0.15s; cursor: pointer; border: none; }
+        .btn-primary { background: #2563eb; color: #fff; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-outline { background: #fff; color: #475569; border: 1px solid #e2e8f0; }
+        .btn-outline:hover { background: #f8fafc; border-color: #cbd5e1; }
+
+        .summary-table { width: 100%; background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; margin-bottom: 40px; }
+        .summary-table table { width: 100%; border-collapse: collapse; }
+        .summary-table th { background: #f8fafc; padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #e2e8f0; }
+        .summary-table td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid #f1f5f9; color: #334155; }
+        .summary-table tr:last-child td { border-bottom: none; }
+        .summary-table tr:hover { background: #f8fafc; }
+        .summary-table a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        .summary-table a:hover { text-decoration: underline; }
+
+        .tasks-section { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 24px; margin-bottom: 40px; }
+        .task-group-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: #0f172a; }
+        .task { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 13px; color: #475569; }
+        .task:last-child { border-bottom: none; }
+        .task-check { width: 18px; height: 18px; border: 2px solid #cbd5e1; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+        .task-done .task-check { background: #22c55e; border-color: #22c55e; }
+        .task-priority { font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 3px; margin-left: auto; flex-shrink: 0; }
+        .priority-high { background: #fef2f2; color: #dc2626; }
+        .priority-med { background: #fff7ed; color: #ea580c; }
+        .priority-low { background: #f0fdf4; color: #16a34a; }
+
+        @media (max-width: 768px) {
+            .header { flex-direction: column; gap: 16px; padding: 16px; }
+            .cards { grid-template-columns: 1fr; }
+            .container { padding: 16px; }
+            .summary-table { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Дашборд сайтов — Дмитрий Васильев</h1>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-num">9</div>
+                <div class="stat-label">Сайтов</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">2</div>
+                <div class="stat-label">Клиента</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">3</div>
+                <div class="stat-label">Уровня</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- СВОДНАЯ ТАБЛИЦА -->
+        <div class="section-title">Все сайты — сводная таблица</div>
+        <div class="summary-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Клиент</th>
+                        <th>Сайт</th>
+                        <th>Тип</th>
+                        <th>Уровень</th>
+                        <th>Фичи</th>
+                        <th>Размер</th>
+                        <th>Ссылка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Евгений Бычковский</td>
+                        <td>Металлопрокат</td>
+                        <td>Каталог</td>
+                        <td>Base</td>
+                        <td>Калькулятор, каталог, план развития</td>
+                        <td>54 KB</td>
+                        <td><a href="evgeny-metal.html" target="_blank">Открыть</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Евгений Бычковский</td>
+                        <td>Металлопрокат</td>
+                        <td>Каталог</td>
+                        <td>Premium</td>
+                        <td>+ Услуги, сравнение, отзывы, parallax</td>
+                        <td>52 KB</td>
+                        <td><a href="evgeny-metal-L2.html" target="_blank">Открыть</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Евгений Бычковский</td>
+                        <td>Металлопрокат</td>
+                        <td>Каталог</td>
+                        <td>Cinematic</td>
+                        <td>+ Glassmorphism, ticker, cursor glow, timeline</td>
+                        <td>54 KB</td>
+                        <td><a href="evgeny-metal-L3.html" target="_blank">Открыть</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Евгений Бычковский</td>
+                        <td>Мангальные зоны</td>
+                        <td>Каталог + B2B</td>
+                        <td>Base</td>
+                        <td>3D-просмотр, 5 моделей, секция для организаций</td>
+                        <td>62 KB</td>
+                        <td><a href="evgeny-mangal.html" target="_blank">Открыть</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Евгений Бычковский</td>
+                        <td>Мангальные зоны</td>
+                        <td>Каталог + B2B</td>
+                        <td>Premium</td>
+                        <td>+ Обучение, выезд, сравнение, roadmap</td>
+                        <td>50 KB</td>
+                        <td><a href="evgeny-mangal-L2.html" target="_blank">Открыть</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Евгений Бычковский</td>
+                        <td>Мангальные зоны</td>
+                        <td>Каталог + B2B</td>
+                        <td>Cinematic</td>
+                        <td>+ Particles, cursor trail, glassmorphism, ticker</td>
+                        <td>48 KB</td>
+                        <td><a href="evgeny-mangal-L3.html" target="_blank">Открыть</a></td>
+                    </tr>
+                    <tr style="background: #fffbeb;">
+                        <td>7</td>
+                        <td>Павел Бычковский</td>
+                        <td>ПРОМСТРОЙ Белгород</td>
+                        <td>Редизайн psopt.ru</td>
+                        <td>Premium</td>
+                        <td>Табы, калькулятор, выкуп лома, план</td>
+                        <td>49 KB</td>
+                        <td><a href="pavlo-promstroy.html" target="_blank">Открыть</a></td>
+                    </tr>
+                    <tr style="background: #f0f9ff;">
+                        <td>8</td>
+                        <td>Дмитрий Васильев</td>
+                        <td>vda.vc</td>
+                        <td>Личный бренд</td>
+                        <td>Cinematic</td>
+                        <td>Видео, GSAP, RU/EN, testimonials</td>
+                        <td>—</td>
+                        <td><a href="https://vda.vc" target="_blank">vda.vc</a></td>
+                    </tr>
+                    <tr style="background: #f0f9ff;">
+                        <td>9</td>
+                        <td>Дмитрий Васильев</td>
+                        <td>vda.vc/versions</td>
+                        <td>Архив версий</td>
+                        <td>—</td>
+                        <td>17 версий, switcher</td>
+                        <td>—</td>
+                        <td><a href="https://vda.vc/versions/" target="_blank">Версии</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- КЛИЕНТ: ЕВГЕНИЙ -->
+        <div class="section-title">Клиент: Евгений Бычковский — ПРОМСТРОЙ Строитель</div>
+        <div class="cards">
+            <div class="card">
+                <span class="card-badge badge-base">Base</span>
+                <div class="card-client">Металлопрокат</div>
+                <div class="card-title">evgeny-metal.html</div>
+                <div class="card-desc">Профтруба и профлист по цене завода. Калькулятор веса, каталог с ценами, план развития бизнеса.</div>
+                <div class="card-features">
+                    <span class="feature">Калькулятор</span>
+                    <span class="feature">Каталог</span>
+                    <span class="feature">WhatsApp</span>
+                    <span class="feature">SEO</span>
+                    <span class="feature">План развития</span>
+                </div>
+                <div class="card-actions">
+                    <a href="evgeny-metal.html" target="_blank" class="btn btn-primary">Открыть</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-badge badge-premium">Premium</span>
+                <div class="card-client">Металлопрокат</div>
+                <div class="card-title">evgeny-metal-L2.html</div>
+                <div class="card-desc">Всё из Base + услуги (доставка, резка, рассрочка), сравнение с конкурентами, отзывы клиентов, parallax.</div>
+                <div class="card-features">
+                    <span class="feature">Калькулятор</span>
+                    <span class="feature">Услуги</span>
+                    <span class="feature">Сравнение</span>
+                    <span class="feature">Отзывы</span>
+                    <span class="feature">Parallax</span>
+                    <span class="feature">Таски</span>
+                </div>
+                <div class="card-actions">
+                    <a href="evgeny-metal-L2.html" target="_blank" class="btn btn-primary">Открыть</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-badge badge-cinematic">Cinematic</span>
+                <div class="card-client">Металлопрокат</div>
+                <div class="card-title">evgeny-metal-L3.html</div>
+                <div class="card-desc">Awwwards-уровень: тёмная тема, glassmorphism, cursor glow, бегущая строка цен, timeline, анимации счётчиков.</div>
+                <div class="card-features">
+                    <span class="feature">Glassmorphism</span>
+                    <span class="feature">Cursor glow</span>
+                    <span class="feature">Ticker</span>
+                    <span class="feature">Timeline</span>
+                    <span class="feature">Fullscreen</span>
+                </div>
+                <div class="card-actions">
+                    <a href="evgeny-metal-L3.html" target="_blank" class="btn btn-primary">Открыть</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-badge badge-base">Base</span>
+                <div class="card-client">Мангальные зоны</div>
+                <div class="card-title">evgeny-mangal.html</div>
+                <div class="card-desc">Премиальный сайт мангальных зон. 3D-просмотрщик, 5 моделей (38К-180К), секция для организаций.</div>
+                <div class="card-features">
+                    <span class="feature">3D-вращение</span>
+                    <span class="feature">5 моделей</span>
+                    <span class="feature">B2B секция</span>
+                    <span class="feature">CSS-огонь</span>
+                </div>
+                <div class="card-actions">
+                    <a href="evgeny-mangal.html" target="_blank" class="btn btn-primary">Открыть</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-badge badge-premium">Premium</span>
+                <div class="card-client">Мангальные зоны</div>
+                <div class="card-title">evgeny-mangal-L2.html</div>
+                <div class="card-desc">Всё из Base + обучение сварке, выезд специалиста, монтаж, сравнение (Мы vs Перекупщики vs Гаражники), roadmap.</div>
+                <div class="card-features">
+                    <span class="feature">Обучение</span>
+                    <span class="feature">Выезд</span>
+                    <span class="feature">Монтаж</span>
+                    <span class="feature">Сравнение</span>
+                    <span class="feature">Roadmap</span>
+                </div>
+                <div class="card-actions">
+                    <a href="evgeny-mangal-L2.html" target="_blank" class="btn btn-primary">Открыть</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-badge badge-cinematic">Cinematic</span>
+                <div class="card-client">Мангальные зоны</div>
+                <div class="card-title">evgeny-mangal-L3.html</div>
+                <div class="card-desc">Mercedes-уровень: огненные частицы, cursor trail, glassmorphism, горизонтальный скролл каталога, 3-колоночное сравнение.</div>
+                <div class="card-features">
+                    <span class="feature">Fire particles</span>
+                    <span class="feature">Cursor trail</span>
+                    <span class="feature">Glassmorphism</span>
+                    <span class="feature">App Store scroll</span>
+                </div>
+                <div class="card-actions">
+                    <a href="evgeny-mangal-L3.html" target="_blank" class="btn btn-primary">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- КЛИЕНТ: ПАВЕЛ -->
+        <div class="section-title">Клиент: Павел Бычковский — ПРОМСТРОЙ Белгород (брат)</div>
+        <div class="cards">
+            <div class="card">
+                <span class="card-badge badge-premium">Premium</span>
+                <div class="card-client">Редизайн psopt.ru</div>
+                <div class="card-title">pavlo-promstroy.html</div>
+                <div class="card-desc">Редизайн сайта конкурента. Каталог (новый металл / БУ / ангары), калькулятор, выкуп лома, 8 задач развития.</div>
+                <div class="card-features">
+                    <span class="feature">3 таба</span>
+                    <span class="feature">Калькулятор</span>
+                    <span class="feature">Выкуп лома</span>
+                    <span class="feature">8 задач</span>
+                </div>
+                <div class="card-actions">
+                    <a href="pavlo-promstroy.html" target="_blank" class="btn btn-primary">Открыть</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- МОИ САЙТЫ -->
+        <div class="section-title">Мои сайты — Дмитрий Васильев</div>
+        <div class="cards">
+            <div class="card">
+                <span class="card-badge badge-my">Live</span>
+                <div class="card-client">Личный бренд</div>
+                <div class="card-title">vda.vc (v13)</div>
+                <div class="card-desc">Живой сайт. Тёмный hero с видео, GSAP, RU/EN toggle, testimonials, cases. Деплой через Vercel.</div>
+                <div class="card-features">
+                    <span class="feature">Видео hero</span>
+                    <span class="feature">GSAP</span>
+                    <span class="feature">RU/EN</span>
+                    <span class="feature">Testimonials</span>
+                    <span class="feature">Vercel</span>
+                </div>
+                <div class="card-actions">
+                    <a href="https://vda.vc" target="_blank" class="btn btn-primary">vda.vc</a>
+                    <a href="https://vda.vc/versions/" target="_blank" class="btn btn-outline">Все версии</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ЗАДАЧИ -->
+        <div class="section-title">Общие задачи по всем проектам</div>
+        <div class="tasks-section">
+            <div class="task-group-title">Евгений — Металлопрокат</div>
+            <div class="task"><div class="task-check"></div> Выбрать финальный уровень (Base/Premium/Cinematic) <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Добавить реальные фото склада и товаров <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Купить домен (promstroy-metal.ru / promstroy31.ru) <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Задеплоить на хостинг <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Запустить Яндекс.Директ — 15 000 р/мес <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Создать магазин на Авито (50+ объявлений) <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Заполнить Яндекс Бизнес + 2GIS <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Собрать 30 отзывов в Яндексе <span class="task-priority priority-low">Низкий</span></div>
+
+            <div class="task-group-title" style="margin-top: 24px;">Евгений — Мангальные зоны</div>
+            <div class="task"><div class="task-check"></div> Выбрать финальный уровень сайта <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Снять профессиональное фото каждой модели <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Купить домен (mangal-promstroy.ru / mangalzone31.ru) <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Заказать 3D-рендеры моделей (~5 000 р/шт) <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Разместить на Авито 10+ объявлений с фото <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Яндекс.Директ Белгород (20К/мес) + Москва (30К/мес) <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Зарегистрироваться на zakupki.gov.ru для госзакупок <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Разослать КП в 50 парков Москвы <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Запустить обучение сварке (подготовить программу) <span class="task-priority priority-low">Низкий</span></div>
+            <div class="task"><div class="task-check"></div> Видео монтажа мангальной зоны для TikTok/Reels <span class="task-priority priority-low">Низкий</span></div>
+
+            <div class="task-group-title" style="margin-top: 24px;">Павел — Редизайн psopt.ru</div>
+            <div class="task"><div class="task-check"></div> Показать редизайн Павлу, собрать обратную связь <span class="task-priority priority-high">Высокий</span></div>
+            <div class="task"><div class="task-check"></div> Обновить карточку Яндекс Бизнес (фото, прайс) <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Зарегистрироваться в 2GIS <span class="task-priority priority-med">Средний</span></div>
+            <div class="task"><div class="task-check"></div> Собрать 20 отзывов от клиентов <span class="task-priority priority-low">Низкий</span></div>
+        </div>
+
+    </div>
+</body>
+</html>

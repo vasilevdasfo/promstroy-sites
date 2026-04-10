@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРОМСТРОЙ — профтруба и профлист по цене завода</title>
+    <meta name="description" content="Профтруба и профлист с доставкой по Белгородской области. Самые низкие цены — гарантированно дешевле конкурентов на 15-30%.">
+    <meta name="keywords" content="профтруба, профлист, металлопрокат, Белгород, доставка, резка, цены">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            color: #222;
+            background: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e40af;
+            letter-spacing: -0.5px;
+        }
+
+        .header-phone {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ea580c;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .header-phone:hover {
+            opacity: 0.8;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 60px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 35px, rgba(30, 64, 175, 0.03) 35px, rgba(30, 64, 175, 0.03) 70px),
+                repeating-linear-gradient(90deg, transparent, transparent 35px, rgba(30, 64, 175, 0.03) 35px, rgba(30, 64, 175, 0.03) 70px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0f172a;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #475569;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        /* CALCULATOR */
+        .calculator {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #0f172a;
+        }
+
+        .calculator-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .calc-inputs {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .calc-group {
+            margin-bottom: 25px;
+        }
+
+        .calc-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        .calc-select, .calc-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .calc-select:focus, .calc-input:focus {
+            outline: none;
+            border-color: #1e40af;
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .quantity-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #e2e8f0;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .quantity-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1e40af;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+        }
+
+        .quantity-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1e40af;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+        }
+
+        .quantity-value {
+            display: inline-block;
+            background: #1e40af;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .calc-result {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .calc-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .calc-price-label {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .calc-details {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .calc-details strong {
+            color: #1e40af;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 16px;
+            background: #ea580c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #d84f0a;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .calculator-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* CATALOG */
+        .catalog {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e2e8f0;
+            overflow-x: auto;
+            padding-bottom: 0;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            color: #1e40af;
+            border-bottom-color: #1e40af;
+        }
+
+        .tab-btn:hover {
+            color: #1e40af;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .catalog-table thead {
+            background: #1e40af;
+            color: white;
+        }
+
+        .catalog-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .catalog-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+
+        .catalog-table tbody tr:hover {
+            background: #f0f4ff;
+        }
+
+        .price-cell {
+            font-weight: 700;
+            color: #ea580c;
+            font-size: 16px;
+        }
+
+        .in-stock {
+            color: #16a34a;
+            font-weight: 600;
+        }
+
+        .out-stock {
+            color: #dc2626;
+        }
+
+        /* WHY CHEAPER */
+        .why-cheaper {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            padding: 40px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .card-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #ea580c;
+        }
+
+        .service-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .service-text {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* COMPETITORS */
+        .competitors {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .comparison-table thead {
+            background: #0f172a;
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .comparison-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+
+        .comparison-table tbody tr:first-child {
+            background: #f0f4ff;
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .check {
+            color: #16a34a;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .cross {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .review {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 13px;
+        }
+
+        .review-note {
+            background: #fef3c7;
+            border-left: 3px solid #f59e0b;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #78350f;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ROADMAP */
+        .roadmap {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .roadmap-items {
+            margin-top: 40px;
+        }
+
+        .roadmap-item {
+            margin-bottom: 30px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #1e40af;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #1e40af;
+        }
+
+        .roadmap-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 32px;
+            width: 2px;
+            height: calc(100% + 30px);
+            background: #cbd5e1;
+        }
+
+        .roadmap-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .roadmap-desc {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* CONTACTS */
+        .contacts {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .contacts-center {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contacts-phone {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e40af;
+            margin: 30px 0;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .contacts-phone:hover {
+            color: #ea580c;
+        }
+
+        .contacts-address {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .contacts-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            padding: 14px 28px;
+            background: white;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #1e40af;
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #ea580c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 12px 0;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .header-phone {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 60px 0;
+                margin-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .catalog-table th, .catalog-table td {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .price-cell {
+                font-size: 14px;
+            }
+
+            .card-number {
+                font-size: 36px;
+            }
+
+            .contacts-phone {
+                font-size: 32px;
+            }
+
+            .tabs {
+                gap: 5px;
+            }
+
+            .tab-btn {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">ПРОМСТРОЙ</div>
+            <a href="tel:+79045330303" class="header-phone">+7 904 533-03-03</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Профтруба и профлист — дешевле нет</h1>
+                <p class="hero-subtitle">Цены завода + 1% на всё. Доставка по Белгородской области. Резка любой длины.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">довольных клиентов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15–30%</div>
+                        <div class="stat-label">дешевле конкурентов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">лет опыта</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="calculator">
+        <div class="container">
+            <h2 class="section-title">Расчёт стоимости</h2>
+            <div class="calculator-wrapper">
+                <div class="calc-inputs">
+                    <div class="calc-group">
+                        <label class="calc-label">Тип продукции</label>
+                        <select id="productType" class="calc-select">
+                            <option value="proftruba">Профтруба (выберите размер)</option>
+                            <option value="proflsheet">Профлист (выберите марку)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-group" id="tubeGroup">
+                        <label class="calc-label">Размер профтубы</label>
+                        <select id="tubeSize" class="calc-select">
+                            <option value="20x20x2">20×20×2 мм — 65₽/шт</option>
+                            <option value="25x25x2">25×25×2 мм — 78₽/шт</option>
+                            <option value="30x30x2">30×30×2 мм — 95₽/шт</option>
+                            <option value="40x40x2">40×40×2 мм — 140₽/шт</option>
+                            <option value="50x50x2">50×50×2 мм — 185₽/шт</option>
+                            <option value="60x60x3">60×60×3 мм — 280₽/шт</option>
+                            <option value="80x80x3">80×80×3 мм — 420₽/шт</option>
+                            <option value="100x100x4">100×100×4 мм — 620₽/шт</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-group" id="sheetGroup" style="display: none;">
+                        <label class="calc-label">Марка профлиста</label>
+                        <select id="sheetType" class="calc-select">
+                            <option value="C8">C8 (волна 8 мм) — 320₽/м²</option>
+                            <option value="C10">C10 (волна 10 мм) — 360₽/м²</option>
+                            <option value="C20">C20 (волна 20 мм) — 420₽/м²</option>
+                            <option value="C21">C21 (волна 21 мм) — 480₽/м²</option>
+                            <option value="C44">C44 (волна 44 мм) — 540₽/м²</option>
+                            <option value="MP20">MP20 (несущий) — 620₽/м²</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-group">
+                        <label class="calc-label">Количество: <span class="quantity-value" id="quantityValue">10</span></label>
+                        <input type="range" id="quantity" class="quantity-slider" min="1" max="100" value="10">
+                    </div>
+
+                    <div class="calc-group">
+                        <label class="calc-label">Доставка</label>
+                        <select id="delivery" class="calc-select">
+                            <option value="0">Самовывоз</option>
+                            <option value="1500">Доставка манипулятором — +1500₽</option>
+                            <option value="800">Доставка бортовой — +800₽</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calc-result">
+                    <div style="font-size: 14px; color: #64748b; margin-bottom: 20px;">Итоговая стоимость</div>
+                    <div class="calc-price" id="totalPrice">650₽</div>
+                    <div class="calc-price-label">+ доставка (если выбрана)</div>
+
+                    <div class="calc-details">
+                        <strong id="productInfo">Профтруба 20×20×2 мм</strong><br>
+                        Количество: <strong id="quantityInfo">10 шт</strong><br>
+                        Единица: <strong id="unitInfo">шт (штука)</strong><br>
+                        Цена за единицу: <strong id="unitPrice">65₽</strong><br>
+                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(30, 64, 175, 0.2);">
+                            Доставка в Белгород, г. Строитель и область
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" id="whatsappBtn">Заказать в WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="catalog">
+        <div class="container">
+            <h2 class="section-title">Полный каталог</h2>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tubes">Профтруба</button>
+                <button class="tab-btn" data-tab="sheets">Профлист</button>
+                <button class="tab-btn" data-tab="services-tab">Услуги доставки</button>
+            </div>
+
+            <div id="tubes" class="tab-content active">
+                <table class="catalog-table">
+                    <thead>
+                        <tr>
+                            <th>Размер (мм)</th>
+                            <th>Толщина стенки</th>
+                            <th>Цена за шт</th>
+                            <th>Вес на шт (кг)</th>
+                            <th>Наличие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20×20</td>
+                            <td>2.0</td>
+                            <td class="price-cell">65₽</td>
+                            <td>1.2</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>25×25</td>
+                            <td>2.0</td>
+                            <td class="price-cell">78₽</td>
+                            <td>1.6</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>30×30</td>
+                            <td>2.0</td>
+                            <td class="price-cell">95₽</td>
+                            <td>2.0</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>40×40</td>
+                            <td>2.0</td>
+                            <td class="price-cell">140₽</td>
+                            <td>3.2</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>50×50</td>
+                            <td>2.0</td>
+                            <td class="price-cell">185₽</td>
+                            <td>4.2</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>60×60</td>
+                            <td>3.0</td>
+                            <td class="price-cell">280₽</td>
+                            <td>7.2</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>80×80</td>
+                            <td>3.0</td>
+                            <td class="price-cell">420₽</td>
+                            <td>11.4</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>100×100</td>
+                            <td>4.0</td>
+                            <td class="price-cell">620₽</td>
+                            <td>16.8</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="sheets" class="tab-content">
+                <table class="catalog-table">
+                    <thead>
+                        <tr>
+                            <th>Марка</th>
+                            <th>Высота волны</th>
+                            <th>Цена за м²</th>
+                            <th>Толщина листа</th>
+                            <th>Наличие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>C8</td>
+                            <td>8 мм</td>
+                            <td class="price-cell">320₽</td>
+                            <td>0.5–0.7 мм</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>C10</td>
+                            <td>10 мм</td>
+                            <td class="price-cell">360₽</td>
+                            <td>0.5–0.7 мм</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>C20</td>
+                            <td>20 мм</td>
+                            <td class="price-cell">420₽</td>
+                            <td>0.6–0.8 мм</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>C21</td>
+                            <td>21 мм</td>
+                            <td class="price-cell">480₽</td>
+                            <td>0.7–0.9 мм</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>C44</td>
+                            <td>44 мм</td>
+                            <td class="price-cell">540₽</td>
+                            <td>0.8–1.0 мм</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                        <tr>
+                            <td>MP20 (несущий)</td>
+                            <td>20 мм</td>
+                            <td class="price-cell">620₽</td>
+                            <td>1.0–1.5 мм</td>
+                            <td class="in-stock">✓ В наличии</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="services-tab" class="tab-content">
+                <table class="catalog-table">
+                    <thead>
+                        <tr>
+                            <th>Услуга</th>
+                            <th>Описание</th>
+                            <th>Стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Доставка манипулятором</strong></td>
+                            <td>По Белгородской области, разгрузка включена</td>
+                            <td class="price-cell">+1500₽</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Доставка бортовой</strong></td>
+                            <td>По городу Строитель и окрестностям</td>
+                            <td class="price-cell">+800₽</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Резка в размер</strong></td>
+                            <td>Любая длина, гидравлическая резка</td>
+                            <td class="price-cell">+50–100₽/м</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Рассрочка</strong></td>
+                            <td>Для юридических лиц, условия по договору</td>
+                            <td class="price-cell">Обсудить</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHEAPER -->
+    <section class="why-cheaper">
+        <div class="container">
+            <h2 class="section-title">Почему мы дешевле</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-number">1</div>
+                    <div class="card-title">Цены напрямую от завода</div>
+                    <div class="card-text">Закупаем сталь напрямую у производителя, без посредников. Экономим 20–25% на поставке.</div>
+                </div>
+                <div class="card">
+                    <div class="card-number">2</div>
+                    <div class="card-title">Минимальная наценка</div>
+                    <div class="card-text">Наша маржа — всего 1% от цены завода. Конкуренты берут 15–30%. Честная торговля.</div>
+                </div>
+                <div class="card">
+                    <div class="card-number">3</div>
+                    <div class="card-title">Нет ненужных расходов</div>
+                    <div class="card-text">Работаем с минимумом офиса, нет больших зарплат управленцев — всё это отражается в цене.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Дополнительные услуги</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-title">Доставка по области</div>
+                    <div class="service-text">Манипулятор или бортовая техника. Разгрузка на объекте. Привезём когда удобно вам.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-title">Резка в размер</div>
+                    <div class="service-text">Режем профтубу и листы любой длины. Гидравлическая резка, точность 1 мм. Быстро.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-title">Рассрочка для юрлиц</div>
+                    <div class="service-text">Для постоянных клиентов — условия рассрочки по договору. Минимум бумажек.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-title">Бесплатная консультация</div>
+                    <div class="service-text">Подскажем какой размер профтубы нужен для вашего проекта. Посчитаем материалы.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPETITORS -->
+    <section class="competitors">
+        <div class="container">
+            <h2 class="section-title">Сравнение с конкурентами</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Критерий</th>
+                        <th style="background: #1e40af;">ПРОМСТРОЙ</th>
+                        <th>Конкурент 1</th>
+                        <th>Конкурент 2</th>
+                        <th>Конкурент 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Цены профтубы</strong></td>
+                        <td style="background: #f0f4ff;"><span class="check">✓</span> от 65₽</td>
+                        <td>от 85₽</td>
+                        <td>от 90₽</td>
+                        <td>от 78₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ассортимент</strong></td>
+                        <td><span class="check">✓</span> Полный</td>
+                        <td>Ограничен</td>
+                        <td><span class="check">✓</span> Полный</td>
+                        <td>Ограничен</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Резка в размер</strong></td>
+                        <td><span class="check">✓</span> Да</td>
+                        <td><span class="cross">✗</span> Нет</td>
+                        <td><span class="check">✓</span> Да</td>
+                        <td><span class="check">✓</span> Да</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Доставка включена</strong></td>
+                        <td><span class="check">✓</span> Да</td>
+                        <td><span class="cross">✗</span> Нет</td>
+                        <td><span class="cross">✗</span> Нет</td>
+                        <td><span class="check">✓</span> Да</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Рассрочка для юрлиц</strong></td>
+                        <td><span class="check">✓</span> Да</td>
+                        <td><span class="cross">✗</span> Нет</td>
+                        <td><span class="check">✓</span> Да</td>
+                        <td><span class="cross">✗</span> Нет</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Цены профлиста</strong></td>
+                        <td style="background: #f0f4ff;"><span class="check">✓</span> от 320₽</td>
+                        <td>от 380₽</td>
+                        <td>от 350₽</td>
+                        <td>от 340₽</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <div class="reviews-grid">
+                <div class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Для теплицы заказал 200 метров профтубы — цена на 20% дешевле, чем на Авито. Ещё и доставку привезли. Рекомендую!"</div>
+                    <div class="review-author">Иван М., садовод</div>
+                    <div class="review-note">✏️ <strong>Примечание:</strong> добавьте реальные отзывы от ваших клиентов</div>
+                </div>
+                <div class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Строили забор, профлист взяли в ПРОМСТРОЙ. За эти деньги я у конкурентов не нашел. Евгений подсказал какой размер нужен."</div>
+                    <div class="review-author">Алексей К., строитель</div>
+                    <div class="review-note">✏️ <strong>Примечание:</strong> добавьте реальные отзывы от ваших клиентов</div>
+                </div>
+                <div class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Рассрочку дали без лишних вопросов. Привезли манипулятором, нормально разгрузили. Спасибо, обращусь ещё."</div>
+                    <div class="review-author">ООО «Стройконтракт»</div>
+                    <div class="review-note">✏️ <strong>Примечание:</strong> добавьте реальные отзывы от ваших клиентов</div>
+                </div>
+                <div class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Впервые через калькулятор на сайте посчитали стоимость — всё точно. Заказал, привезли в тот же день. Качество отлично."</div>
+                    <div class="review-author">Сергей В., архитектор</div>
+                    <div class="review-note">✏️ <strong>Примечание:</strong> добавьте реальные отзывы от ваших клиентов</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="roadmap">
+        <div class="container">
+            <h2 class="section-title">План развития бизнеса</h2>
+            <div class="roadmap-items">
+                <div class="roadmap-item">
+                    <div class="roadmap-title">Реклама в Яндекс.Директ</div>
+                    <div class="roadmap-desc">Запустить контекстную рекламу по ключевым фразам: «профтруба», «профлист», «металлопрокат Белгород». Бюджет: 1000₽/день. ROI: 3–4x.</div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-title">Яндекс.Карты и Google Maps</div>
+                    <div class="roadmap-desc">Оптимизировать профиль на картах, добавить фото склада, отзывы. Цель: топ-3 в выдаче для запросов «металлопрокат + город».</div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-title">Авито — профессиональный аккаунт</div>
+                    <div class="roadmap-desc">Создать магазин на Авито с полным каталогом, фото каждого размера, описанием услуг. Активная переписка с потенциальными клиентами.</div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-title">SEO оптимизация сайта</div>
+                    <div class="roadmap-desc">Добавить блог с гайдами: «Как выбрать профтубу», «Расход профлиста на крышу», «Транспортировка». Целевые статьи для Google.</div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-title">Соцсети — Telegram и Instagram</div>
+                    <div class="roadmap-desc">Канал Telegram с еженедельными предложениями и прайс-листами. Instagram с фото объектов (заборы, теплицы, ангары).</div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-title">Яндекс.Карты и Google — отзывы</div>
+                    <div class="roadmap-desc">Попросить клиентов оставить отзывы. Отвечать на все отзывы. Целевой рейтинг: 4.8+ звёзд. Влияет на выдачу в поиске.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts-center">
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <div class="contacts-address">
+                    г. Строитель, Белгородская область<br>
+                    Металлобаза «ПРОМСТРОЙ»
+                </div>
+                <a href="tel:+79045330303" class="contacts-phone">+7 904 533-03-03</a>
+                <div class="contacts-buttons">
+                    <a href="https://wa.me/79045330303?text=Здравствуйте!%20Интересуюсь%20вашими%20предложениями" target="_blank" class="btn-primary">WhatsApp</a>
+                    <a href="tel:+79045330303" class="btn-secondary">Позвонить</a>
+                    <a href="https://t.me/promstroy_belgorod" target="_blank" class="btn-secondary">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ПРОМСТРОЙ. Металлобаза Белгородской области. Все права защищены.</p>
+            <p>Цены актуальны на момент публикации. Уточняйте наличие и стоимость по телефону.</p>
+        </div>
+    </footer>
+
+    <script>
+        // CALCULATOR LOGIC
+        const productType = document.getElementById('productType');
+        const tubeGroup = document.getElementById('tubeGroup');
+        const sheetGroup = document.getElementById('sheetGroup');
+        const tubeSize = document.getElementById('tubeSize');
+        const sheetType = document.getElementById('sheetType');
+        const quantity = document.getElementById('quantity');
+        const quantityValue = document.getElementById('quantityValue');
+        const delivery = document.getElementById('delivery');
+        const totalPrice = document.getElementById('totalPrice');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+
+        const prices = {
+            'proftruba': {
+                '20x20x2': 65,
+                '25x25x2': 78,
+                '30x30x2': 95,
+                '40x40x2': 140,
+                '50x50x2': 185,
+                '60x60x3': 280,
+                '80x80x3': 420,
+                '100x100x4': 620
+            },
+            'proflsheet': {
+                'C8': 320,
+                'C10': 360,
+                'C20': 420,
+                'C21': 480,
+                'C44': 540,
+                'MP20': 620
+            }
+        };
+
+        const names = {
+            'proftruba': {
+                '20x20x2': 'Профтруба 20×20×2 мм',
+                '25x25x2': 'Профтруба 25×25×2 мм',
+                '30x30x2': 'Профтруба 30×30×2 мм',
+                '40x40x2': 'Профтруба 40×40×2 мм',
+                '50x50x2': 'Профтруба 50×50×2 мм',
+                '60x60x3': 'Профтруба 60×60×3 мм',
+                '80x80x3': 'Профтруба 80×80×3 мм',
+                '100x100x4': 'Профтруба 100×100×4 мм'
+            },
+            'proflsheet': {
+                'C8': 'Профлист C8',
+                'C10': 'Профлист C10',
+                'C20': 'Профлист C20',
+                'C21': 'Профлист C21',
+                'C44': 'Профлист C44',
+                'MP20': 'Профлист MP20 (несущий)'
+            }
+        };
+
+        function updateCalculator() {
+            const type = productType.value;
+            const isSheet = type === 'proflsheet';
+
+            tubeGroup.style.display = isSheet ? 'none' : 'block';
+            sheetGroup.style.display = isSheet ? 'block' : 'none';
+
+            const selectedValue = isSheet ? sheetType.value : tubeSize.value;
+            const price = prices[type][selectedValue];
+            const name = names[type][selectedValue];
+            const qty = parseInt(quantity.value);
+            const deliveryValue = parseInt(delivery.value);
+
+            const subtotal = price * qty;
+            const total = subtotal + deliveryValue;
+
+            totalPrice.textContent = total.toLocaleString('ru-RU') + '₽';
+            document.getElementById('productInfo').textContent = name;
+            document.getElementById('quantityInfo').textContent = qty + ' ' + (isSheet ? 'м²' : 'шт');
+            document.getElementById('unitInfo').textContent = isSheet ? 'м² (кв.метр)' : 'шт (штука)';
+            document.getElementById('unitPrice').textContent = price + '₽';
+
+            const whatsappText = encodeURIComponent(
+                `Здравствуйте! Меня интересует:\n\n${name}\nКоличество: ${qty} ${isSheet ? 'м²' : 'шт'}\nЦена за единицу: ${price}₽\nИтого: ${subtotal}₽\n\nПожалуйста, уточните стоимость доставки и наличие.`
+            );
+            whatsappBtn.href = `https://wa.me/79045330303?text=${whatsappText}`;
+        }
+
+        productType.addEventListener('change', updateCalculator);
+        tubeSize.addEventListener('change', updateCalculator);
+        sheetType.addEventListener('change', updateCalculator);
+        quantity.addEventListener('input', () => {
+            quantityValue.textContent = quantity.value;
+            updateCalculator();
+        });
+        delivery.addEventListener('change', updateCalculator);
+
+        updateCalculator();
+
+        // TABS
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+                const tabId = btn.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Intersection Observer для элементов
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .service-item, .review').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

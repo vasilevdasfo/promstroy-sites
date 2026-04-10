@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мангальные зоны из металла — купить в Белгороде и с доставкой в Москву | ПРОМСТРОЙ</title>
+    <meta name="description" content="Мангальные зоны из профтрубы. Собственное производство в Белгороде. Для дачи от 38 000 ₽. Для парков и организаций — с НДС и документами. Доставка по России.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+            background: transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header.scrolled {
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 0.8rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #f59e0b;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .header-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: #f59e0b;
+        }
+
+        .header-phone {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .header-phone:hover {
+            color: #f59e0b;
+        }
+
+        .cta-btn-header {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: #ffffff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1c0a00 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 2rem 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: radial-gradient(ellipse at 50% 100%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+            animation: fireGlow 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fireGlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1.2; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(217, 119, 6, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(217, 119, 6, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 2px solid #f59e0b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(245, 158, 11, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+            color: #f59e0b;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ===== 3D VIEWER ===== */
+        .viewer-section {
+            background: #0d0d0d;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .viewer-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .viewer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .viewer-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .viewer-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .viewer-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+
+        .viewer-box {
+            perspective: 1000px;
+            height: 500px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a1a0f 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            cursor: grab;
+            user-select: none;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            overflow: hidden;
+        }
+
+        .viewer-box:active {
+            cursor: grabbing;
+        }
+
+        .viewer-3d {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .mangal-model {
+            width: 300px;
+            height: 250px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+
+        /* Крыша навеса */
+        .mangal-roof {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            height: 20px;
+            background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            border-radius: 2px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5), inset 0 -2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Трубы опоры */
+        .mangal-post {
+            position: absolute;
+            width: 8px;
+            height: 180px;
+            background: linear-gradient(90deg, #333 0%, #1a1a1a 50%, #333 100%);
+            box-shadow: inset -1px 0 2px rgba(255, 255, 255, 0.1), inset 1px 0 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .mangal-post.left {
+            left: 80px;
+            top: 60px;
+        }
+
+        .mangal-post.right {
+            right: 80px;
+            top: 60px;
+        }
+
+        /* Столешница */
+        .mangal-table {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 30px;
+            background: linear-gradient(90deg, #8B7355 0%, #A0826D 50%, #8B7355 100%);
+            border-radius: 3px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4), inset 0 -1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Мангал */
+        .mangal-barrel {
+            position: absolute;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, #3a3a3a 0%, #0d0d0d 100%);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset -3px -3px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .mangal-barrel::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: rgba(245, 158, 11, 0.3);
+            border-radius: 2px;
+            animation: fireFlicker 0.3s ease-in-out infinite;
+        }
+
+        @keyframes fireFlicker {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Скамейки */
+        .mangal-bench {
+            position: absolute;
+            width: 100px;
+            height: 12px;
+            background: linear-gradient(90deg, #8B7355 0%, #A0826D 50%, #8B7355 100%);
+            border-radius: 2px;
+            bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .mangal-bench.left {
+            left: 30px;
+        }
+
+        .mangal-bench.right {
+            right: 30px;
+        }
+
+        .viewer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .viewer-angle-btn {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+            border: 1px solid #f59e0b;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .viewer-angle-btn:hover {
+            background: rgba(245, 158, 11, 0.3);
+            transform: scale(1.05);
+        }
+
+        .viewer-angle-btn.active {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: #ffffff;
+        }
+
+        .viewer-rotate-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .rotate-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #f59e0b;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rotate-btn:hover {
+            background: rgba(245, 158, 11, 0.3);
+            transform: scale(1.1);
+        }
+
+        .viewer-hint {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* ===== CATALOG ===== */
+        .catalog-section {
+            background: #fdfaf5;
+            padding: 6rem 2rem;
+        }
+
+        .catalog-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .catalog-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .catalog-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(217, 119, 6, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(217, 119, 6, 0.15);
+            border-color: rgba(217, 119, 6, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #f59e0b15 0%, #d9770615 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #d97706;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 20px); }
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-category {
+            color: #f59e0b;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #d97706;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .product-features li {
+            color: #666;
+            font-size: 0.95rem;
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-weight: 700;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-order {
+            flex: 1;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: #ffffff;
+            padding: 0.9rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-order:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-more {
+            flex: 1;
+            background: transparent;
+            color: #d97706;
+            padding: 0.9rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            border: 2px solid #d97706;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-more:hover {
+            background: rgba(217, 119, 6, 0.1);
+        }
+
+        .calculate-btn {
+            display: block;
+            margin: 2.5rem auto 0;
+            background: transparent;
+            color: #d97706;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            border: 2px solid #d97706;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            max-width: 350px;
+            font-size: 1.05rem;
+        }
+
+        .calculate-btn:hover {
+            background: rgba(217, 119, 6, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-section {
+            background: #ffffff;
+            padding: 6rem 2rem;
+        }
+
+        .gallery-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .gallery-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            group: 1;
+        }
+
+        .gallery-item::before {
+            content: attr(data-location);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: #ffffff;
+            padding: 2rem 1.5rem 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover::before {
+            padding: 2.5rem 1.5rem 2rem;
+            background: linear-gradient(to top, rgba(217, 119, 6, 0.9), transparent);
+        }
+
+        .gallery-pic {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-pic::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+        }
+
+        /* ===== ORG SECTION ===== */
+        .org-section {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1c0a00 100%);
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .org-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .org-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .org-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .org-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .org-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .org-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .org-feature {
+            background: rgba(245, 158, 11, 0.08);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .org-feature:hover {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .org-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .org-feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .org-feature-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .org-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .org-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border-radius: 6px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(245, 158, 11, 0.8);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+        }
+
+        .form-group input.optional::after {
+            content: ' (опционально)';
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 6px;
+            border: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(217, 119, 6, 0.3);
+        }
+
+        /* ===== BENEFITS ===== */
+        .benefits-section {
+            background: #fdfaf5;
+            padding: 6rem 2rem;
+        }
+
+        .benefits-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .benefits-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(217, 119, 6, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: rgba(217, 119, 6, 0.5);
+            box-shadow: 0 12px 35px rgba(217, 119, 6, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-text {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ===== ROADMAP ===== */
+        .roadmap-section {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1c0a00 100%);
+            padding: 6rem 2rem;
+        }
+
+        .roadmap-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .roadmap-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .accordion-header {
+            background: rgba(245, 158, 11, 0.1);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+            color: #ffffff;
+        }
+
+        .accordion-header:hover {
+            background: rgba(245, 158, 11, 0.2);
+        }
+
+        .accordion-header.active {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.3) 0%, rgba(245, 158, 11, 0.2) 100%);
+        }
+
+        .accordion-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .accordion-title::before {
+            content: attr(data-emoji);
+            font-size: 1.8rem;
+        }
+
+        .accordion-toggle {
+            color: #f59e0b;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 2rem 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(245, 158, 11, 0.1);
+        }
+
+        .accordion-content.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .accordion-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .accordion-list li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .accordion-list li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0d0d0d;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo span {
+            color: #f59e0b;
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-phone {
+            color: #f59e0b;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .footer-phone:hover {
+            color: #d97706;
+        }
+
+        .footer-address {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(245, 158, 11, 0.2);
+            margin: 2rem 0;
+        }
+
+        .footer-bottom {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .viewer-box {
+                height: 350px;
+            }
+
+            .mangal-model {
+                width: 200px;
+                height: 180px;
+            }
+
+            .catalog-header h2,
+            .gallery-header h2,
+            .benefits-header h2,
+            .org-header h2,
+            .roadmap-header h2,
+            .viewer-header h2 {
+                font-size: 2rem;
+            }
+
+            .product-card {
+                margin-bottom: 1rem;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+
+            .header-nav {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .org-form {
+                padding: 2rem;
+            }
+
+            .org-form h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ===== FADE-IN ON SCROLL ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="logo">ПРОМСТРОЙ <span>⚒</span></div>
+        <nav class="header-nav">
+            <a href="#catalog">Каталог</a>
+            <a href="#org">Для организаций</a>
+            <a href="#benefits">Преимущества</a>
+            <a href="#footer" class="header-phone">+7 904 533-03-03</a>
+            <button class="cta-btn-header" onclick="openWhatsApp()">Получить КП</button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Мангальные зоны из металла.<br>Под ключ.</h1>
+            <p>Собственное производство в Белгороде. Качество, которое горит ярче конкурентов.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('#catalog')">Смотреть каталог</button>
+                <button class="btn-secondary" onclick="openWhatsAppOrg()">КП для организаций</button>
+            </div>
+            <div class="scroll-indicator">↓</div>
+        </div>
+    </section>
+
+    <!-- 3D VIEWER -->
+    <section class="viewer-section" id="viewer">
+        <div class="viewer-container">
+            <div class="viewer-header">
+                <h2>Рассмотрите со всех сторон</h2>
+                <p>Потяните или используйте кнопки для поворота модели</p>
+            </div>
+
+            <div class="viewer-controls">
+                <button class="viewer-angle-btn active" onclick="setView(0)">Спереди</button>
+                <button class="viewer-angle-btn" onclick="setView(90)">Сбоку</button>
+                <button class="viewer-angle-btn" onclick="setView(180)">Сзади</button>
+            </div>
+
+            <div class="viewer-box" id="viewerBox" onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
+                <div class="viewer-3d" id="viewer3d">
+                    <div class="mangal-model" id="mangalModel">
+                        <div class="mangal-roof"></div>
+                        <div class="mangal-post left"></div>
+                        <div class="mangal-post right"></div>
+                        <div class="mangal-table"></div>
+                        <div class="mangal-barrel"></div>
+                        <div class="mangal-bench left"></div>
+                        <div class="mangal-bench right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="viewer-rotate-buttons">
+                <button class="rotate-btn" onclick="rotateModel(-45)">◀</button>
+                <button class="rotate-btn" onclick="rotateModel(45)">▶</button>
+            </div>
+
+            <p class="viewer-hint">Интерактивная 3D модель мангальной зоны «Классик» — профтруба + профлист</p>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="catalog-section" id="catalog">
+        <div class="catalog-header">
+            <h2>Пять моделей на любой вкус</h2>
+            <p>От компактной зоны для дачи до премиум-беседки для загородного дома</p>
+        </div>
+
+        <div class="catalog-grid">
+            <!-- Card 1 -->
+            <div class="product-card fade-in">
+                <div class="product-image">🔥</div>
+                <div class="product-content">
+                    <div class="product-category">Начальный уровень</div>
+                    <h3 class="product-name">Классик</h3>
+                    <div class="product-price">38 000 ₽</div>
+                    <ul class="product-features">
+                        <li>Навес 3×3 м из профтрубы</li>
+                        <li>Мангал стационарный</li>
+                        <li>Столешница из профлиста</li>
+                        <li>2 деревянные скамейки</li>
+                        <li>Базовое окрашивание</li>
+                    </ul>
+                    <div class="product-actions">
+                        <button class="btn-order" onclick="openWhatsApp()">Заказать</button>
+                        <button class="btn-more" onclick="alert('Подробное описание Классика')">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card fade-in">
+                <div class="product-image">🌟</div>
+                <div class="product-content">
+                    <div class="product-category">Оптимальный выбор</div>
+                    <h3 class="product-name">Комфорт</h3>
+                    <div class="product-price">67 000 ₽</div>
+                    <ul class="product-features">
+                        <li>Навес 3×5 м усиленной конструкции</li>
+                        <li>Мангал + тандыр</li>
+                        <li>2 столешницы разных уровней</li>
+                        <li>4 скамейки</li>
+                        <li>Встроенное LED-освещение</li>
+                    </ul>
+                    <div class="product-actions">
+                        <button class="btn-order" onclick="openWhatsApp()">Заказать</button>
+                        <button class="btn-more" onclick="alert('Подробное описание Комфорта')">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card fade-in">
+                <div class="product-image">👨‍👩‍👧‍👦</div>
+                <div class="product-content">
+                    <div class="product-category">Для больших компаний</div>
+                    <h3 class="product-name">Семейный</h3>
+                    <div class="product-price">98 000 ₽</div>
+                    <ul class="product-features">
+                        <li>Навес 4×6 м с усилением</li>
+                        <li>Барбекю + встроенный мангал</li>
+                        <li>Кухонный модуль из профлиста</li>
+                        <li>Встроенное 3D-освещение</li>
+                        <li>Люстра на потолок</li>
+                    </ul>
+                    <div class="product-actions">
+                        <button class="btn-order" onclick="openWhatsApp()">Заказать</button>
+                        <button class="btn-more" onclick="alert('Подробное описание Семейного')">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card fade-in">
+                <div class="product-image">👑</div>
+                <div class="product-content">
+                    <div class="product-category">Люкс</div>
+                    <h3 class="product-name">Премиум</h3>
+                    <div class="product-price">145 000 ₽</div>
+                    <ul class="product-features">
+                        <li>Закрытая беседка 4×4 м</li>
+                        <li>Печь-барбекю премиум класса</li>
+                        <li>Кухонный модуль с мойкой</li>
+                        <li>Профессиональное освещение</li>
+                        <li>220V розетки на стене</li>
+                    </ul>
+                    <div class="product-actions">
+                        <button class="btn-order" onclick="openWhatsApp()">Заказать</button>
+                        <button class="btn-more" onclick="alert('Подробное описание Премиума')">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="product-card fade-in">
+                <div class="product-image">🏛</div>
+                <div class="product-content">
+                    <div class="product-category">Для организаций</div>
+                    <h3 class="product-name">Парковый</h3>
+                    <div class="product-price">от 180 000 ₽</div>
+                    <ul class="product-features">
+                        <li>Усиленная конструкция</li>
+                        <li>Соответствие ГОСТ</li>
+                        <li>Полный пакет сертификатов</li>
+                        <li>Рассчитано на высокие нагрузки</li>
+                        <li>Доставка в Москву и СПб</li>
+                    </ul>
+                    <div class="product-actions">
+                        <button class="btn-order" onclick="openWhatsAppOrg()">Заказать</button>
+                        <button class="btn-more" onclick="alert('Подробное описание Паркового')">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="calculate-btn" onclick="openWhatsApp()">Рассчитать индивидуально →</button>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-header">
+            <h2>Галерея работ</h2>
+            <p>Мангальные зоны ПРОМСТРОЙ в реальных локациях</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" data-location="На даче в Белгородской обл.">
+                <div class="gallery-pic">🏡</div>
+            </div>
+            <div class="gallery-item" data-location="В городском парке">
+                <div class="gallery-pic">🌳</div>
+            </div>
+            <div class="gallery-item" data-location="Загородный дом семьи">
+                <div class="gallery-pic">🏘</div>
+            </div>
+            <div class="gallery-item" data-location="Сквер в центре города">
+                <div class="gallery-pic">🏛</div>
+            </div>
+            <div class="gallery-item" data-location="База отдыха">
+                <div class="gallery-pic">🏕</div>
+            </div>
+            <div class="gallery-item" data-location="Загородное кафе">
+                <div class="gallery-pic">☕</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORG SECTION -->
+    <section class="org-section" id="org">
+        <div class="org-container">
+            <div class="org-header">
+                <h2>Для парков, скверов и застройщиков</h2>
+                <p>Продаём с НДС. Полный пакет документов. Доставка в Москву и СПб.</p>
+            </div>
+
+            <div class="org-features">
+                <div class="org-feature">
+                    <div class="org-feature-icon">📋</div>
+                    <div class="org-feature-title">Счёт-фактура и НДС</div>
+                    <div class="org-feature-text">Полный пакет налоговых документов. Готовы к проверкам контролирующих органов.</div>
+                </div>
+                <div class="org-feature">
+                    <div class="org-feature-icon">🛡</div>
+                    <div class="org-feature-title">Гарантийные документы</div>
+                    <div class="org-feature-text">3 года гарантии на конструкцию и сварные швы. Техническая поддержка.</div>
+                </div>
+                <div class="org-feature">
+                    <div class="org-feature-icon">✅</div>
+                    <div class="org-feature-title">Сертификаты качества</div>
+                    <div class="org-feature-text">Соответствие ГОСТ. Допуск к госзакупкам. Материал от проверенных поставщиков.</div>
+                </div>
+                <div class="org-feature">
+                    <div class="org-feature-icon">🚚</div>
+                    <div class="org-feature-title">Доставка по России</div>
+                    <div class="org-feature-text">Отправляем в Москву, СПб, регионы. Собственная логистика или курьер на выбор.</div>
+                </div>
+            </div>
+
+            <form class="org-form" onsubmit="handleOrgSubmit(event)">
+                <h3>Получить коммерческое предложение</h3>
+                <div class="form-group">
+                    <label for="orgName">Название организации</label>
+                    <input type="text" id="orgName" name="orgName" placeholder="ООО / АО / ИП" required>
+                </div>
+                <div class="form-group">
+                    <label for="orgInn">ИНН (опционально)</label>
+                    <input type="text" id="orgInn" name="orgInn" placeholder="10 или 12 цифр" class="optional">
+                </div>
+                <div class="form-group">
+                    <label for="orgPhone">Телефон контактного лица</label>
+                    <input type="tel" id="orgPhone" name="orgPhone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <button type="submit" class="form-submit">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits-section" id="benefits">
+        <div class="benefits-header">
+            <h2>Почему выбирают ПРОМСТРОЙ</h2>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon">🏭</div>
+                <h3 class="benefit-title">Собственное производство</h3>
+                <p class="benefit-text">База в г. Строитель, своя мастерская, нет посредников. Контролируем каждый шаг от проекта до доставки.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon">🔩</div>
+                <h3 class="benefit-title">Металл от завода</h3>
+                <p class="benefit-text">Используем профтрубу и профлист от сертифицированных поставщиков. Качество ГОСТ, не подделка.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon">🛡</div>
+                <h3 class="benefit-title">Гарантия 3 года</h3>
+                <p class="benefit-text">На конструкцию и сварные швы. Если что-то случится — мы в ответе и поправим быстро.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon">🚚</div>
+                <h3 class="benefit-title">Доставка по России</h3>
+                <p class="benefit-text">От Белгорода до Москвы и СПб. Следим за условиями доставки, упаковываем аккуратно.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="roadmap-section" id="roadmap">
+        <div class="roadmap-header">
+            <h2>Дорожная карта роста бизнеса</h2>
+            <p>План развития мангальных зон ПРОМСТРОЙ на 2026 год</p>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(0)" data-emoji="🎯">
+                    <span class="accordion-title" data-emoji="🎯">Реклама онлайн (1 месяц)</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="accordion-list">
+                        <li>Яндекс.Директ Белгородская область: «мангальная зона купить», «мангальная зона для дачи цена» — 20 000 р/мес</li>
+                        <li>Яндекс.Директ Москва: «мангальная зона для парка», «металлическая беседка под заказ» — 30 000 р/мес</li>
+                        <li>ВКонтакте таргет: дачники 35-60 лет, Белгородская область, интересы «дача», «барбекю»</li>
+                        <li>Instagram/Pinterest: визуальный контент — фото зон в красивых локациях, Reels</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(1)" data-emoji="📍">
+                    <span class="accordion-title" data-emoji="📍">Маркетплейсы (2 недели)</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="accordion-list">
+                        <li>Авито: создать 10+ объявлений с реальными фото по каждой модели</li>
+                        <li>Яндекс.Услуги: зарегистрировать услугу «изготовление мангальных зон на заказ»</li>
+                        <li>СБЕР Мегамаркет: разместить 3-5 популярные модели</li>
+                        <li>Ozon: подготовить ассортимент для физических товаров</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(2)" data-emoji="🏛">
+                    <span class="accordion-title" data-emoji="🏛">B2B Москва/СПб (2 месяца)</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="accordion-list">
+                        <li>Реестр поставщиков Москвы: зарегистрироваться для участия в госзакупках</li>
+                        <li>Zakupki.gov.ru: мониторить тендеры по «мангальная зона», «малые архитектурные формы»</li>
+                        <li>Прямой охват: разослать КП в 50 управляющих компаний парков Москвы</li>
+                        <li>Партнёрство с ландшафтными дизайнерами и архитекторами</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(3)" data-emoji="📸">
+                    <span class="accordion-title" data-emoji="📸">Контент и визуал (постоянно)</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="accordion-list">
+                        <li>Снять профессиональное фото каждой модели в 3 локациях (дача, город, парк)</li>
+                        <li>Видео монтажа мангальной зоны для Reels/TikTok (вирусный формат)</li>
+                        <li>3D-рендеры моделей для сайта и каталогов (заказать фрилансеру, ~5 000 р/штука)</li>
+                        <li>Кейсы и отзывы клиентов для социальных сетей</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(4)" data-emoji="💡">
+                    <span class="accordion-title" data-emoji="💡">Развитие продукта</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="accordion-list">
+                        <li>Модульная система конфигурации: клиент сам выбирает размер, материал, опции онлайн</li>
+                        <li>Опции: навес с поликарбонатом, декоративная ковка, барная стойка, встроенная мойка</li>
+                        <li>Сертификат «Изготовлено в России» — важен для госзакупок и брендирования</li>
+                        <li>Техподдержка и гарантийное обслуживание через чат-бот</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-logo">ПРОМСТРОЙ <span>⚒</span></div>
+            <div class="footer-contact">
+                <p>Производство мангальных зон</p>
+                <a href="tel:+79045330303" class="footer-phone">+7 904 533-03-03</a>
+                <p class="footer-address">г. Строитель, Белгородская область, Россия</p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                © 2026 ПРОМСТРОЙ. Все права защищены. | Мобильный номер доступен 09:00–21:00 МСК
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // 3D Viewer
+        let currentRotation = 0;
+        let isDragging = false;
+        let dragStart = 0;
+
+        function startDrag(e) {
+            isDragging = true;
+            dragStart = e.clientX || (e.touches && e.touches[0].clientX);
+            document.addEventListener('mousemove', onDrag);
+            document.addEventListener('touchmove', onDrag);
+            document.addEventListener('mouseup', stopDrag);
+            document.addEventListener('touchend', stopDrag);
+        }
+
+        function onDrag(e) {
+            if (!isDragging) return;
+            const current = e.clientX || (e.touches && e.touches[0].clientX);
+            const diff = current - dragStart;
+            currentRotation += diff * 0.5;
+            updateModelRotation();
+            dragStart = current;
+        }
+
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', onDrag);
+            document.removeEventListener('touchmove', onDrag);
+            document.removeEventListener('mouseup', stopDrag);
+            document.removeEventListener('touchend', stopDrag);
+        }
+
+        function rotateModel(angle) {
+            currentRotation += angle;
+            updateModelRotation();
+        }
+
+        function updateModelRotation() {
+            const mangalModel = document.getElementById('mangalModel');
+            mangalModel.style.transform = `rotateY(${currentRotation}deg)`;
+        }
+
+        function setView(angle) {
+            currentRotation = angle;
+            updateModelRotation();
+            document.querySelectorAll('.viewer-angle-btn').forEach((btn, idx) => {
+                btn.classList.remove('active');
+                if (idx * 90 === angle) btn.classList.add('active');
+            });
+        }
+
+        // Accordion
+        function toggleAccordion(index) {
+            const items = document.querySelectorAll('.accordion-item');
+            const item = items[index];
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+
+            const isActive = content.classList.contains('active');
+
+            document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+
+            if (!isActive) {
+                content.classList.add('active');
+                header.classList.add('active');
+            }
+        }
+
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        function scrollToSection(sectionId) {
+            const element = document.querySelector(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // WhatsApp handlers
+        function openWhatsApp() {
+            const phone = '79045330303';
+            const message = encodeURIComponent('Здравствуйте! Мне интересны мангальные зоны ПРОМСТРОЙ. Хочу получить подробную информацию и расчёт.');
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+
+        function openWhatsAppOrg() {
+            const phone = '79045330303';
+            const message = encodeURIComponent('Здравствуйте! Мы организация, нас интересуют мангальные зоны для парка/сквера/благоустройства. Нужно КП с НДС и документами.');
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+
+        // Form submission
+        function handleOrgSubmit(event) {
+            event.preventDefault();
+            const orgName = document.getElementById('orgName').value;
+            const orgPhone = document.getElementById('orgPhone').value;
+            const inn = document.getElementById('orgInn').value;
+
+            let message = `Организация: ${orgName}\nТелефон: ${orgPhone}`;
+            if (inn) message += `\nИНН: ${inn}`;
+            message += '\n\nПрошу отправить коммерческое предложение с НДС и документами.';
+
+            const phone = '79045330303';
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
+        }
+
+        // Ensure touch events work properly
+        document.addEventListener('touchmove', function(e) {
+            if (e.target.closest('.viewer-box')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>

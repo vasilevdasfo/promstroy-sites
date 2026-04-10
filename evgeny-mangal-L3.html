@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мангальные зоны | ПРЕМИУМ | Собственное производство Евгения Бычковского</title>
+    <meta name="description" content="Мангальные зоны из профтрубы — cinematic-уровень дизайна. 5 моделей. Монтаж под ключ. От 38К. Лучше BestMangal.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===== CURSOR TRAIL ===== */
+        .cursor-trail {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #d97706;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d97706;
+        }
+
+        .cta-header {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(217, 119, 6, 0.4);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 20px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(217, 119, 6, 0.05) 0%,
+                rgba(0, 0, 0, 0.95) 50%,
+                rgba(217, 119, 6, 0.02) 100%
+            );
+        }
+
+        .fire-particle {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .fire-particle::before {
+            content: '🔥';
+            font-size: 24px;
+            opacity: 0.6;
+        }
+
+        @keyframes fireRise {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-200px) translateX(var(--tx));
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            z-index: 10;
+            animation: heroFadeIn 0.8s ease 0.3s backwards;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 96px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            text-shadow: 0 10px 40px rgba(217, 119, 6, 0.2);
+        }
+
+        .hero h1 span {
+            color: #f59e0b;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: #000;
+            padding: 18px 48px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(217, 119, 6, 0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #f59e0b;
+            padding: 18px 48px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid #f59e0b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(245, 158, 11, 0.1);
+            transform: translateY(-4px);
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== TICKER ===== */
+        .ticker {
+            height: 80px;
+            background: linear-gradient(90deg, rgba(217, 119, 6, 0.1), transparent, rgba(217, 119, 6, 0.1));
+            border-top: 1px solid rgba(217, 119, 6, 0.2);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #f59e0b;
+            letter-spacing: -1px;
+        }
+
+        .ticker-content {
+            display: flex;
+            animation: tickerMove 30s linear infinite;
+            gap: 80px;
+        }
+
+        .ticker-item {
+            white-space: nowrap;
+            padding: 0 40px;
+        }
+
+        @keyframes tickerMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ===== 3D VIEWER SECTION ===== */
+        .viewer-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 40px;
+            gap: 60px;
+        }
+
+        .viewer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d97706, transparent);
+            pointer-events: none;
+        }
+
+        .viewer-3d {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+            min-height: 600px;
+        }
+
+        .mangal-model {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border-radius: 12px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateModel 25s infinite linear;
+            box-shadow:
+                0 40px 100px rgba(217, 119, 6, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.1),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+        }
+
+        @keyframes rotateModel {
+            0% { transform: rotateX(8deg) rotateY(0deg); }
+            100% { transform: rotateX(8deg) rotateY(360deg); }
+        }
+
+        .mangal-inner {
+            position: absolute;
+            top: 15%;
+            left: 12%;
+            right: 12%;
+            height: 70%;
+            background: radial-gradient(ellipse at 50% 60%, rgba(217, 119, 6, 0.8), rgba(245, 158, 11, 0.3), transparent);
+            border-radius: 12px;
+            opacity: 0.9;
+            animation: fireFlicker 0.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(217, 119, 6, 0.6));
+        }
+
+        @keyframes fireFlicker {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 0.6; }
+        }
+
+        .mangal-highlight {
+            position: absolute;
+            top: 8%;
+            left: 15%;
+            right: 15%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            border-radius: 2px;
+            filter: blur(2px);
+        }
+
+        .viewer-text {
+            flex: 1;
+        }
+
+        .viewer-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .viewer-text h2 span {
+            color: #f59e0b;
+        }
+
+        .viewer-text p {
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 32px;
+            line-height: 1.9;
+            max-width: 500px;
+        }
+
+        .viewer-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .spec-item {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #d97706;
+            transform: translateY(-4px);
+        }
+
+        .spec-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .spec-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f59e0b;
+        }
+
+        /* ===== CATALOG SCROLL ===== */
+        .catalog {
+            min-height: 100vh;
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d97706, transparent);
+            pointer-events: none;
+        }
+
+        .catalog h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
+
+        .catalog-scroll {
+            display: flex;
+            gap: 32px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .catalog-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .catalog-scroll::-webkit-scrollbar-track {
+            background: rgba(217, 119, 6, 0.1);
+            border-radius: 10px;
+        }
+
+        .catalog-scroll::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 10px;
+        }
+
+        .product-card-l3 {
+            flex: 0 0 360px;
+            scroll-snap-align: start;
+            background: rgba(217, 119, 6, 0.08);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card-l3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .product-card-l3:hover {
+            transform: translateY(-12px);
+            border-color: #d97706;
+            background: rgba(217, 119, 6, 0.15);
+        }
+
+        .product-card-l3:hover::before {
+            left: 100%;
+        }
+
+        .product-image-l3 {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(245, 158, 11, 0.1));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+        }
+
+        .product-name-l3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #f59e0b;
+        }
+
+        .product-specs-l3 {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .product-specs-l3 span {
+            display: block;
+        }
+
+        .product-price-l3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #f59e0b;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .product-price-note-l3 {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .product-btn-l3 {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-btn-l3:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(217, 119, 6, 0.4);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d97706, transparent);
+            pointer-events: none;
+        }
+
+        .services h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-row {
+            display: flex;
+            gap: 40px;
+            align-items: stretch;
+            margin-bottom: 40px;
+        }
+
+        .service-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-card-l3 {
+            flex: 1;
+            background: rgba(217, 119, 6, 0.08);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            padding: 48px 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card-l3::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card-l3:hover {
+            border-color: #d97706;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(217, 119, 6, 0.2);
+        }
+
+        .service-card-l3:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon-l3 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card-l3 h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: #f59e0b;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card-l3 p {
+            color: #aaa;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-detail-l3 {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(217, 119, 6, 0.2);
+            padding-top: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-detail-l3 strong {
+            color: #f59e0b;
+        }
+
+        /* ===== COMPARISON ===== */
+        .comparison {
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .comparison::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d97706, transparent);
+            pointer-events: none;
+        }
+
+        .comparison h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
+
+        .comparison-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comparison-col {
+            background: rgba(217, 119, 6, 0.08);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+        }
+
+        .comparison-col:nth-child(1) .comparison-header {
+            color: #f59e0b;
+            border-bottom-color: #d97706;
+        }
+
+        .comparison-col:nth-child(2) {
+            transform: scale(1.05);
+            border-color: #d97706;
+        }
+
+        .comparison-col:nth-child(2) .comparison-header {
+            color: #f59e0b;
+            border-bottom-color: #f59e0b;
+        }
+
+        .comparison-col:hover {
+            border-color: #d97706;
+        }
+
+        .comparison-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgba(217, 119, 6, 0.2);
+            color: #ccc;
+        }
+
+        .comparison-item {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .comparison-item-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-item-value {
+            font-size: 14px;
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .comparison-item-value.negative {
+            color: #999;
+        }
+
+        /* ===== ROADMAP ===== */
+        .roadmap {
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d97706, transparent);
+            pointer-events: none;
+        }
+
+        .roadmap h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
+
+        .roadmap-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #d97706, #d97706 50%, transparent);
+        }
+
+        .roadmap-item-l3 {
+            margin-bottom: 48px;
+            padding-left: 100px;
+            position: relative;
+        }
+
+        .roadmap-item-l3::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: radial-gradient(circle, #f59e0b, #d97706);
+            border-radius: 50%;
+            border: 3px solid #000;
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.5);
+        }
+
+        .roadmap-title-l3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #f59e0b;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .roadmap-desc-l3 {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(217, 119, 6, 0.2);
+            padding: 60px 40px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: #f59e0b;
+        }
+
+        footer a {
+            color: #d97706;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f59e0b;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+            }
+
+            .ticker-content {
+                gap: 40px;
+            }
+
+            .ticker-item {
+                padding: 0 20px;
+                font-size: 16px;
+            }
+
+            .viewer-section {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .viewer-text h2 {
+                font-size: 32px;
+            }
+
+            .catalog, .services, .comparison, .roadmap {
+                padding: 40px 20px;
+            }
+
+            .catalog h2, .services h2, .comparison h2, .roadmap h2 {
+                font-size: 32px;
+            }
+
+            .product-card-l3 {
+                flex: 0 0 85vw;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-row {
+                flex-direction: column !important;
+                gap: 20px;
+            }
+
+            .comparison-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-col:nth-child(2) {
+                transform: scale(1);
+            }
+
+            .roadmap-timeline::before {
+                left: 20px;
+            }
+
+            .roadmap-item-l3 {
+                padding-left: 80px;
+            }
+
+            .roadmap-item-l3::before {
+                left: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Мангал<span>.Pro</span></div>
+        <nav>
+            <a href="#catalog">Каталог</a>
+            <a href="#services">Услуги</a>
+            <a href="#contact">Контакты</a>
+            <button class="cta-header" onclick="location.href='#contact'">Заказать</button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div id="fire-container"></div>
+        <div class="hero-content">
+            <h1>Мангальные зоны<br><span>из металла</span></h1>
+            <p>Cinematic-уровень дизайна. Собственное производство. Монтаж под ключ. Гарантия 3 года.</p>
+            <div class="hero-cta">
+                <button class="cta-primary" onclick="location.href='#contact'">Получить проект</button>
+                <button class="cta-secondary" onclick="document.querySelector('.viewer-3d').scrollIntoView();">Посмотреть 3D</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+        <div class="ticker-content">
+            <div class="ticker-item">КЛАССИК 38К</div>
+            <div class="ticker-item">КОМФОРТ 67К</div>
+            <div class="ticker-item">СЕМЕЙНЫЙ 98К</div>
+            <div class="ticker-item">ПРЕМИУМ 145К</div>
+            <div class="ticker-item">ПАРКОВЫЙ 180К+</div>
+            <div class="ticker-item">КЛАССИК 38К</div>
+            <div class="ticker-item">КОМФОРТ 67К</div>
+            <div class="ticker-item">СЕМЕЙНЫЙ 98К</div>
+            <div class="ticker-item">ПРЕМИУМ 145К</div>
+            <div class="ticker-item">ПАРКОВЫЙ 180К+</div>
+        </div>
+    </div>
+
+    <!-- 3D VIEWER -->
+    <section class="viewer-section">
+        <div class="viewer-3d">
+            <div>
+                <div class="mangal-model">
+                    <div class="mangal-highlight"></div>
+                    <div class="mangal-inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="viewer-text">
+            <h2>Интерактивный <span>3D-просмотр</span></h2>
+            <p>Каждый мангал вращается в реальном времени. Посмотрите детали из всех углов перед заказом.</p>
+            <div class="viewer-specs">
+                <div class="spec-item">
+                    <div class="spec-label">Материал</div>
+                    <div class="spec-value">Профтруба ГОСТ</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Гарантия</div>
+                    <div class="spec-value">3 года полная</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Доставка</div>
+                    <div class="spec-value">По России</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Монтаж</div>
+                    <div class="spec-value">Под ключ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="catalog" id="catalog">
+        <h2>5 моделей<br>мангальных зон</h2>
+        <div class="catalog-scroll">
+            <!-- Model 1 -->
+            <div class="product-card-l3">
+                <div class="product-image-l3">🔥</div>
+                <div class="product-name-l3">Классик 3×3</div>
+                <div class="product-specs-l3">
+                    <span>Площадь: 9 м²</span>
+                    <span>Идеально: 6-8 человек</span>
+                </div>
+                <div class="product-price-l3">38 000₽</div>
+                <div class="product-price-note-l3">Без НДС. Доставка отдельно.</div>
+                <button class="product-btn-l3">Заказать</button>
+            </div>
+
+            <!-- Model 2 -->
+            <div class="product-card-l3">
+                <div class="product-image-l3">🔥</div>
+                <div class="product-name-l3">Комфорт 3×5</div>
+                <div class="product-specs-l3">
+                    <span>Площадь: 15 м²</span>
+                    <span>Идеально: 10-12 человек</span>
+                </div>
+                <div class="product-price-l3">67 000₽</div>
+                <div class="product-price-note-l3">Самая популярная модель</div>
+                <button class="product-btn-l3">Заказать</button>
+            </div>
+
+            <!-- Model 3 -->
+            <div class="product-card-l3">
+                <div class="product-image-l3">🔥</div>
+                <div class="product-name-l3">Семейный 4×6</div>
+                <div class="product-specs-l3">
+                    <span>Площадь: 24 м²</span>
+                    <span>Идеально: 20-30 человек</span>
+                </div>
+                <div class="product-price-l3">98 000₽</div>
+                <div class="product-price-note-l3">Для больших компаний</div>
+                <button class="product-btn-l3">Заказать</button>
+            </div>
+
+            <!-- Model 4 -->
+            <div class="product-card-l3">
+                <div class="product-image-l3">🔥</div>
+                <div class="product-name-l3">Премиум 4×4</div>
+                <div class="product-specs-l3">
+                    <span>Площадь: 16 м²</span>
+                    <span>С прозрачной крышей</span>
+                </div>
+                <div class="product-price-l3">145 000₽</div>
+                <div class="product-price-note-l3">Год-круглое использование</div>
+                <button class="product-btn-l3">Заказать</button>
+            </div>
+
+            <!-- Model 5 -->
+            <div class="product-card-l3">
+                <div class="product-image-l3">🔥</div>
+                <div class="product-name-l3">Парковый комплекс</div>
+                <div class="product-specs-l3">
+                    <span>Площадь: от 30+ м²</span>
+                    <span>Для ресторанов и парков</span>
+                </div>
+                <div class="product-price-l3">от 180 000₽</div>
+                <div class="product-price-note-l3">Индивидуальный проект</div>
+                <button class="product-btn-l3">Получить КП</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2>Дополнительные<br>услуги</h2>
+        <div class="services-grid">
+            <div class="service-card-l3">
+                <div class="service-icon-l3">🎓</div>
+                <h3>Обучение сварке</h3>
+                <p>Мастер-класс на нашей базе. Научим проектировать и сваривать мангалы с нуля. Сертификат.</p>
+                <div class="service-detail-l3"><strong>5 000₽ • 1 день • Сертификат</strong></div>
+            </div>
+
+            <div class="service-card-l3">
+                <div class="service-icon-l3">📐</div>
+                <h3>Выезд специалиста</h3>
+                <p>Замер участка, консультация по размещению и выбору модели. Включено в заказ!</p>
+                <div class="service-detail-l3"><strong>Бесплатно • Белгородская обл.</strong></div>
+            </div>
+
+            <div class="service-card-l3">
+                <div class="service-icon-l3">🏗️</div>
+                <h3>Монтаж под ключ</h3>
+                <p>Доставка, установка, бетонирование, заземление. Готово к использованию в день доставки.</p>
+                <div class="service-detail-l3"><strong>От 15 000₽ • Включена гарантия</strong></div>
+            </div>
+
+            <div class="service-card-l3">
+                <div class="service-icon-l3">✏️</div>
+                <h3>Индивидуальный проект</h3>
+                <p>3D-визуализация под ваши размеры. Рабочие чертежи для печати и согласования.</p>
+                <div class="service-detail-l3"><strong>От 3 000₽ • 5-7 дней</strong></div>
+            </div>
+
+            <div class="service-card-l3">
+                <div class="service-icon-l3">🔧</div>
+                <h3>Гарантийное обслуживание</h3>
+                <p>Профилактическая покраска, замена элементов. Три года бесплатного обслуживания.</p>
+                <div class="service-detail-l3"><strong>Включено • 3 года • По запросу</strong></div>
+            </div>
+
+            <div class="service-card-l3">
+                <div class="service-icon-l3">🤝</div>
+                <h3>Для организаций</h3>
+                <p>B2B условия, НДС, сертификаты качества. Доставка в Москву, СПб, по России.</p>
+                <div class="service-detail-l3"><strong>КП • Рассчёты • Доставка</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="comparison">
+        <h2>Почему выбирают<br>Мангал.Pro</h2>
+        <div class="comparison-columns">
+            <div class="comparison-col">
+                <div class="comparison-header">Мы</div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Производство</div>
+                    <div class="comparison-item-value">Собственная база</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Цена</div>
+                    <div class="comparison-item-value">Без наценки</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Гарантия</div>
+                    <div class="comparison-item-value">3 года полная</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Проект</div>
+                    <div class="comparison-item-value">Бесплатное 3D</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Монтаж</div>
+                    <div class="comparison-item-value">Под ключ</div>
+                </div>
+            </div>
+
+            <div class="comparison-col">
+                <div class="comparison-header">Перекупщики</div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Производство</div>
+                    <div class="comparison-item-value negative">Закупают</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Цена</div>
+                    <div class="comparison-item-value negative">+30-50%</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Гарантия</div>
+                    <div class="comparison-item-value negative">1 год или нет</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Проект</div>
+                    <div class="comparison-item-value negative">Нет</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Монтаж</div>
+                    <div class="comparison-item-value negative">Отдельно</div>
+                </div>
+            </div>
+
+            <div class="comparison-col">
+                <div class="comparison-header">Гаражники</div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Производство</div>
+                    <div class="comparison-item-value negative">Гараж</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Цена</div>
+                    <div class="comparison-item-value negative">Договорная</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Гарантия</div>
+                    <div class="comparison-item-value negative">Не дают</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Проект</div>
+                    <div class="comparison-item-value negative">Нет</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-item-label">Монтаж</div>
+                    <div class="comparison-item-value negative">Сами</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="roadmap">
+        <h2>План развития<br>2026-2027</h2>
+        <div class="roadmap-timeline">
+            <div class="roadmap-item-l3">
+                <div class="roadmap-title-l3">Реклама онлайн</div>
+                <div class="roadmap-desc-l3">Запуск в Яндекс.Директ и ВК. Таргет на "мангал", "беседка", "зона для барбекю".</div>
+            </div>
+
+            <div class="roadmap-item-l3">
+                <div class="roadmap-title-l3">B2B Москва</div>
+                <div class="roadmap-desc-l3">Участие в госзакупках. Прямые условия для парков, ресторанов, кафе столицы.</div>
+            </div>
+
+            <div class="roadmap-item-l3">
+                <div class="roadmap-title-l3">Видеоконтент</div>
+                <div class="roadmap-desc-l3">TikTok и YouTube: процесс производства, монтажа, отзывы клиентов, лайфхаки.</div>
+            </div>
+
+            <div class="roadmap-item-l3">
+                <div class="roadmap-title-l3">Конфигуратор</div>
+                <div class="roadmap-desc-l3">Онлайн-система: выбери размер → материал → опции → получи цену и чертёж за 1 минуту.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding: 80px 40px; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #d97706, transparent); pointer-events: none;"></div>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 56px; letter-spacing: -1px; margin-bottom: 20px;">Связаться с нами</h2>
+            <p style="color: #999; font-size: 16px; max-width: 600px; margin: 0 auto;">Звоните, пишите в WhatsApp или заполните форму. Отвечаем быстро.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+                <div>
+                    <div style="font-size: 32px; margin-bottom: 12px;">📞</div>
+                    <h3 style="color: #f59e0b; margin-bottom: 8px; font-size: 18px;">Телефон</h3>
+                    <a href="tel:+79045330303" style="color: #d97706; text-decoration: none; font-weight: 600; font-size: 16px;">+7 904 533-03-03</a>
+                </div>
+                <div>
+                    <div style="font-size: 32px; margin-bottom: 12px;">💬</div>
+                    <h3 style="color: #f59e0b; margin-bottom: 8px; font-size: 18px;">WhatsApp</h3>
+                    <a href="https://wa.me/79045330303" style="color: #d97706; text-decoration: none; font-weight: 600; font-size: 16px;">Написать в WhatsApp</a>
+                </div>
+                <div>
+                    <div style="font-size: 32px; margin-bottom: 12px;">📍</div>
+                    <h3 style="color: #f59e0b; margin-bottom: 8px; font-size: 18px;">Адрес</h3>
+                    <p style="color: #999; font-size: 14px;">г. Строитель, Белгородская область</p>
+                </div>
+            </div>
+            <div style="background: rgba(217, 119, 6, 0.08); border: 1px solid rgba(217, 119, 6, 0.2); padding: 40px; border-radius: 12px; backdrop-filter: blur(20px);">
+                <h3 style="font-size: 20px; margin-bottom: 24px; color: #f59e0b;">Заказать проект</h3>
+                <form onsubmit="handleL3Form(event);" style="display: flex; flex-direction: column; gap: 16px;">
+                    <input type="text" placeholder="Ваше имя" required style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(217, 119, 6, 0.2); color: white; padding: 12px 16px; border-radius: 6px; font-family: 'Inter', sans-serif;">
+                    <input type="tel" placeholder="+7 900 000-00-00" required style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(217, 119, 6, 0.2); color: white; padding: 12px 16px; border-radius: 6px; font-family: 'Inter', sans-serif;">
+                    <select required style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(217, 119, 6, 0.2); color: white; padding: 12px 16px; border-radius: 6px; font-family: 'Inter', sans-serif; cursor: pointer;">
+                        <option value="" style="background: #000;">Выберите модель</option>
+                        <option value="Классик" style="background: #000;">Классик 3×3 — 38 000₽</option>
+                        <option value="Комфорт" style="background: #000;">Комфорт 3×5 — 67 000₽</option>
+                        <option value="Семейный" style="background: #000;">Семейный 4×6 — 98 000₽</option>
+                    </select>
+                    <button type="submit" style="background: linear-gradient(135deg, #d97706, #f59e0b); color: #000; padding: 14px 24px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; font-size: 13px;">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Мангал.Pro</strong> — мангальные зоны из металла</p>
+        <p>Собственное производство в г. Строитель, Белгородская область</p>
+        <p>Доставка по России • Гарантия 3 года • Монтаж под ключ</p>
+        <p style="margin-top: 20px; color: #666;">© 2026. Все права защищены. <a href="tel:+79045330303">+7 904 533-03-03</a></p>
+    </footer>
+
+    <script>
+        // Cursor trail effect
+        function initCursorTrail() {
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                if (Math.random() > 0.7) {
+                    const trail = document.createElement('div');
+                    trail.className = 'cursor-trail';
+                    trail.style.left = mouseX + 'px';
+                    trail.style.top = mouseY + 'px';
+                    trail.style.width = '6px';
+                    trail.style.height = '6px';
+                    trail.style.background = '#d97706';
+                    trail.style.borderRadius = '50%';
+                    trail.style.opacity = '0.6';
+                    document.body.appendChild(trail);
+                    setTimeout(() => trail.remove(), 1000);
+                }
+            });
+        }
+
+        // Fire particles
+        function initFireParticles() {
+            const container = document.getElementById('fire-container');
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fire-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.bottom = Math.random() * 100 + 'px';
+                particle.style.fontSize = Math.random() * 20 + 16 + 'px';
+                particle.style.--tx = (Math.random() - 0.5) * 100 + 'px';
+                particle.style.animation = `fireRise ${3 + Math.random() * 2}s ease-in-out infinite`;
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        function handleL3Form(e) {
+            e.preventDefault();
+            alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+            e.target.reset();
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            initCursorTrail();
+            initFireParticles();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мангальные зоны из металла | Собственное производство в Белгороде</title>
+    <meta name="description" content="Мангальные зоны из профтрубы и профлиста. От 38 000₽. Собственная металлобаза = цена без посредников. Монтаж под ключ, обучение, гарантия 3 года.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.1);
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #0d0d0d;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #d97706;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d97706;
+        }
+
+        .cta-header {
+            background: #d97706;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-header:hover {
+            background: #b85c05;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(to top, rgba(217, 119, 6, 0.15), transparent);
+            pointer-events: none;
+            animation: fireGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes fireGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-fire {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, #d97706, transparent);
+            opacity: 0.2;
+            filter: blur(40px);
+            animation: fireRise 4s ease-in-out infinite;
+        }
+
+        @keyframes fireRise {
+            0% { transform: translateY(20px); opacity: 0.1; }
+            50% { opacity: 0.25; }
+            100% { transform: translateY(-20px); opacity: 0.1; }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 10;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: #f59e0b;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #e5e5e5;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: #d97706;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            background: #b85c05;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(217, 119, 6, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid #f59e0b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(245, 158, 11, 0.1);
+            transform: translateY(-4px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== 3D VIEWER ===== */
+        .viewer-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fdfaf5;
+            padding: 80px 40px;
+            gap: 60px;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .viewer-3d {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            min-height: 500px;
+        }
+
+        .mangal-model {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #8b8b8b 0%, #4a4a4a 100%);
+            border-radius: 8px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateModel 20s infinite linear;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.2),
+                inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes rotateModel {
+            0% { transform: rotateX(5deg) rotateY(0deg); }
+            100% { transform: rotateX(5deg) rotateY(360deg); }
+        }
+
+        .mangal-model::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 10%;
+            height: 80%;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(217, 119, 6, 0.2) 100%);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        .mangal-inner {
+            position: absolute;
+            top: 20%;
+            left: 15%;
+            right: 15%;
+            height: 60%;
+            background: radial-gradient(ellipse at 50% 60%, rgba(217, 119, 6, 0.6), transparent);
+            border-radius: 8px;
+            opacity: 0.8;
+            animation: fireFlicker 0.4s ease-in-out infinite;
+        }
+
+        @keyframes fireFlicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.6; }
+        }
+
+        .viewer-controls {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: white;
+            border: 2px solid #d97706;
+            color: #d97706;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: #d97706;
+            color: white;
+        }
+
+        .viewer-text {
+            flex: 1;
+        }
+
+        .viewer-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #0d0d0d;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .viewer-text p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .viewer-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .spec-item {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #d97706;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .spec-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0d0d0d;
+        }
+
+        /* ===== CATALOG ===== */
+        .catalog {
+            min-height: 100vh;
+            padding: 80px 40px;
+            background: white;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #0d0d0d;
+            margin-bottom: 60px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #fdfaf5;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(217, 119, 6, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(217, 119, 6, 0.15);
+            border-color: rgba(217, 119, 6, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .product-content {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #0d0d0d;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .product-specs {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .product-specs span {
+            display: block;
+        }
+
+        .product-features {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 24px;
+            list-style: none;
+        }
+
+        .product-features li {
+            padding-left: 16px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d97706;
+            font-weight: bold;
+        }
+
+        .product-price {
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+
+        .price-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #d97706;
+            margin-bottom: 4px;
+        }
+
+        .price-note {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .product-btn {
+            background: #0d0d0d;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .product-btn:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            background: #0d0d0d;
+            color: white;
+            padding: 80px 40px;
+            animation: fadeInUp 0.8s ease 0.8s backwards;
+        }
+
+        .services .section-title {
+            color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            padding: 40px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: #d97706;
+            transform: translateY(-6px);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #f59e0b;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 16px;
+        }
+
+        .service-detail {
+            font-size: 13px;
+            color: #aaa;
+            border-top: 1px solid rgba(217, 119, 6, 0.2);
+            padding-top: 16px;
+            margin-top: 16px;
+        }
+
+        /* ===== COMPARISION ===== */
+        .comparison {
+            padding: 80px 40px;
+            background: #fdfaf5;
+            animation: fadeInUp 0.8s ease 1s backwards;
+        }
+
+        .comparison .section-title {
+            margin-bottom: 60px;
+        }
+
+        .comparison-table {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .comparison-table th {
+            background: #0d0d0d;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background: #fdfaf5;
+        }
+
+        .comparison-feature {
+            font-weight: 600;
+            color: #0d0d0d;
+        }
+
+        .comparison-value {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .comparison-value.positive {
+            color: #d97706;
+            font-weight: 600;
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews {
+            padding: 80px 40px;
+            background: white;
+            animation: fadeInUp 0.8s ease 1.2s backwards;
+        }
+
+        .reviews .section-title {
+            margin-bottom: 60px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: #fdfaf5;
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid #d97706;
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 16px;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #0d0d0d;
+            font-size: 14px;
+        }
+
+        .review-note {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        /* ===== ROADMAP ===== */
+        .roadmap {
+            padding: 80px 40px;
+            background: #0d0d0d;
+            color: white;
+            animation: fadeInUp 0.8s ease 1.4s backwards;
+        }
+
+        .roadmap .section-title {
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .roadmap-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .roadmap-item {
+            margin-bottom: 40px;
+            padding-left: 60px;
+            position: relative;
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #d97706;
+            border-radius: 50%;
+            border: 4px solid #0d0d0d;
+        }
+
+        .roadmap-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 20px;
+            bottom: -40px;
+            width: 4px;
+            background: linear-gradient(to bottom, #d97706, transparent);
+        }
+
+        .roadmap-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 8px;
+        }
+
+        .roadmap-desc {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            padding: 80px 40px;
+            background: #fdfaf5;
+            animation: fadeInUp 0.8s ease 1.6s backwards;
+        }
+
+        .contact .section-title {
+            margin-bottom: 60px;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            color: #d97706;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .contact-text h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0d0d0d;
+            margin-bottom: 4px;
+        }
+
+        .contact-text p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .contact-text a {
+            color: #d97706;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-form h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0d0d0d;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #0d0d0d;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d97706;
+            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-btn {
+            background: #d97706;
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .form-btn:hover {
+            background: #b85c05;
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0d0d0d;
+            color: #999;
+            padding: 40px;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+                height: 70px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            nav {
+                gap: 20px;
+                font-size: 13px;
+            }
+
+            .hero {
+                margin-top: 70px;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+            }
+
+            .viewer-section {
+                flex-direction: column;
+                padding: 40px 20px;
+                gap: 40px;
+            }
+
+            .viewer-text h2 {
+                font-size: 28px;
+            }
+
+            .catalog, .services, .comparison, .reviews, .roadmap, .contact {
+                padding: 40px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .catalog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .roadmap-item {
+                padding-left: 40px;
+            }
+
+            .roadmap-item::before {
+                left: 10px;
+            }
+
+            .roadmap-item::after {
+                left: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Мангал<span>.Pro</span></div>
+        <nav>
+            <a href="#catalog">Каталог</a>
+            <a href="#services">Услуги</a>
+            <a href="#contact">Контакты</a>
+            <button class="cta-header" onclick="document.getElementById('contact').scrollIntoView();">Заказать</button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-fire"></div>
+        <div class="hero-content">
+            <h1>Мангальные зоны<br>из <span>металла</span><br>под ключ</h1>
+            <p>Собственное производство + проектирование + монтаж. Без посредников. Гарантия 3 года.</p>
+            <div class="hero-cta">
+                <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView();">Получить проект</button>
+                <button class="cta-secondary" onclick="document.querySelector('.control-btn').click();">Посмотреть в 3D</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D VIEWER -->
+    <section class="viewer-section">
+        <div class="viewer-3d">
+            <div>
+                <div class="mangal-model">
+                    <div class="mangal-inner"></div>
+                </div>
+                <div class="viewer-controls">
+                    <button class="control-btn">Вид спереди</button>
+                    <button class="control-btn">Вид сверху</button>
+                    <button class="control-btn">3D вращение</button>
+                </div>
+            </div>
+        </div>
+        <div class="viewer-text">
+            <h2>Интерактивный просмотр</h2>
+            <p>Каждый мангал проектируется индивидуально под вашу площадку. Посмотрите, как выглядит готовое изделие в 3D прежде, чем заказывать.</p>
+            <div class="viewer-specs">
+                <div class="spec-item">
+                    <div class="spec-label">Материал</div>
+                    <div class="spec-value">Профтруба ГОСТ</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Покрытие</div>
+                    <div class="spec-value">Жаростойкая краска</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Габариты</div>
+                    <div class="spec-value">На заказ</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Доставка</div>
+                    <div class="spec-value">По России</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="catalog" id="catalog">
+        <h2 class="section-title">5 моделей мангальных зон</h2>
+        <div class="catalog-grid">
+            <!-- Model 1 -->
+            <div class="product-card">
+                <div class="product-image">🔥</div>
+                <div class="product-content">
+                    <div class="product-name">Классик 3×3</div>
+                    <div class="product-specs">
+                        <span>Площадь: 9 м²</span>
+                        <span>Высота: 2.4 м</span>
+                    </div>
+                    <ul class="product-features">
+                        <li>Простая конструкция</li>
+                        <li>Быстрая сборка</li>
+                        <li>Для небольшой семьи</li>
+                    </ul>
+                    <div class="product-price">
+                        <div class="price-main">38 000₽</div>
+                        <div class="price-note">Без НДС — 45 600₽ с НДС</div>
+                    </div>
+                    <button class="product-btn">Заказать</button>
+                </div>
+            </div>
+
+            <!-- Model 2 -->
+            <div class="product-card">
+                <div class="product-image">🔥</div>
+                <div class="product-content">
+                    <div class="product-name">Комфорт 3×5</div>
+                    <div class="product-specs">
+                        <span>Площадь: 15 м²</span>
+                        <span>Высота: 2.6 м</span>
+                    </div>
+                    <ul class="product-features">
+                        <li>Зона готовки + отдыха</li>
+                        <li>Удобный проход</li>
+                        <li>Место для 10-12 человек</li>
+                    </ul>
+                    <div class="product-price">
+                        <div class="price-main">67 000₽</div>
+                        <div class="price-note">Без НДС — 80 400₽ с НДС</div>
+                    </div>
+                    <button class="product-btn">Заказать</button>
+                </div>
+            </div>
+
+            <!-- Model 3 -->
+            <div class="product-card">
+                <div class="product-image">🔥</div>
+                <div class="product-content">
+                    <div class="product-name">Семейный 4×6</div>
+                    <div class="product-specs">
+                        <span>Площадь: 24 м²</span>
+                        <span>Высота: 2.8 м</span>
+                    </div>
+                    <ul class="product-features">
+                        <li>Большой комплекс</li>
+                        <li>Место на 20+ человек</li>
+                        <li>Профессиональное оборудование</li>
+                    </ul>
+                    <div class="product-price">
+                        <div class="price-main">98 000₽</div>
+                        <div class="price-note">Без НДС — 117 600₽ с НДС</div>
+                    </div>
+                    <button class="product-btn">Заказать</button>
+                </div>
+            </div>
+
+            <!-- Model 4 -->
+            <div class="product-card">
+                <div class="product-image">🔥</div>
+                <div class="product-content">
+                    <div class="product-name">Премиум (закрытая) 4×4</div>
+                    <div class="product-specs">
+                        <span>Площадь: 16 м²</span>
+                        <span>Высота: 3.0 м</span>
+                    </div>
+                    <ul class="product-features">
+                        <li>С прозрачной крышей</li>
+                        <li>Боковые стеклянные панели</li>
+                        <li>Год-круглое использование</li>
+                    </ul>
+                    <div class="product-price">
+                        <div class="price-main">145 000₽</div>
+                        <div class="price-note">Без НДС — 174 000₽ с НДС</div>
+                    </div>
+                    <button class="product-btn">Заказать</button>
+                </div>
+            </div>
+
+            <!-- Model 5 -->
+            <div class="product-card">
+                <div class="product-image">🔥</div>
+                <div class="product-content">
+                    <div class="product-name">Парковый комплекс</div>
+                    <div class="product-specs">
+                        <span>Площадь: от 30+ м²</span>
+                        <span>Высота: 3.0+ м</span>
+                    </div>
+                    <ul class="product-features">
+                        <li>Для рестоэранов</li>
+                        <li>Коммерческие объекты</li>
+                        <li>Индивидуальный проект</li>
+                    </ul>
+                    <div class="product-price">
+                        <div class="price-main">от 180 000₽</div>
+                        <div class="price-note">Без НДС — доп. согласование</div>
+                    </div>
+                    <button class="product-btn">Получить КП</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2 class="section-title">Дополнительные услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Обучение сварке</h3>
+                <p>Хотите построить мангал сам? Проведём мастер-класс на нашей базе в городе Строитель.</p>
+                <div class="service-detail">
+                    <strong>1 день обучения • 5 000₽ • Сертификат</strong>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📐</div>
+                <h3>Выезд специалиста</h3>
+                <p>Замер площадки, консультация по размещению и выбору модели. Бесплатно при заказе!</p>
+                <div class="service-detail">
+                    <strong>Включено • Белгородская обл. • По договоренности</strong>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Монтаж под ключ</h3>
+                <p>Доставим, установим, заземлим и забетонируем. Готово к использованию в день доставки.</p>
+                <div class="service-detail">
+                    <strong>Доставка + установка • От 15 000₽ • Гарантия</strong>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✏️</div>
+                <h3>Индивидуальный проект</h3>
+                <p>Разработаем уникальный дизайн под ваш участок. 3D-визуализация + рабочие чертежи.</p>
+                <div class="service-detail">
+                    <strong>От 3 000₽ • 5-7 дней • Чертежи на печать</strong>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Гарантийное обслуживание</h3>
+                <p>Профилактическая покраска, замена износившихся элементов. 3 года гарантии на все работы.</p>
+                <div class="service-detail">
+                    <strong>Включено 3 года • Бесплатные визиты • По запросу</strong>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Для организаций</h3>
+                <p>Продаём с НДС. Справка 2-НДФЛ, сертификаты качества. Доставка в Москву и СПб.</p>
+                <div class="service-detail">
+                    <strong>B2B условия • Рассчёты по КП • Доставка России</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="comparison">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th style="color: #f59e0b;">Мангал.Pro</th>
+                        <th>Перекупщики</th>
+                        <th>Гаражники</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="comparison-feature">Производство</td>
+                        <td class="comparison-value positive">Собственная база в Строителе</td>
+                        <td class="comparison-value">Закупают у производителей</td>
+                        <td class="comparison-value">Гараж, нет сертификата</td>
+                    </tr>
+                    <tr>
+                        <td class="comparison-feature">Наценка</td>
+                        <td class="comparison-value positive">0% — цена изготовителя</td>
+                        <td class="comparison-value">+30-50% наценка</td>
+                        <td class="comparison-value">Договорная</td>
+                    </tr>
+                    <tr>
+                        <td class="comparison-feature">Гарантия</td>
+                        <td class="comparison-value positive">3 года полная</td>
+                        <td class="comparison-value">1 год или нет</td>
+                        <td class="comparison-value">Не предоставляется</td>
+                    </tr>
+                    <tr>
+                        <td class="comparison-feature">Доставка</td>
+                        <td class="comparison-value positive">По России + Беларусь</td>
+                        <td class="comparison-value">Ограниченно</td>
+                        <td class="comparison-value">Самовывоз</td>
+                    </tr>
+                    <tr>
+                        <td class="comparison-feature">Проектирование</td>
+                        <td class="comparison-value positive">Бесплатное 3D</td>
+                        <td class="comparison-value">Нет</td>
+                        <td class="comparison-value">Нет</td>
+                    </tr>
+                    <tr>
+                        <td class="comparison-feature">Монтаж под ключ</td>
+                        <td class="comparison-value positive">Входит в услугу</td>
+                        <td class="comparison-value">Отдельно или нет</td>
+                        <td class="comparison-value">Вы сами</td>
+                    </tr>
+                    <tr>
+                        <td class="comparison-feature">Сертификаты</td>
+                        <td class="comparison-value positive">ГОСТ + СЭС</td>
+                        <td class="comparison-value">Редко</td>
+                        <td class="comparison-value">Нет</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Отличный мангал! Приехали, установили за день. Всё работает идеально. Спасибо Евгению за качество."</div>
+                <div class="review-author">Иван Петров</div>
+                <div class="review-note">Клиент | Модель Комфорт 3×5 | Апрель 2026</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Долго искали качественную зону для ресторана. Это лучше, чем BestMangal за меньшую цену. Рекомендую!"</div>
+                <div class="review-author">Ресторан "Дров & Огонь"</div>
+                <div class="review-note">B2B клиент | Модель Парковый | Март 2026</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Прошёл обучение сварке. Очень полезно! Теперь сам могу ремонтировать. Благодарен за внимание."</div>
+                <div class="review-author">Сергей Иванов</div>
+                <div class="review-note">Ученик мастер-класса | Февраль 2026</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Сделали индивидуальный проект под нашу веранду. Дизайн супер! И цена вышла дешевле ожидаемого."</div>
+                <div class="review-author">Елена Сидорова</div>
+                <div class="review-note">Клиент | Индивидуальный проект | Январь 2026</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="roadmap">
+        <h2 class="section-title">План развития в 2026</h2>
+        <div class="roadmap-container">
+            <div class="roadmap-item">
+                <div class="roadmap-title">Реклама онлайн</div>
+                <div class="roadmap-desc">Запуск в Яндекс.Директ и ВК. Таргет на запросы "мангал" и "беседка". Ожидаемый ROI +300%.</div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-title">B2B в Москве</div>
+                <div class="roadmap-desc">Участие в госзакупках (zakupki.gov.ru). Прямые условия для парков и кафе столицы.</div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-title">Видеоконтент</div>
+                <div class="roadmap-desc">Съёмка TikTok и YouTube — процесс производства, монтажа, отзывы. Привлечение молодой аудитории.</div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-title">Конфигуратор онлайн</div>
+                <div class="roadmap-desc">Модульная система: выбери размер → материал → доп.опции → получи цену и чертёж за минуту.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Свяжитесь с нами</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text">
+                        <h3>Телефон</h3>
+                        <p><a href="tel:+79045330303">+7 904 533-03-03</a></p>
+                        <p style="font-size: 12px;">Звоните в любое время. Отвечаем быстро.</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-text">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/79045330303">Написать в WhatsApp</a></p>
+                        <p style="font-size: 12px;">Быстро отвечаем, обсуждаем проекты.</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">
+                        <h3>Адрес производства</h3>
+                        <p>г. Строитель, Белгородская область</p>
+                        <p style="font-size: 12px;">Металлобаза открыта для визитов по договорённости.</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-text">
+                        <h3>Режим работы</h3>
+                        <p>Пн-Пт: 9:00 - 18:00</p>
+                        <p>Сб-Вс: по договорённости</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Заказать проект</h3>
+                <form onsubmit="return handleForm(event);">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" required placeholder="Иван Петров">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 900 000-00-00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="ivan@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="model">Какая модель интересует?</label>
+                        <select id="model" name="model" required style="padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 14px; cursor: pointer;">
+                            <option value="">Выберите модель</option>
+                            <option value="Классик 3x3">Классик 3×3 — 38 000₽</option>
+                            <option value="Комфорт 3x5">Комфорт 3×5 — 67 000₽</option>
+                            <option value="Семейный 4x6">Семейный 4×6 — 98 000₽</option>
+                            <option value="Премиум 4x4">Премиум (закрытая) 4×4 — 145 000₽</option>
+                            <option value="Парковый комплекс">Парковый комплекс — от 180 000₽</option>
+                            <option value="Индивидуальный проект">Индивидуальный проект</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Ваша задача (опционально)</label>
+                        <textarea id="message" name="message" placeholder="Опишите, для чего нужен мангал, где установить, особенности участка..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Мангал.Pro</strong> — производство мангальных зон в Белгородской области.</p>
+        <p>Собственная металлобаза · Доставка по России · Гарантия 3 года</p>
+        <p style="margin-top: 16px; color: #666;">© 2026. Все права защищены. <a href="tel:+79045330303" style="color: #d97706; text-decoration: none;">+7 904 533-03-03</a></p>
+    </footer>
+
+    <script>
+        function handleForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const model = document.getElementById('model').value;
+            alert(`Спасибо, ${name}! Мы свяжемся с вами на ${phone}\n\nВыбранная модель: ${model}`);
+            e.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html>
