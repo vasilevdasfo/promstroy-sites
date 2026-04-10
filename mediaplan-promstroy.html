@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРОМСТРОЙ — Медиаплан рекламы 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+            padding: 60px 20px;
+            margin: -40px -20px 40px -20px;
+            border-bottom: 4px solid #ea580c;
+        }
+
+        header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        header .contact {
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 16px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        header .contact strong {
+            color: #fbbf24;
+        }
+
+        .toc {
+            background: #f3f4f6;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            border-left: 4px solid #ea580c;
+        }
+
+        .toc h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #1e40af;
+        }
+
+        .toc ol {
+            margin-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+
+        .toc a {
+            color: #1e40af;
+            text-decoration: none;
+            border-bottom: 1px dotted #1e40af;
+        }
+
+        .toc a:hover {
+            border-bottom: 1px solid #1e40af;
+        }
+
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .section-subtitle {
+            font-size: 12px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: -4px;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 28px;
+            margin-bottom: 14px;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #4b5563;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            margin-bottom: 12px;
+            color: #4b5563;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            border-left: 4px solid #ea580c;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight strong {
+            color: #ea580c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #1e40af;
+            color: white;
+        }
+
+        th {
+            padding: 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        .budget-table tbody tr {
+            background: white;
+        }
+
+        .budget-table .budget-header {
+            background: #dbeafe;
+            font-weight: 600;
+            color: #1e40af;
+        }
+
+        .budget-table .budget-row {
+            background: white;
+        }
+
+        .budget-table .total {
+            background: #fef3c7;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .timeline {
+            background: #f3f4f6;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            padding: 16px;
+            margin-bottom: 12px;
+            background: white;
+            border-left: 4px solid #1e40af;
+            border-radius: 4px;
+        }
+
+        .timeline-item.active {
+            border-left-color: #ea580c;
+            background: #fffbeb;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 6px;
+        }
+
+        .timeline-item.active .timeline-title {
+            color: #ea580c;
+        }
+
+        .timeline-content {
+            font-size: 13px;
+            color: #6b7280;
+            margin: 8px 0 0 0;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .kpi-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            border-top: 4px solid #1e40af;
+        }
+
+        .kpi-card.accent {
+            border-top-color: #ea580c;
+        }
+
+        .kpi-card h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #6b7280;
+        }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .kpi-card.accent .kpi-value {
+            color: #ea580c;
+        }
+
+        .kpi-description {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .creative-block {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 12px 0;
+        }
+
+        .creative-title {
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .creative-content {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.5;
+            background: white;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 8px 0;
+            border-left: 2px solid #ea580c;
+        }
+
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .keyword {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            padding-left: 28px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .strategy-box {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .strategy-box h4 {
+            margin-top: 0;
+        }
+
+        .stats {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #1e40af;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 16px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        footer {
+            background: #f3f4f6;
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .footer-divider {
+            margin: 12px 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px 16px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            td, th {
+                padding: 10px 8px;
+            }
+        }
+
+        .warning {
+            background: #fee2e2;
+            border-left: 4px solid #dc2626;
+            padding: 16px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .success {
+            background: #dcfce7;
+            border-left: 4px solid #16a34a;
+            padding: 16px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ПРОМСТРОЙ</h1>
+            <div class="subtitle">Медиаплан цифровой рекламы 2026</div>
+            <div class="subtitle">Мангальные зоны • Металлопрокат</div>
+            <div class="contact">Контакты: <strong>+7 904 533-03-03</strong> | г. Строитель, Белгородская область</div>
+        </header>
+
+        <div class="toc">
+            <h2 style="font-size: 18px; border: none; margin-bottom: 20px; padding: 0; color: #1e40af;">Содержание</h2>
+            <ol>
+                <li><a href="#overview">Обзор и целевые аудитории</a></li>
+                <li><a href="#yandex-mangal">Яндекс.Директ — Мангальные зоны</a></li>
+                <li><a href="#yandex-metal">Яндекс.Директ — Металлопрокат</a></li>
+                <li><a href="#avito">Авито: размещение и продвижение</a></li>
+                <li><a href="#vk">ВКонтакте: таргетированная реклама и контент</a></li>
+                <li><a href="#telegram">Telegram: канал и местная реклама</a></li>
+                <li><a href="#seo">SEO и регистрация в каталогах</a></li>
+                <li><a href="#budgets">Три варианта бюджета</a></li>
+                <li><a href="#calendar">Календарный план запуска</a></li>
+                <li><a href="#kpi">KPI и метрики успеха</a></li>
+            </ol>
+        </div>
+
+        <!-- 1. ОБЗОР И ЦЕЛЕВЫЕ АУДИТОРИИ -->
+        <section id="overview">
+            <h2>1. Обзор и целевые аудитории</h2>
+            <p class="section-subtitle">Стратегическое позиционирование ПРОМСТРОЙ</p>
+
+            <h3>Два бизнес-направления</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                <div class="strategy-box">
+                    <h4>🏗️ Мангальные зоны (ПРИОРИТЕТ 1)</h4>
+                    <p><strong>Маржа:</strong> Высокая (40-50%)</p>
+                    <p><strong>Стоимость:</strong> $2,000–$50,000 за проект</p>
+                    <p><strong>Цикл продаж:</strong> 2–8 недель</p>
+                    <p><strong>Основные клиенты:</strong></p>
+                    <ul>
+                        <li>Частные лица (Белгород, область) — облагораживание участков</li>
+                        <li>Парки, зоны отдыха — уличная инфраструктура</li>
+                        <li>Застройщики, ГЖК, СНТ — комплексное благоустройство</li>
+                        <li>Рестораны, кафе на природе — собственная сыпь</li>
+                        <li>Турпредприятия, базы отдыха</li>
+                    </ul>
+                </div>
+                <div class="strategy-box">
+                    <h4>📦 Металлопрокат (ПРИОРИТЕТ 2)</h4>
+                    <p><strong>Маржа:</strong> Средняя (15-25%)</p>
+                    <p><strong>Стоимость:</strong> $100–$5,000 за проект</p>
+                    <p><strong>Цикл продаж:</strong> 3–7 дней</p>
+                    <p><strong>Основные клиенты:</strong></p>
+                    <ul>
+                        <li>Прорабы, строительные бригады (Белгородская область)</li>
+                        <li>Индивидуальные застройщики</li>
+                        <li>Производства (механизмы, станки)</li>
+                        <li>Садоводы (теплицы, заборы)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Географический фокус</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Направление</th>
+                        <th>Приоритет 1</th>
+                        <th>Приоритет 2</th>
+                        <th>Приоритет 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Мангальные зоны</strong></td>
+                        <td>Белгород + обл. (100 км)</td>
+                        <td>Москва (парки, благоустройство)</td>
+                        <td>Санкт-Петербург (региональные сети)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Металлопрокат</strong></td>
+                        <td>Белгородская область</td>
+                        <td>Соседние области (Липецк, Тамбов)</td>
+                        <td>Другие регионы (по спросу)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Конкурентное преимущество</h3>
+            <div class="highlight">
+                <strong>✓ Производство на месте</strong> — нет логистики из других регионов<br>
+                <strong>✓ Быстрое исполнение</strong> — от 3 до 10 дней<br>
+                <strong>✓ Гибкое проектирование</strong> — под бюджет и пожелания клиента<br>
+                <strong>✓ Полный цикл</strong> — доставка, монтаж, консультация<br>
+                <strong>✓ Репутация в регионе</strong> — лучше использовать в маркетинге
+            </div>
+        </section>
+
+        <!-- 2. ЯНДЕКС.ДИРЕКТ — МАНГАЛЬНЫЕ ЗОНЫ -->
+        <section id="yandex-mangal">
+            <h2>2. Яндекс.Директ — Мангальные зоны</h2>
+            <p class="section-subtitle">Поисковая реклама для высокомотивированных покупателей</p>
+
+            <h3>Структура кампаний</h3>
+            <p>Рекомендуется <strong>две отдельные кампании</strong> для разных аудиторий:</p>
+
+            <h4>Кампания 1: Белгород + область (местный спрос)</h4>
+
+            <p><strong>Целевая аудитория:</strong> Частные лица и владельцы объектов в Белгородской области</p>
+
+            <p><strong>Ключевые слова (основные):</strong></p>
+            <div class="keyword-list">
+                <span class="keyword">мангальная зона белгород</span>
+                <span class="keyword">купить мангал проект</span>
+                <span class="keyword">благоустройство участка</span>
+                <span class="keyword">беседка с мангалом</span>
+                <span class="keyword">зона барбекю цена</span>
+                <span class="keyword">металлическая беседка</span>
+                <span class="keyword">мангал на заказ</span>
+                <span class="keyword">барбекю зона дизайн</span>
+            </div>
+
+            <p><strong>Ключевые слова (дополнительные):</strong></p>
+            <div class="keyword-list">
+                <span class="keyword">строительство беседки</span>
+                <span class="keyword">металлическая конструкция</span>
+                <span class="keyword">крытая зона отдыха</span>
+                <span class="keyword">мебель для дачи</span>
+                <span class="keyword">проектирование территории</span>
+            </div>
+
+            <h4>Примеры объявлений (Кампания 1):</h4>
+
+            <div class="creative-block">
+                <div class="creative-title">Объявление 1: Эмоциональный подход</div>
+                <div class="creative-content">
+                    <strong>Заголовок 1:</strong> Мангальная зона мечты | ПРОМСТРОЙ<br>
+                    <strong>Заголовок 2:</strong> Проектируем за 3 дня<br>
+                    <strong>Заголовок 3:</strong> Монтаж + доставка включены<br><br>
+                    <strong>Текст объявления:</strong><br>
+                    "Превращаем участок в зону отдыха. Беседки, мангалы, барбекю из прочного металла. Выдержат снег, ветер, жару. Проект за 3 дня. Монтаж 1-2 недели. Звоните: +7 904 533-03-03"
+                </div>
+            </div>
+
+            <div class="creative-block">
+                <div class="creative-title">Объявление 2: Коммерческое предложение</div>
+                <div class="creative-content">
+                    <strong>Заголовок 1:</strong> Мангальные зоны от 25 000 ₽<br>
+                    <strong>Заголовок 2:</strong> Полный монтаж включен<br>
+                    <strong>Заголовок 3:</strong> Гарантия 5 лет<br><br>
+                    <strong>Текст объявления:</strong><br>
+                    "Мангальные зоны и беседки для дачи, ресторана, парка. Изготовим и установим в вашем графике. Консультация бесплатно. ПРОМСТРОЙ, Белгород."
+                </div>
+            </div>
+
+            <div class="creative-block">
+                <div class="creative-title">Объявление 3: B2B-ориентированное</div>
+                <div class="creative-content">
+                    <strong>Заголовок 1:</strong> Благоустройство под ключ<br>
+                    <strong>Заголовок 2:</strong> Парки, базы отдыха, ГЖК<br>
+                    <strong>Заголовок 3:</strong> Низкие цены на объёмы<br><br>
+                    <strong>Текст объявления:</strong><br>
+                    "Спецпредложение для парков и застройщиков: мангальные зоны, беседки, уличная мебель. Оптовые цены. Дизайн-проект бесплатно. +7 904 533-03-03"
+                </div>
+            </div>
+
+            <h3>Параметры Кампании 1 (Белгород)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Метрика</th>
+                        <th>Значение</th>
+                        <th>Обоснование</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Дневной бюджет</strong></td>
+                        <td>800–1200 ₽</td>
+                        <td>Средний CPC 50-80 ₽, цель — 10–15 кликов в день</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Максимальная ставка (CPC)</strong></td>
+                        <td>80–100 ₽</td>
+                        <td>В Белгороде конкуренция средняя, можем себе позволить</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз кликов/день</strong></td>
+                        <td>10–15</td>
+                        <td>При 1000 ₽ бюджета и CPC 80 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз заявок/день (CTR ~3%)</strong></td>
+                        <td>0.3–0.5</td>
+                        <td>Примерный CTR веб-сайта 3–5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Стоимость заявки (CPL)</strong></td>
+                        <td>1600–2400 ₽</td>
+                        <td>1000 ₽ : 0.4 заявок = 2500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Месячный бюджет</strong></td>
+                        <td>24 000–36 000 ₽</td>
+                        <td>30 дней × 1000 ₽ (минимум)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Кампания 2: Москва + Санкт-Петербург (B2B)</h4>
+
+            <p><strong>Целевая аудитория:</strong> Парки, компании благоустройства, муниципальные учреждения, сети ресторанов</p>
+
+            <p><strong>Ключевые слова:</strong></p>
+            <div class="keyword-list">
+                <span class="keyword">мангальная зона москва поставщик</span>
+                <span class="keyword">благоустройство парков</span>
+                <span class="keyword">уличная мебель оптом</span>
+                <span class="keyword">беседка проект купить</span>
+                <span class="keyword">зона отдыха муниципальная</span>
+                <span class="keyword">малые архитектурные формы МАФ</span>
+                <span class="keyword">поставка металлоконструкций</span>
+            </div>
+
+            <h4>Примеры объявлений (Кампания 2):</h4>
+
+            <div class="creative-block">
+                <div class="creative-title">Объявление 1: Профессиональное предложение</div>
+                <div class="creative-content">
+                    <strong>Заголовок 1:</strong> Мангальные зоны для муниципалитетов<br>
+                    <strong>Заголовок 2:</strong> От производителя, оптовые цены<br>
+                    <strong>Заголовок 3:</strong> Гарантия 5 лет, доставка в РФ<br><br>
+                    <strong>Текст объявления:</strong><br>
+                    "Компания ПРОМСТРОЙ поставляет беседки и мангальные зоны для парков, учреждений, ресторанов. Прямое производство — минимальные цены. Доставка, монтаж, гарантия."
+                </div>
+            </div>
+
+            <p><strong>Параметры Кампании 2 (Москва/СПб):</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Метрика</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Дневной бюджет</strong></td>
+                        <td>600–1000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Максимальная ставка (CPC)</strong></td>
+                        <td>120–150 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз кликов/день</strong></td>
+                        <td>5–8</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз заявок/день</strong></td>
+                        <td>0.15–0.25</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Стоимость заявки (CPL)</strong></td>
+                        <td>2400–3500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Месячный бюджет</strong></td>
+                        <td>18 000–30 000 ₽</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Настройка и оптимизация</h3>
+            <ul class="checklist">
+                <li>Нацелить на поиск (не сеть Яндекса) для точного охвата</li>
+                <li>Геотаргетинг: Белгород + 100 км (Кампания 1), Москва (Кампания 2)</li>
+                <li>Минус-слова: «дешевая», «бесплатная», «картинки», «видео» (отсеиваем зевак)</li>
+                <li>A/B тестирование объявлений 1–2 недели, потом паузим слабых</li>
+                <li>Отслеживание звонков и форм через Яндекс.Метрика и СРМ</li>
+                <li>Пересчёт ставок каждый понедельник, снижаем малоперспективные ключевые слова</li>
+            </ul>
+        </section>
+
+        <!-- 3. ЯНДЕКС.ДИРЕКТ — МЕТАЛЛОПРОКАТ -->
+        <section id="yandex-metal">
+            <h2>3. Яндекс.Директ — Металлопрокат</h2>
+            <p class="section-subtitle">Рабочие ключи для строителей и производств</p>
+
+            <h3>Стратегия</h3>
+            <p>Металлопрокат — быстрые продажи, простые ключевые слова, малый CPC. Цель: охватить рабочих и подрядчиков, которые ищут материал <strong>срочно</strong>.</p>
+
+            <h3>Ключевые слова</h3>
+            <div class="keyword-list">
+                <span class="keyword">профтруба белгород</span>
+                <span class="keyword">профлист купить</span>
+                <span class="keyword">металлопрокат цена</span>
+                <span class="keyword">профнастил доставка</span>
+                <span class="keyword">уголок металл</span>
+                <span class="keyword">труба 20х20 белгород</span>
+                <span class="keyword">швеллер цена</span>
+                <span class="keyword">листовая сталь</span>
+                <span class="keyword">сетка рабица оптом</span>
+                <span class="keyword">арматура строительная</span>
+                <span class="keyword">металл оптом белгородская область</span>
+            </div>
+
+            <h3>Примеры объявлений</h3>
+
+            <div class="creative-block">
+                <div class="creative-title">Объявление 1: Цена и оперативность</div>
+                <div class="creative-content">
+                    <strong>Заголовок 1:</strong> Профтруба, профлист, уголок<br>
+                    <strong>Заголовок 2:</strong> Низкие цены, доставка сегодня<br>
+                    <strong>Заголовок 3:</strong> Профнастил, швеллер, сетка<br><br>
+                    <strong>Текст объявления:</strong><br>
+                    "Металлопрокат оптом и в розницу. Профтруба 20х20, 40х40. Профлист, уголок, швеллер. Доставка в Белгород и область. Звоните: +7 904 533-03-03"
+                </div>
+            </div>
+
+            <div class="creative-block">
+                <div class="creative-title">Объявление 2: Для производств</div>
+                <div class="creative-content">
+                    <strong>Заголовок 1:</strong> Металл для производства<br>
+                    <strong>Заголовок 2:</strong> Оптовые цены на объёмы<br>
+                    <strong>Заголовок 3:</strong> Постоянные клиенты — скидки<br><br>
+                    <strong>Текст объявления:</strong><br>
+                    "ПРОМСТРОЙ: листовая сталь, трубы, уголки. Стабильные цены, надёжные поставки. Договор для постоянных клиентов."
+                </div>
+            </div>
+
+            <h3>Параметры Кампании (Металлопрокат)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Метрика</th>
+                        <th>Значение</th>
+                        <th>Примечание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Дневной бюджет</strong></td>
+                        <td>500–800 ₽</td>
+                        <td>Средний CPC 30–50 ₽, спрос ниже, чем на мангалы</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Максимальная ставка (CPC)</strong></td>
+                        <td>50–70 ₽</td>
+                        <td>Конкуренция минимальна, есть интернет-магазины, но они не в каждом районе</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз кликов/день</strong></td>
+                        <td>10–16</td>
+                        <td>Много ключей, но часто видят конкурентов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз заявок/день</strong></td>
+                        <td>0.4–0.7</td>
+                        <td>Высокий CTC, многие знают, что ищут</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Стоимость заявки (CPL)</strong></td>
+                        <td>700–1200 ₽</td>
+                        <td>Очень выгодно — короткий цикл продаж</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Месячный бюджет</strong></td>
+                        <td>15 000–24 000 ₽</td>
+                        <td>30 дней × 600 ₽ (среднее)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Оптимизация</h3>
+            <ul class="checklist">
+                <li>Минус-слова: «цена», «дешево», «купить дешево» (некачественный трафик)</li>
+                <li>Широкое соответствие для охвата региона, но с минус-словами (не Москва, не СПб)</li>
+                <li>Ставки поднять в пиковые часы (8–10, 16–18 по мск)</li>
+                <li>Еженедельное снижение ставок на непродуктивные ключи</li>
+                <li>Трекинг выполненных заказов для расчёта ROI</li>
+            </ul>
+        </section>
+
+        <!-- 4. АВИТО -->
+        <section id="avito">
+            <h2>4. Авито: размещение и продвижение</h2>
+            <p class="section-subtitle">Классика B2C рынка в РФ</p>
+
+            <h3>Стратегия размещения (Мангальные зоны)</h3>
+
+            <h4>Объявления</h4>
+            <p>Разместить <strong>5–7 объявлений</strong> с ротацией:</p>
+            <ul>
+                <li><strong>1 объявление:</strong> Премиум-зоны (35–50 тыс. ₽) — с фото проектов и отзывов</li>
+                <li><strong>2–3 объявления:</strong> Стандартные (25–35 тыс. ₽) — разные варианты беседок</li>
+                <li><strong>1 объявление:</strong> Бюджетные варианты (15–25 тыс. ₽) — привлечение массового рынка</li>
+                <li><strong>1–2 объявления:</strong> Под заказ (без фиксированной цены) — для В2В контактов</li>
+            </ul>
+
+            <p><strong>Каждое объявление должно содержать:</strong></p>
+            <div class="checklist">
+                <li>Название: [Вид] [Размер] [Цена] — пример: "Беседка металл 4x6м – 38 000 ₽"</li>
+                <li>5–8 фото высокого качества (в разных ракурсах, с клиентом на фон для масштаба)</li>
+                <li>Описание 200–300 символов: материалы, размеры, гарантия, сроки изготовления</li>
+                <li>Указать номер телефона и ссылку на сайт (если есть)</li>
+                <li>Включить слова: "гарантия", "доставка", "монтаж", "быстро", "качество"</li>
+            </div>
+
+            <h4>Заголовки (примеры)</h4>
+            <ul>
+                <li>Мангальная зона 4х6м с крышей – доставка и монтаж – ПРОМСТРОЙ</li>
+                <li>Беседка металлическая под мангал, закрытая – цена 28 000 ₽</li>
+                <li>Зона отдыха для дачи: мангал + беседка – установка 1 день</li>
+                <li>Барбекю зона, профнастил, монтаж бесплатно – проект за 2 дня</li>
+                <li>Металлическая конструкция беседки – лучшая цена в регионе!</li>
+            </ul>
+
+            <h4>Продвижение объявлений Авито</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Стоимость</th>
+                        <th>Эффект</th>
+                        <th>Рекомендация</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Поднятие</strong> (1 раз в 2 часа)</td>
+                        <td>10 ₽/раз × 12 = 120 ₽/день</td>
+                        <td>+30–50% просмотров</td>
+                        <td>✓ Включить для всех 5–7 объявлений</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Выделение (x2)</strong></td>
+                        <td>30 ₽ × 7 дн = 210 ₽/неделя</td>
+                        <td>+50–80% кликов</td>
+                        <td>✓ Включить для премиум-объявлений</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Выделение (x5)</strong></td>
+                        <td>75 ₽ × 7 дн = 525 ₽/неделя</td>
+                        <td>+100–150% контактов</td>
+                        <td>△ Опционально, для лучших скоро</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Выделение (x10)</strong> — ТОП</td>
+                        <td>150 ₽ × 7 дн = 1050 ₽/неделя</td>
+                        <td>+200–300% звонков</td>
+                        <td>△ Включать точечно (перед сезоном)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Турбо</strong> (30 дн гарантия)</td>
+                        <td>990 ₽ за месяц</td>
+                        <td>Первая страница, приоритет показа</td>
+                        <td>✓ Для 1–2 топовых объявлений</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Оптимальная стратегия продвижения:</strong></p>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Пн–Сб (6 дн):</strong> Поднятие для всех 7 объявлений (720 ₽)</li>
+                    <li><strong>Пн, Ср, Пт (3 дн):</strong> Выделение x2 для 2-3 лучших (630 ₽)</li>
+                    <li><strong>Каждый месяц:</strong> 1 объявление на Турбо (990 ₽)</li>
+                    <li><strong>Перед летом (май) и осенью (август):</strong> +1 Выделение x5 на неделю (525 ₽)</li>
+                    <li><strong>Итого на месяц:</strong> 720×30 + 630×4 + 990 + спец. = <strong>5 500–6 500 ₽</strong></li>
+                </ul>
+            </div>
+
+            <h3>Стратегия размещения (Металлопрокат)</h3>
+
+            <p>Металлопрокат на Авито менее привлекателен (частники редко смотрят). Рекомендация:</p>
+            <ul>
+                <li>Разместить <strong>2–3 объявления</strong> про основные позиции (профтруба, профлист, уголок)</li>
+                <li>Ставка на телефон и прямые контакты</li>
+                <li>Только поднятие (120 ₽/дн), выделение не требуется</li>
+                <li>Месячный бюджет на Авито для металла: <strong>3 500–4 000 ₽</strong></li>
+            </ul>
+
+            <h3>Общий бюджет Авито (оба направления)</h3>
+            <div class="stats" style="background: #fef3c7;">
+                <p style="margin: 0; text-align: center;">
+                    <strong style="font-size: 20px; color: #ea580c;">Мангальные зоны: 5 500 ₽/мес</strong><br>
+                    <strong style="font-size: 20px; color: #ea580c;">Металлопрокат: 3 500 ₽/мес</strong><br><br>
+                    <strong style="font-size: 18px; color: #92400e;">Итого: 9 000 ₽/месяц на Авито</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. ВКОНТАКТЕ -->
+        <section id="vk">
+            <h2>5. ВКонтакте: таргетированная реклама и контент</h2>
+            <p class="section-subtitle">Социальная сеть для целевой аудитории</p>
+
+            <h3>Таргетированная реклама ВК (объявления)</h3>
+
+            <h4>Аудитория 1: Частники, дачники (Белгород + обл.)</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Возраст</strong></td>
+                        <td>35–65 лет</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Пол</strong></td>
+                        <td>Мужской (60%), Женский (40%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Геолокация</strong></td>
+                        <td>Белгород, Белгородская область</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Интересы</strong></td>
+                        <td>Дача, дом, сад, благоустройство, отдых на природе, дизайн интерьера</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Семейное положение</strong></td>
+                        <td>Женат/замужем</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Бюджет на Аудиторию 1:</strong> 300–400 ₽/день (5 дн в неделю)</p>
+            <p><strong>Прогноз:</strong> 200–300 кликов/неделя, 20–50 заявок/месяц</p>
+
+            <h4>Аудитория 2: B2B (парки, благоустройство, застройщики)</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Возраст</strong></td>
+                        <td>28–55 лет</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Геолокация</strong></td>
+                        <td>Москва, Санкт-Петербург, Белгород</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Интересы</strong></td>
+                        <td>Благоустройство, девелопмент, строительство, дизайн парков</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Должность</strong></td>
+                        <td>Руководитель, менеджер, специалист</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Бюджет на Аудиторию 2:</strong> 200–300 ₽/день (3 дн в неделю)</p>
+            <p><strong>Прогноз:</strong> 100–150 кликов/неделя, 5–10 B2B-контактов/месяц</p>
+
+            <h3>Варианты креативов для ВК</h3>
+
+            <div class="strategy-box">
+                <h4>Креатив 1: Фото до/после</h4>
+                <p><strong>Визуал:</strong> Два фото по сторонам — голый участок и готовая мангальная зона</p>
+                <p><strong>Заголовок:</strong> "Из пустого участка — в зону отдыха за 2 недели"</p>
+                <p><strong>Текст:</strong> "Мангальная зона, беседка, проект и монтаж. ПРОМСТРОЙ. +7 904 533-03-03"</p>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Креатив 2: Видеоролик (10–15 сек)</h4>
+                <p><strong>Сценарий:</strong> Тайм-лапс монтажа мангальной зоны (основание → каркас → кровля → финиш)</p>
+                <p><strong>Текст оверлея:</strong> "От идеи к готовому за 10 дней" | "ПРОМСТРОЙ"</p>
+                <p><strong>CTA в конце:</strong> "Заказать проект" (кнопка)</p>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Креатив 3: Каталог (карусель)</h4>
+                <p><strong>4 карточки:</strong></p>
+                <ul>
+                    <li>Карточка 1: Мангальная зона 4×6 м — фото + цена (35 000 ₽)</li>
+                    <li>Карточка 2: Беседка с открытым мангалом — 28 000 ₽</li>
+                    <li>Карточка 3: Премиум-зона с крышей и столешницей — 52 000 ₽</li>
+                    <li>Карточка 4: "Получи проект БЕСПЛАТНО" — форма контакта</li>
+                </ul>
+            </div>
+
+            <h3>Контент-план группы ВК (посты, 1 месяц)</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>День</th>
+                        <th>Тип</th>
+                        <th>Тема</th>
+                        <th>Цель</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Пн</strong></td>
+                        <td>Фото</td>
+                        <td>Готовый проект мангальной зоны (портфолио)</td>
+                        <td>Вдохновение, примеры работ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ср</strong></td>
+                        <td>Статья / совет</td>
+                        <td>"Как выбрать место для мангала?" или "5 материалов для беседки"</td>
+                        <td>Полезный контент, SEO</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Пт</strong></td>
+                        <td>Видео (снято на телефон)</td>
+                        <td>Короткое видео обзора готовой зоны / процесса монтажа</td>
+                        <td>Вовлечение, доверие</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Сб</strong></td>
+                        <td>Промо</td>
+                        <td>"Выходной день — закажи проект БЕСПЛАТНО" или спецпредложение</td>
+                        <td>Конверсия в заявку</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Идеи постов для контент-плана:</h4>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">Пост 1: Портфолио</div>
+                    <div class="timeline-content">"Эта мангальная зона украшает дачу в п. Волоконовка уже полгода. Держит снег, ветер, жару. Заказчик оставил 5⭐. Хотите такую же?" + ссылка на номер</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Пост 2: Статья</div>
+                    <div class="timeline-content">"5 правил выбора мангала для участка: 1) Размер — зависит от площади... 2) Материал — выбираем прочный... 3) Кровля — защита от дождя... 4) Мебель — складная или встроенная... 5) Проектирование — доверьте профессионалам." + фото с названием</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Пост 3: За кулисами</div>
+                    <div class="timeline-content">Видео из мастерской: "Сегодня изготавливаем каркас для новой мангальной зоны. Материал — профтруба 40х40. Прослужит 20+ лет. #ПРОМСТРОЙ"</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Пост 4: CTA / Акция</div>
+                    <div class="timeline-content">"ВЫХОДНОЙ = СКИДКА! 🎉 В пт-сб разговор с проектировщиком БЕСПЛАТНО. Дизайн участка, смета, сроки. Звоните: +7 904 533-03-03"</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Пост 5: Отзыв</div>
+                    <div class="timeline-content">"Петр Сергеевич, Белгород: 'Приехали, посмотрели участок. Предложили 3 варианта за неделю. Изготовили и установили за 10 дней. Качество отличное, цена честная. Рекомендую!' — Спасибо за доверие!"</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Пост 6: Металлопрокат</div>
+                    <div class="timeline-content">"Нужна профтруба или профлист оптом? Мы поставляем в Белгородскую область по честным ценам. Постоянным клиентам — договор и скидки. Узнать цены: +7 904 533-03-03"</div>
+                </div>
+            </div>
+
+            <h3>Параметры ВК-рекламы</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Метрика</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Дневной бюджет (объявления)</strong></td>
+                        <td>500–700 ₽ (5 дн, только выходные приостанавливаем)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CPM (видимость поста)</strong></td>
+                        <td>150–250 ₽ за 1000 показов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CPC (клик на ссылку)</strong></td>
+                        <td>20–40 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз кликов/день</strong></td>
+                        <td>15–25</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз заявок/день</strong></td>
+                        <td>2–4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Месячный бюджет ВК (реклама + контент)</strong></td>
+                        <td>14 000–17 000 ₽</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 6. TELEGRAM -->
+        <section id="telegram">
+            <h2>6. Telegram: канал и местная реклама</h2>
+            <p class="section-subtitle">Прямое общение с интересующейся аудиторией</p>
+
+            <h3>Telegram-канал ПРОМСТРОЙ</h3>
+
+            <p>Создать канал (публичный, ссылка вида @promstroy_mangal) для:</p>
+            <ul>
+                <li>Объявлений о новых проектах</li>
+                <li>Акций и скидок</li>
+                <li>Советов по благоустройству</li>
+                <li>Портфолио (фото до/после)</li>
+                <li>Прямого контакта с руководством</li>
+            </ul>
+
+            <h3>Контент-план канала (1 месяц, 8–10 постов/неделю)</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Тип поста</th>
+                        <th>Частота</th>
+                        <th>Пример</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Портфолио (фото готовых проектов)</strong></td>
+                        <td>3-4 поста/неделю</td>
+                        <td>"🏗️ Новая мангальная зона в пос. Логиново (4×5 м, профтруба 40х40). Клиент: Иван Петрович. Сроки: 12 дней. Цена: 32 000 ₽. Звоните!"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Советы / обучение</strong></td>
+                        <td>1-2 поста/неделю</td>
+                        <td>"💡 Совет дня: почему профтруба лучше деревянного бруса для беседки? [Почему...]"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Промо / акции</strong></td>
+                        <td>1 пост/неделю</td>
+                        <td>"📢 Выходные: СКИДКА 10% на проектирование! Проект, расчёты, 3D-визуализация за 5 000 ₽ (вместо 5 500). Срок: суббота-воскресенье."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>За кулисами / процесс</strong></td>
+                        <td>1-2 поста/неделю</td>
+                        <td>"🔧 В мастерской: сегодня варим каркас для беседки размером 6×8. Профтруба 40х40, толщина стенки 2 мм. Выдержит 500 кг снега!"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Отзывы клиентов</strong></td>
+                        <td>1 пост/2 недели</td>
+                        <td>"⭐⭐⭐⭐⭐ 'Хороший проект, быстро, качество на отлично!' — Сергей, Белгород"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Примеры постов для канала</h3>
+
+            <div class="creative-block">
+                <div class="creative-title">Пост 1: Портфолио (изображение + текст)</div>
+                <div class="creative-content">
+                    <strong>Текст:</strong><br>
+                    "🎉 Завершили проект в коттеджном посёлке 'Новогородский' (Белгород)<br><br>
+                    ✓ Беседка 5×6 метров<br>
+                    ✓ Материал: профтруба 40х40, профлист для кровли<br>
+                    ✓ Сроки: 14 дней (от договора до установки)<br>
+                    ✓ Цена: 39 000 ₽ (доставка + монтаж)<br><br>
+                    Заказчик: Игорь Викторович<br>
+                    Рейтинг: ⭐⭐⭐⭐⭐<br><br>
+                    Хотите такую же? Звоните: +7 904 533-03-03 или напишите сюда!"
+                </div>
+            </div>
+
+            <div class="creative-block">
+                <div class="creative-title">Пост 2: Совет (текст)</div>
+                <div class="creative-content">
+                    "<strong>💡 Совет: как выбрать материал для беседки?</strong><br><br>
+                    <strong>Дерево:</strong> красиво, тепло, но нужна обработка каждый год. Служит 5–7 лет.<br><br>
+                    <strong>Профтруба (наш выбор!):</strong> служит 20+ лет, не гниёт, выдерживает снег и ветер. Нужна покраска раз в 5 лет.<br><br>
+                    <strong>Алюминий:</strong> лёгкий, не ржавеет, но хрупкий для больших нагрузок.<br><br>
+                    ✅ Вывод: профтруба 40×40 — оптимальное соотношение цены, прочности и долговечности.<br><br>
+                    Доверьте расчёт нам! +7 904 533-03-03"
+                </div>
+            </div>
+
+            <div class="creative-block">
+                <div class="creative-title">Пост 3: Акция (текст с emoji)</div>
+                <div class="creative-content">
+                    "<strong>🎁 ВЫХОДНАЯ АКЦИЯ!</strong><br><br>
+                    В пт–вс разговор с проектировщиком БЕСПЛАТНО<br><br>
+                    ✓ Оценим ваш участок<br>
+                    ✓ Предложим 2–3 варианта<br>
+                    ✓ Дадим смету и сроки<br><br>
+                    Обычно это стоит 3 500 ₽, но в выходные — БЕСПЛАТНО!<br><br>
+                    Ограничение: только первые 5 заявок в пт–вс<br><br>
+                    🔔 Жми кнопку ниже или звони: +7 904 533-03-03"
+                </div>
+            </div>
+
+            <h3>Реклама в местных Telegram-чатах</h3>
+
+            <p>Найти и вступить в 5–10 местных чатов Белгорода:</p>
+            <ul>
+                <li>"Белгород объявления"</li>
+                <li>"Белгородские дачники"</li>
+                <li>"Строительство в Белгороде"</li>
+                <li>"Продажа и обмен (Белгород)"</li>
+                <li>"Белгородская область — всё для дома"</li>
+            </ul>
+
+            <p><strong>Правила размещения в чатах:</strong></p>
+            <ul class="checklist">
+                <li>Прочитать pinned-посты и правила чата</li>
+                <li>Разместить 1–2 объявления в месяц (не спам)</li>
+                <li>Текст: название + цена + номер телефона + ссылка на канал</li>
+                <li>Время: пн, ср, пт вечером (18–20:00)</li>
+                <li>Если чат платный ($50–200/месяц на размещение) — пока пропускаем</li>
+            </ul>
+
+            <h3>Бюджет Telegram</h3>
+            <p style="margin-top: 20px;"><strong>Контент-план канала:</strong> бесплатно (самостоятельно)</p>
+            <p><strong>Реклама в чатах:</strong> 0–100 ₽/месяц (платные чаты опционально)</p>
+            <p><strong>Итого на Telegram: 0–100 ₽/месяц (практически бесплатно)</strong></p>
+        </section>
+
+        <!-- 7. SEO-ПЛАН -->
+        <section id="seo">
+            <h2>7. SEO-план: блог, каталоги, Яндекс Бизнес</h2>
+            <p class="section-subtitle">Долгосрочный трафик и доверие</p>
+
+            <h3>Регистрация в каталогах (обязательно)</h3>
+
+            <div class="strategy-box">
+                <h4>Яндекс Бизнес</h4>
+                <ul class="checklist">
+                    <li>Регистрация как "ПРОМСТРОЙ — мангальные зоны и металлопрокат"</li>
+                    <li>Полное описание (300–500 слов): что делаете, материалы, сроки, гарантия</li>
+                    <li>Фото: фасада мастерской, портфолио проектов (минимум 10–15)</li>
+                    <li>Номер телефона, адрес, время работы</li>
+                    <li>Видео (если есть) — процесс или обзор готовых работ</li>
+                    <li>Ссылка на сайт и соцсети</li>
+                    <li>Таги: #мангальныезоны #беседки #металлопрокат #белгород</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>2GIS</h4>
+                <ul class="checklist">
+                    <li>Регистрация с фото мастерской</li>
+                    <li>Категории: "Строительные материалы" + "Строительство и ремонт"</li>
+                    <li>Телефон, часы работы, сайт</li>
+                    <li>Примерно 10 фото портфолио</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Другие каталоги</h4>
+                <ul class="checklist">
+                    <li>Google Business Profile (если есть англоязычная аудитория)</li>
+                    <li>Avvo, Listructor, ПромЭлектра (для B2B)</li>
+                    <li>Регион.ру, Все компании региона</li>
+                </ul>
+            </div>
+
+            <h3>Статьи для блога (5 основных тем)</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Заголовок статьи</th>
+                        <th>Ключевые слова</th>
+                        <th>Формат</th>
+                        <th>Цель</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>"Как выбрать мангальную зону для дачи: 5 советов"</td>
+                        <td>мангальная зона, беседка, материалы</td>
+                        <td>1500–2000 слов + фото</td>
+                        <td>Привлечение через поиск, доверие</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>"Профтруба vs дерево: что выбрать для беседки?"</td>
+                        <td>профтруба, беседка материал</td>
+                        <td>1200–1500 слов + таблица</td>
+                        <td>Информационный запрос → преобразование</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>"Сколько стоит мангальная зона? Цены 2026"</td>
+                        <td>мангальная зона цена, беседка стоимость</td>
+                        <td>1000–1500 слов + прайс</td>
+                        <td>Коммерческий запрос, конверсия</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>"Профлист и профтруба: где использовать в строительстве"</td>
+                        <td>профлист, профтруба, металлопрокат</td>
+                        <td>1200–1500 слов + схемы</td>
+                        <td>B2B трафик, строители</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>"5 ошибок при проектировании зоны отдыха (и как их избежать)"</td>
+                        <td>зона отдыха дизайн, благоустройство участка</td>
+                        <td>1500–2000 слов + кейсы</td>
+                        <td>Позиционирование как эксперта</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Основные правила написания статей</h3>
+            <ul class="checklist">
+                <li>Первый абзац — ответить на основной вопрос (что читатель ищет)</li>
+                <li>Структура: H1 (заголовок) → H2 (разделы) → H3 (подразделы)</li>
+                <li>Минимум 1200 слов (для SEO признания)</li>
+                <li>Включить ключевые слова в заголовки (H1, H2, H3)</li>
+                <li>Внутренние ссылки на другие статьи и продукты</li>
+                <li>Фото, таблицы, схемы (улучшают ранжирование и UX)</li>
+                <li>Meta-описание 155–160 символов</li>
+                <li>CTA в конце: "Хотите мангальную зону? Звоните: +7 904 533-03-03"</li>
+            </ul>
+
+            <h3>График публикации статей</h3>
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-title">Месяц 1 (апрель–май)</div>
+                    <div class="timeline-content">Статья 3 (коммерческая) + Статья 1 (информационная). Регистрация в каталогах.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Месяц 2 (июнь)</div>
+                    <div class="timeline-content">Статья 2 (сравнительная) + Статья 4 (B2B). Обновление Яндекс.Бизнеса.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Месяц 3 (июль)</div>
+                    <div class="timeline-content">Статья 5 (лидирующая мысль). Начать рассылку новых статей в блог раз в 2 недели.</div>
+                </div>
+            </div>
+
+            <h3>Бюджет SEO</h3>
+            <p style="margin-top: 20px;"><strong>Собственное письмо + публикация:</strong> 0 ₽ (если сами пишете)</p>
+            <p><strong>Фрилансер (5 статей × 2 000 ₽):</strong> 10 000 ₽ (опционально)</p>
+            <p><strong>Услуги каталогов:</strong> 0–2 000 ₽ (большинство бесплатны)</p>
+            <p><strong>Итого на SEO: 0–12 000 ₽ / месяц (по мере необходимости)</strong></p>
+        </section>
+
+        <!-- 8. БЮДЖЕТЫ -->
+        <section id="budgets">
+            <h2>8. Три варианта бюджета</h2>
+            <p class="section-subtitle">Минимальный • Оптимальный • Агрессивный</p>
+
+            <h3>Вариант 1: МИНИМАЛЬНЫЙ (30 000 ₽/месяц)</h3>
+            <p class="section-subtitle" style="color: #6b7280;">Стартовый уровень, только основные каналы</p>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Канал / Услуга</th>
+                        <th>Сумма</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="budget-header">
+                        <td colspan="3">ПОИСК (Яндекс.Директ)</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (мангалы Белгород)</td>
+                        <td>15 000 ₽</td>
+                        <td>1000 ₽/день × 15 дн (выходные пауза)</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (металлопрокат)</td>
+                        <td>8 000 ₽</td>
+                        <td>500–600 ₽/день</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">КЛАССИФАЙДЫ (Авито)</td>
+                    </tr>
+                    <tr>
+                        <td>Авито (поднятие объявлений)</td>
+                        <td>5 000 ₽</td>
+                        <td>Только поднятие, без выделения</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">СОЦИАЛЬНЫЕ СЕТИ</td>
+                    </tr>
+                    <tr>
+                        <td>Telegram (контент)</td>
+                        <td>0 ₽</td>
+                        <td>Свои посты, органический рост</td>
+                    </tr>
+                    <tr>
+                        <td>ВКонтакте</td>
+                        <td>0 ₽</td>
+                        <td>Органический контент (без рекламы)</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">SEO И КАТАЛОГИ</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Бизнес, 2GIS, регистрация</td>
+                        <td>0 ₽</td>
+                        <td>Бесплатно, собственное время</td>
+                    </tr>
+                    <tr class="total">
+                        <td><strong>ИТОГО</strong></td>
+                        <td><strong>28 000 ₽</strong></td>
+                        <td>Примерно 30 000 ₽/месяц</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="note"><strong>Рекомендация:</strong> Запустите вариант 1, если у вас мало средств. Результаты появятся за 3–4 недели. Потом масштабируйте.</p>
+
+            <h3>Вариант 2: ОПТИМАЛЬНЫЙ (70 000 ₽/месяц)</h3>
+            <p class="section-subtitle" style="color: #6b7280;">Сбалансированный микс всех каналов</p>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Канал / Услуга</th>
+                        <th>Сумма</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="budget-header">
+                        <td colspan="3">ПОИСК (Яндекс.Директ)</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (мангалы Белгород)</td>
+                        <td>24 000 ₽</td>
+                        <td>1000–1200 ₽/день × 22 дн</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (металлопрокат)</td>
+                        <td>12 000 ₽</td>
+                        <td>600 ₽/день × 20 дн</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (мангалы Москва/СПб)</td>
+                        <td>10 000 ₽</td>
+                        <td>500 ₽/день × 20 дн (B2B)</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">КЛАССИФАЙДЫ (Авито)</td>
+                    </tr>
+                    <tr>
+                        <td>Авито (мангальные зоны)</td>
+                        <td>6 000 ₽</td>
+                        <td>Поднятие + выделение x2</td>
+                    </tr>
+                    <tr>
+                        <td>Авито (металлопрокат)</td>
+                        <td>3 500 ₽</td>
+                        <td>Поднятие</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">СОЦИАЛЬНЫЕ СЕТИ</td>
+                    </tr>
+                    <tr>
+                        <td>ВКонтакте (таргет на аудиторию)</td>
+                        <td>8 000 ₽</td>
+                        <td>400 ₽/день × 20 дн</td>
+                    </tr>
+                    <tr>
+                        <td>Telegram (органический + чаты)</td>
+                        <td>0 ₽</td>
+                        <td>Свой контент-план</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">КОНТЕНТ И SEO</td>
+                    </tr>
+                    <tr>
+                        <td>Статьи для блога (фрилансер)</td>
+                        <td>4 000 ₽</td>
+                        <td>2 статьи × 2 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Бизнес, 2GIS, каталоги</td>
+                        <td>0 ₽</td>
+                        <td>Бесплатная регистрация</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">АНАЛИТИКА И УПРАВЛЕНИЕ</td>
+                    </tr>
+                    <tr>
+                        <td>SEMrush / Яндекс.Метрика (лицензия)</td>
+                        <td>2 500 ₽</td>
+                        <td>Опционально, для отслеживания</td>
+                    </tr>
+                    <tr class="total">
+                        <td><strong>ИТОГО</strong></td>
+                        <td><strong>70 000 ₽</strong></td>
+                        <td>Полный микс + аналитика</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="note"><strong>Рекомендация:</strong> Оптимальный вариант балансирует все каналы. Начните с этого, если есть бюджет. ROI появится за 1–2 месяца.</p>
+
+            <h3>Вариант 3: АГРЕССИВНЫЙ (150 000 ₽/месяц)</h3>
+            <p class="section-subtitle" style="color: #6b7280;">Максимальный охват, видео и масштабирование</p>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Канал / Услуга</th>
+                        <th>Сумма</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="budget-header">
+                        <td colspan="3">ПОИСК (Яндекс.Директ)</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (мангалы Белгород)</td>
+                        <td>36 000 ₽</td>
+                        <td>1500 ₽/день × 24 дн</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (металлопрокат)</td>
+                        <td>18 000 ₽</td>
+                        <td>900 ₽/день × 20 дн</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Директ (мангалы Москва/СПб)</td>
+                        <td>20 000 ₽</td>
+                        <td>1000 ₽/день × 20 дн</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">КЛАССИФАЙДЫ (Авито)</td>
+                    </tr>
+                    <tr>
+                        <td>Авито (мангальные зоны)</td>
+                        <td>10 000 ₽</td>
+                        <td>Поднятие + выделение x5 + 1 Турбо</td>
+                    </tr>
+                    <tr>
+                        <td>Авито (металлопрокат)</td>
+                        <td>6 000 ₽</td>
+                        <td>Поднятие + выделение</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">СОЦИАЛЬНЫЕ СЕТИ</td>
+                    </tr>
+                    <tr>
+                        <td>ВКонтакте (реклама)</td>
+                        <td>16 000 ₽</td>
+                        <td>800 ₽/день × 20 дн</td>
+                    </tr>
+                    <tr>
+                        <td>YouTube (реклама TrueView)</td>
+                        <td>10 000 ₽</td>
+                        <td>Видеоролики (новое!)</td>
+                    </tr>
+                    <tr>
+                        <td>Telegram (чаты + рассылка)</td>
+                        <td>2 000 ₽</td>
+                        <td>Размещение в платных чатах</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">КОНТЕНТ И SEO</td>
+                    </tr>
+                    <tr>
+                        <td>Статьи для блога (3 статьи)</td>
+                        <td>6 000 ₽</td>
+                        <td>3 статьи × 2 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Видеопродакшн (1 видео)</td>
+                        <td>5 000 ₽</td>
+                        <td>Профессиональный ролик (новое!)</td>
+                    </tr>
+                    <tr>
+                        <td>SEO-аудит сайта</td>
+                        <td>3 000 ₽</td>
+                        <td>Если сайт есть</td>
+                    </tr>
+                    <tr class="budget-header">
+                        <td colspan="3">АНАЛИТИКА И УПРАВЛЕНИЕ</td>
+                    </tr>
+                    <tr>
+                        <td>Яндекс.Метрика + Google Analytics</td>
+                        <td>3 000 ₽</td>
+                        <td>Настройка и управление</td>
+                    </tr>
+                    <tr>
+                        <td>CRM система (Bitrix24, Jivo)</td>
+                        <td>2 000 ₽</td>
+                        <td>Управление заявками</td>
+                    </tr>
+                    <tr class="total">
+                        <td><strong>ИТОГО</strong></td>
+                        <td><strong>147 000 ₽</strong></td>
+                        <td>Полная стратегия + видео</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="note"><strong>Рекомендация:</strong> Агрессивный вариант для масштабирования и захвата рынка. ROI должен быть виден за 2–3 недели.</p>
+
+            <h3>Таблица сравнения (ROI, KPI)</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>KPI / Результат</th>
+                        <th>Минимальный (30K)</th>
+                        <th>Оптимальный (70K)</th>
+                        <th>Агрессивный (150K)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Месячный бюджет</strong></td>
+                        <td>30 000 ₽</td>
+                        <td>70 000 ₽</td>
+                        <td>150 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз кликов/день</strong></td>
+                        <td>20–30</td>
+                        <td>50–80</td>
+                        <td>100–150</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз заявок/день</strong></td>
+                        <td>1–2</td>
+                        <td>3–5</td>
+                        <td>8–12</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз заявок/месяц</strong></td>
+                        <td>20–40</td>
+                        <td>60–100</td>
+                        <td>150–250</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Средняя цена проекта</strong></td>
+                        <td>30 000 ₽</td>
+                        <td>35 000 ₽</td>
+                        <td>40 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз выполненных проектов/месяц</strong></td>
+                        <td>5–10</td>
+                        <td>15–25</td>
+                        <td>35–50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Прогноз оборота/месяц (мангалы)</strong></td>
+                        <td>150–300K</td>
+                        <td>525–875K</td>
+                        <td>1.4–2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ROI</strong></td>
+                        <td>400–700%</td>
+                        <td>600–1000%</td>
+                        <td>700–1200%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 9. КАЛЕНДАРНЫЙ ПЛАН -->
+        <section id="calendar">
+            <h2>9. Календарный план запуска</h2>
+            <p class="section-subtitle">Неделя за неделей, месяц за месяцем</p>
+
+            <h3>МЕСЯЦ 1 (апрель–май 2026)</h3>
+
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-title">Неделя 1: Подготовка базы</div>
+                    <div class="timeline-content">
+                        ✓ Создать страницу в ВК (если нет) и Telegram-канал<br>
+                        ✓ Подготовить портфолио (фото проектов, 10+ шт)<br>
+                        ✓ Написать тексты объявлений для Яндекс.Директ<br>
+                        ✓ Зарегистрировать в Яндекс.Бизнес и 2GIS<br>
+                        ✓ Готовить первые 3 статьи для блога
+                    </div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="timeline-title">Неделя 2: Запуск основных каналов</div>
+                    <div class="timeline-content">
+                        ✓ Запустить Яндекс.Директ (мангалы Белгород) — Кампания 1<br>
+                        ✓ Запустить ВК-объявления (Аудитория 1: частники)<br>
+                        ✓ Разместить 5–7 объявлений на Авито<br>
+                        ✓ Опубликовать первый пост в Telegram-канал<br>
+                        ✓ Начать контент-план ВК (постить 3–4 раза в неделю)
+                    </div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="timeline-title">Неделя 3–4: Расширение и оптимизация</div>
+                    <div class="timeline-content">
+                        ✓ Запустить Яндекс.Директ (металлопрокат)<br>
+                        ✓ Публикация статьи 1 (коммерческая: "Сколько стоит")<br>
+                        ✓ Начать постить в Telegram-канал (2–3 раза в день)<br>
+                        ✓ Первая оптимизация объявлений по результатам<br>
+                        ✓ Присоединиться к 5 местным чатам в Telegram
+                    </div>
+                </div>
+            </div>
+
+            <h3>МЕСЯЦ 2 (май–июнь 2026)</h3>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">Неделя 5–6: Расширение на Москву</div>
+                    <div class="timeline-content">
+                        ✓ Запустить Яндекс.Директ Кампания 2 (Москва/СПб для B2B)<br>
+                        ✓ Публикация статьи 2 (сравнительная: "Профтруба vs дерево")<br>
+                        ✓ Авито: Турбо для 1–2 лучших объявлений<br>
+                        ✓ ВК: увеличить бюджет на 20% (если ROI > 300%)<br>
+                        ✓ Добавить новые ключи в Директ (долгохвост)
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Неделя 7–8: Новые каналы</div>
+                    <div class="timeline-content">
+                        ✓ Запустить YouTube-объявления (если есть видео)<br>
+                        ✓ Публикация статьи 3 (B2B: "Профлист и профтруба")<br>
+                        ✓ Первая комплексная оптимизация — пересчёт ставок<br>
+                        ✓ Сбор отзывов и Case Studies (5–10 проектов)<br>
+                        ✓ Начать готовить видеоролик (тайм-лапс монтажа)
+                    </div>
+                </div>
+            </div>
+
+            <h3>МЕСЯЦ 3 (июнь–июль 2026)</h3>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">Неделя 9–10: Масштабирование</div>
+                    <div class="timeline-content">
+                        ✓ Увеличить дневные бюджеты на 30% (если ROI стабильный)<br>
+                        ✓ Публикация видеоролика в ВК, Telegram, YouTube<br>
+                        ✓ Запустить платные чаты Telegram (опционально)<br>
+                        ✓ Запустить Google Ads (если сайт готов)<br>
+                        ✓ Анализ данных: какой канал самый выгодный
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Неделя 11–12: Интеграция и автоматизация</div>
+                    <div class="timeline-content">
+                        ✓ Внедрить CRM систему (Jivo, Bitrix24)<br>
+                        ✓ Настроить автоответы в Telegram, ВК, Авито<br>
+                        ✓ Создать лид-магнит (e-book: "5 ошибок при мангальной зоне")<br>
+                        ✓ Запустить email-рассылку подписчикам<br>
+                        ✓ Планирование на месяц 4: какие каналы масштабировать
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. KPI И МЕТРИКИ -->
+        <section id="kpi">
+            <h2>10. KPI и метрики успеха</h2>
+            <p class="section-subtitle">Что отслеживать и какие цифры ожидать</p>
+
+            <h3>Ключевые метрики по каналам</h3>
+
+            <div class="kpi-grid">
+                <div class="kpi-card accent">
+                    <h4>Яндекс.Директ (мангалы)</h4>
+                    <div class="kpi-value">15–25</div>
+                    <div class="kpi-description">Кликов в день в первую неделю</div>
+                    <p style="font-size: 12px; margin-top: 12px; color: #4b5563;"><strong>Цель месяц 1:</strong> CPL ≤ 2500 ₽</p>
+                </div>
+
+                <div class="kpi-card">
+                    <h4>Авито (поднятие)</h4>
+                    <div class="kpi-value">50–100</div>
+                    <div class="kpi-description">Просмотров в день на объявление</div>
+                    <p style="font-size: 12px; margin-top: 12px; color: #4b5563;"><strong>Цель месяц 1:</strong> 3–5 позвонков/день на все</p>
+                </div>
+
+                <div class="kpi-card accent">
+                    <h4>ВКонтакте (таргет)</h4>
+                    <div class="kpi-value">200–300</div>
+                    <div class="kpi-description">Показов объявления в день</div>
+                    <p style="font-size: 12px; margin-top: 12px; color: #4b5563;"><strong>Цель месяц 1:</strong> CTR ≥ 5%, CPC ≤ 40 ₽</p>
+                </div>
+
+                <div class="kpi-card">
+                    <h4>Telegram-канал</h4>
+                    <div class="kpi-value">100–200</div>
+                    <div class="kpi-description">Подписчиков в первый месяц</div>
+                    <p style="font-size: 12px; margin-top: 12px; color: #4b5563;"><strong>Цель месяц 3:</strong> 500+ подписчиков</p>
+                </div>
+            </div>
+
+            <h3>Сквозные метрики (для всех каналов)</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Метрика</th>
+                        <th>Инструмент отслеживания</th>
+                        <th>Целевое значение (Месяц 1)</th>
+                        <th>Целевое значение (Месяц 3)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Количество заявок/день</strong></td>
+                        <td>Яндекс.Метрика + CRM</td>
+                        <td>1–2</td>
+                        <td>5–8</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Средняя стоимость заявки (CPL)</strong></td>
+                        <td>Яндекс.Метрика</td>
+                        <td>≤ 2500 ₽</td>
+                        <td>≤ 1500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Коэффициент конверсии (заявка → клиент)</strong></td>
+                        <td>CRM вручную</td>
+                        <td>20–30%</td>
+                        <td>40–50%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Средний чек проекта (мангалы)</strong></td>
+                        <td>CRM вручную</td>
+                        <td>30 000 ₽</td>
+                        <td>35–40 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ROI по каналам</strong></td>
+                        <td>Расчёт вручную</td>
+                        <td>≥ 300%</td>
+                        <td>≥ 500%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Время ответа на заявку</strong></td>
+                        <td>CRM</td>
+                        <td>≤ 2 часа</td>
+                        <td>≤ 30 мин</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Реальные примеры ожидаемых результатов</h3>
+
+            <div class="stats">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">20</div>
+                        <div class="stat-label">Заявок в неделю (месяц 1)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">5–7</div>
+                        <div class="stat-label">Переводов в клиентов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">210K</div>
+                        <div class="stat-label">₽ оборота в месяц 1</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">30K</div>
+                        <div class="stat-label">₽ затрат (минимум)</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Дашборд для отслеживания (недельный/месячный)</h3>
+
+            <div class="strategy-box">
+                <p><strong>Каждую неделю проверяйте:</strong></p>
+                <ul class="checklist">
+                    <li>Кол-во кликов и заявок по каждому каналу</li>
+                    <li>CPL (стоимость заявки) — растёт или снижается?</li>
+                    <li>Какой канал лучше конвертится? (Это главное!)</li>
+                    <li>Какое объявление самое популярное?</li>
+                    <li>Скорость ответа на заявки (цель ≤ 30 мин)</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <p><strong>Каждый месяц анализируйте:</strong></p>
+                <ul class="checklist">
+                    <li>Общая рентабельность (ROI ≥ 300%?)</li>
+                    <li>Какой канал принёс больше клиентов?</li>
+                    <li>Средний размер проекта по каналам</li>
+                    <li>Какие ключевые слова лучше работают?</li>
+                    <li>Какие объявления паузировать, какие развивать?</li>
+                    <li>Нужно ли масштабировать бюджет?</li>
+                </ul>
+            </div>
+
+            <h3>Красные флаги (когда пора менять стратегию)</h3>
+
+            <div class="warning">
+                <strong>🚩 CPL растёт выше 3000 ₽</strong> — снизить ставки на неработающие ключи<br>
+                <strong>🚩 Коверсия заявок в клиентов < 15%</strong> — проверить качество звонков, улучшить сценарий продаж<br>
+                <strong>🚩 ROI < 200%</strong> — пересмотреть цены проектов или маржу<br>
+                <strong>🚩 Нет заявок больше 3 дней</strong> — срочно запустить платную рекламу или увеличить бюджет<br>
+                <strong>🚩 Авито объявления не приносят звонков</strong> — добавить выделение или Турбо
+            </div>
+
+            <h3>Зелёные флаги (когда можно масштабировать)</h3>
+
+            <div class="success">
+                <strong>✅ ROI ≥ 500%</strong> — увеличить дневной бюджет на 20–30%<br>
+                <strong>✅ CPL ≤ 1500 ₽</strong> — масштабировать этот канал (поднять ставки)<br>
+                <strong>✅ Конверсия заявки → клиента > 40%</strong> — увеличить объём заявок<br>
+                <strong>✅ Один канал приносит > 50% заявок</strong> — удвоить бюджет в этом канале<br>
+                <strong>✅ Оборот > 500K в месяц</strong> — пора расширяться на новые регионы
+            </div>
+        </section>
+
+        <!-- ЗАКЛЮЧЕНИЕ -->
+        <section>
+            <h2>Заключение и рекомендации</h2>
+            <p class="section-subtitle">Действия в первые 48 часов</p>
+
+            <div class="highlight">
+                <strong>1️⃣ Выберите вариант бюджета</strong> (минимальный, оптимальный или агрессивный)<br><br>
+                <strong>2️⃣ Создайте аккаунты на всех каналах:</strong> Яндекс.Директ, Яндекс.Бизнес, 2GIS, ВК, Telegram<br><br>
+                <strong>3️⃣ Подготовьте материалы:</strong> фото проектов (10+), портфолио, первые тексты объявлений<br><br>
+                <strong>4️⃣ Запустите первую кампанию</strong> (Яндекс.Директ мангалы Белгород) — начните с 500 ₽/день<br><br>
+                <strong>5️⃣ Первую неделю отслеживайте только CPL и качество заявок</strong> — не переживайте по количеству<br><br>
+                <strong>6️⃣ На неделе 2 добавьте второй канал</strong> (Авито или ВК) — смотрите какой работает лучше
+            </div>
+
+            <h3>Быстрые победы (что даст результаты в первые 2 недели)</h3>
+            <ul class="checklist">
+                <li>Яндекс.Директ (поиск) — самый быстрый результат, 1–2 дня до первых кликов</li>
+                <li>Авито (размещение + поднятие) — звонки начнутся на день 2–3</li>
+                <li>Яндекс.Бизнес (бесплатно) — органический трафик в течение 2–3 недель</li>
+            </ul>
+
+            <h3>Контакты для управления</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Платформа</th>
+                        <th>Контакт для поддержки</th>
+                        <th>Срок ответа</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Яндекс.Директ</strong></td>
+                        <td>Служба поддержки в кабинете (live-chat)</td>
+                        <td>1–2 часа</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Авито</strong></td>
+                        <td>support@avito.ru или live-chat в приложении</td>
+                        <td>4–24 часа</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ВКонтакте Реклама</strong></td>
+                        <td>Служба поддержки в кабинете (help.vk.com)</td>
+                        <td>2–4 часа</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Telegram</strong></td>
+                        <td>@telegram или @BotFather (для ботов)</td>
+                        <td>4–12 часов</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-left: 4px solid #1e40af; border-radius: 4px;">
+                <strong>Финальный совет:</strong> Не пытайтесь запустить все каналы одновременно. Начните с Яндекс.Директ (самый быстрый ROI), потом добавляйте каналы по одному. Через месяц у вас будет чёткое понимание, какой канал работает для вашего бизнеса.
+            </p>
+        </section>
+
+        <footer>
+            <div>Медиаплан составлен для ПРОМСТРОЙ</div>
+            <div class="footer-divider">г. Строитель, Белгородская область</div>
+            <div class="footer-divider">Контакты: +7 904 533-03-03</div>
+            <div style="margin-top: 16px; font-size: 11px; opacity: 0.7;">Документ актуален на апрель–май 2026 года. Рекомендуется пересмотреть каждый квартал.</div>
+        </footer>
+    </div>
+</body>
+</html>
