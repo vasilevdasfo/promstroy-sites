@@ -802,6 +802,23 @@
     </style>
 </head>
 <body>
+
+<!-- LEVEL BAR -->
+<div id="level-bar" style="position:fixed;top:0;left:0;right:0;z-index:10000;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;padding:8px 16px;display:flex;align-items:center;justify-content:center;gap:8px;font-family:Inter,system-ui,sans-serif;font-size:13px;">
+  <span style="color:#64748b;margin-right:8px;">Металлопрокат ПРОМСТРОЙ:</span>
+  <a href="evgeny-metal.html" id="lvl1" style="padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;transition:all .15s;">Базовый</a>
+  <a href="evgeny-metal-L2.html" id="lvl2" class="active" style="padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;transition:all .15s;">Премиум</a>
+  <a href="evgeny-metal-L3.html" id="lvl3" style="padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;transition:all .15s;">Кинематический</a>
+  <span style="margin-left:12px;color:#94a3b8;font-size:11px;">|</span>
+  <a href="index.html" style="margin-left:4px;color:#2563eb;text-decoration:none;font-size:12px;font-weight:500;">← Дашборд</a>
+</div>
+<style>
+  #level-bar a { color: #64748b; background: #f1f5f9; }
+  #level-bar a:hover { background: #e2e8f0; color: #1e293b; }
+  #level-bar a.active { background: #2563eb; color: #fff; }
+  body { padding-top: 48px !important; }
+</style>
+
     <!-- HEADER -->
     <header>
         <div class="header-content">
