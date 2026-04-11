@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гайд по AI для написания книги — Евгений Бычковский</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #FAFAF9; color: #1A202C; line-height: 1.7; }
+
+        .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+
+        .hero { text-align: center; padding: 60px 0 40px; }
+        .hero-badge { display: inline-block; background: #EFF6FF; color: #2563EB; font-size: 12px; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.5px; }
+        .hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; color: #0F172A; }
+        .hero p { font-size: 18px; color: #64748B; max-width: 560px; margin: 0 auto; }
+
+        .divider { height: 1px; background: #E2E8F0; margin: 40px 0; }
+
+        h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #0F172A; }
+        h3 { font-size: 18px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; color: #1E293B; }
+
+        p { margin-bottom: 16px; color: #334155; font-size: 16px; }
+
+        .recommendation { background: #FFFFFF; border: 2px solid #2563EB; border-radius: 16px; padding: 32px; margin: 32px 0; position: relative; }
+        .recommendation::before { content: "РЕКОМЕНДАЦИЯ"; position: absolute; top: -12px; left: 24px; background: #2563EB; color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 4px; letter-spacing: 1px; }
+        .rec-title { font-size: 28px; font-weight: 800; color: #2563EB; margin-bottom: 8px; }
+        .rec-subtitle { color: #64748B; font-size: 15px; margin-bottom: 16px; }
+        .rec-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+        .rec-feature { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: #475569; }
+        .rec-feature span { color: #22C55E; font-weight: 700; flex-shrink: 0; }
+
+        .price-table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 12px; overflow: hidden; }
+        .price-table th { background: #F1F5F9; padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 1px; }
+        .price-table td { padding: 12px 16px; border-bottom: 1px solid #F1F5F9; font-size: 14px; }
+        .price-table tr:last-child td { border-bottom: none; }
+        .price-table .best { background: #F0FDF4; }
+        .price-table .best td { font-weight: 600; }
+
+        .prompt-block { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; margin: 24px 0; overflow: hidden; }
+        .prompt-header { background: #F8FAFC; padding: 12px 20px; border-bottom: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; }
+        .prompt-label { font-size: 12px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 1px; }
+        .prompt-copy { font-size: 11px; color: #2563EB; cursor: pointer; font-weight: 600; padding: 4px 12px; background: #EFF6FF; border-radius: 4px; border: none; }
+        .prompt-body { padding: 20px; font-size: 14px; color: #334155; white-space: pre-wrap; line-height: 1.8; }
+        .prompt-body .highlight { background: #FEF3C7; padding: 2px 4px; border-radius: 3px; }
+
+        .step { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start; }
+        .step-num { background: #2563EB; color: #fff; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+        .step-content h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .step-content p { margin-bottom: 0; font-size: 14px; color: #475569; }
+
+        .tip { background: #FFF7ED; border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+        .tip-title { font-size: 13px; font-weight: 700; color: #EA580C; margin-bottom: 4px; }
+        .tip p { margin-bottom: 0; font-size: 14px; color: #78350F; }
+
+        .warning { background: #FEF2F2; border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+        .warning-title { font-size: 13px; font-weight: 700; color: #DC2626; margin-bottom: 4px; }
+        .warning p { margin-bottom: 0; font-size: 14px; color: #7F1D1D; }
+
+        .section { margin: 48px 0; }
+
+        .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+        .tool-card { background: #FFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; }
+        .tool-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .tool-card p { font-size: 13px; color: #64748B; margin-bottom: 8px; }
+        .tool-card .price { font-size: 14px; font-weight: 700; color: #EA580C; }
+        .tool-card a { color: #2563EB; font-size: 13px; font-weight: 600; text-decoration: none; }
+
+        .workflow { background: #FFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .workflow-step { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #F1F5F9; }
+        .workflow-step:last-child { border-bottom: none; }
+        .workflow-icon { font-size: 24px; flex-shrink: 0; }
+        .workflow-text { font-size: 14px; color: #334155; }
+        .workflow-arrow { color: #CBD5E1; font-size: 18px; text-align: center; padding: 4px 0; }
+
+        .footer { text-align: center; padding: 40px 0; color: #94A3B8; font-size: 13px; }
+        .footer a { color: #2563EB; text-decoration: none; }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 28px; }
+            .rec-features { grid-template-columns: 1fr; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .container { padding: 24px 16px 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="hero">
+            <div class="hero-badge">Гайд от DEMI</div>
+            <h1>Как писать книгу с помощью AI</h1>
+            <p>Простая инструкция для Евгения — какой инструмент выбрать, как настроить и как использовать для написания и редактирования текста</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 1: КАКОЙ AI ВЫБРАТЬ -->
+        <div class="section">
+            <h2>Какой AI-агент выбрать для книги на русском?</h2>
+            <p>На рынке есть несколько основных ИИ-помощников. Для написания книги на русском языке важно: качество русского текста, понимание стиля, способность держать контекст на протяжении длинного текста.</p>
+
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Инструмент</th>
+                        <th>Русский язык</th>
+                        <th>Для книги</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="best">
+                        <td>Claude (claude.ai)</td>
+                        <td>Отличный</td>
+                        <td>Лучший выбор</td>
+                        <td>Бесплатно / $20/мес</td>
+                    </tr>
+                    <tr>
+                        <td>ChatGPT (openai.com)</td>
+                        <td>Хороший</td>
+                        <td>Хорош для идей</td>
+                        <td>Бесплатно / $20/мес</td>
+                    </tr>
+                    <tr>
+                        <td>YandexGPT</td>
+                        <td>Хороший</td>
+                        <td>Средне</td>
+                        <td>Бесплатно</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini (google.com)</td>
+                        <td>Средний</td>
+                        <td>Средне</td>
+                        <td>Бесплатно / $20/мес</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="recommendation">
+                <div class="rec-title">Claude (claude.ai)</div>
+                <div class="rec-subtitle">Лучший AI для написания книг на русском языке</div>
+                <p style="font-size:14px;">Claude от Anthropic — самый сильный ИИ для работы с длинным текстом. Он пишет живым, человечным языком (не "роботным"), помнит контекст книги, умеет выдерживать стиль автора и работает с главами по 5-10 тысяч слов за раз.</p>
+                <div class="rec-features">
+                    <div class="rec-feature"><span>✓</span> Отличный русский язык</div>
+                    <div class="rec-feature"><span>✓</span> Длинный контекст (200K слов)</div>
+                    <div class="rec-feature"><span>✓</span> Держит стиль автора</div>
+                    <div class="rec-feature"><span>✓</span> Не пишет "водой"</div>
+                    <div class="rec-feature"><span>✓</span> Можно загрузить свои файлы</div>
+                    <div class="rec-feature"><span>✓</span> Работает с главами целиком</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 2: КАК НАЧАТЬ -->
+        <div class="section">
+            <h2>Как начать — за 5 минут</h2>
+
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Зарегистрируйся на claude.ai</h4>
+                    <p>Зайди на <strong>claude.ai</strong> → нажми "Зарегистрироваться" → введи email и пароль. Бесплатный тариф уже даёт много — хватит для начала.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Создай проект "Моя книга"</h4>
+                    <p>Слева в меню нажми "Проекты" → "Новый проект" → назови "Книга". В проекте можно задать контекст — Claude будет помнить тему и стиль.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Задай системную инструкцию</h4>
+                    <p>В настройках проекта есть поле "Инструкции". Вставь туда промпт из раздела ниже — это настроит Claude под твою задачу.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <h4>Начни диалог</h4>
+                    <p>Открой чат в проекте и начни: "Я пишу книгу о..." — Claude сам задаст уточняющие вопросы и предложит структуру.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 3: ПРОМПТ -->
+        <div class="section">
+            <h2>Системный промпт — скопируй и вставь</h2>
+            <p>Это инструкция для Claude. Вставь её в "Инструкции проекта" (Project Instructions) на claude.ai. Claude будет следовать этим правилам в каждом разговоре внутри проекта.</p>
+
+            <div class="prompt-block">
+                <div class="prompt-header">
+                    <span class="prompt-label">Промпт для написания книги</span>
+                    <button class="prompt-copy" onclick="copyPrompt('prompt1')">Скопировать</button>
+                </div>
+                <div class="prompt-body" id="prompt1">Ты — опытный литературный редактор и соавтор. Помогаешь мне писать книгу на русском языке.
+
+ПРАВИЛА:
+- Пиши живым, человечным русским языком. Без канцелярита, без "водяных" фраз
+- Выдерживай мой авторский стиль — если я пишу просто и разговорно, ты тоже
+- Не добавляй лишних вводных слов типа "конечно", "безусловно", "несомненно"
+- Каждый абзац должен нести смысл — не растягивай текст ради объёма
+- Диалоги — живые, как люди реально говорят
+- Если я прошу "напиши главу" — пиши целиком, не останавливайся на середине
+- Если я прошу "отредактируй" — сохраняй мой стиль, убирай только слабые места
+
+МОЯ КНИГА:
+- Тема: <span class="highlight">[ВСТАВЬ ТЕМУ СВОЕЙ КНИГИ]</span>
+- Жанр: <span class="highlight">[ВСТАВЬ ЖАНР: мемуары / бизнес / художественная / учебник]</span>
+- Целевая аудитория: <span class="highlight">[ВСТАВЬ: для кого пишешь]</span>
+- Тон: <span class="highlight">[ВСТАВЬ: разговорный / серьёзный / мотивирующий / юмористический]</span>
+
+ФОРМАТ РАБОТЫ:
+- Когда я отправляю черновик — ты редактируешь и объясняешь что поменял
+- Когда я прошу "напиши" — ты пишешь текст с нуля по моему плану
+- Когда я прошу "идеи" — даёшь 3-5 конкретных вариантов развития
+- Когда я прошу "структура" — предлагаешь план главы/раздела
+- Каждую главу начинай с крючка — первое предложение должно затянуть читателя</div>
+            </div>
+
+            <div class="tip">
+                <div class="tip-title">Совет</div>
+                <p>Жёлтые поля [В СКОБКАХ] — замени на свои данные. Чем точнее опишешь книгу, тем лучше Claude будет помогать.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 4: ПРОМПТЫ НА КАЖДЫЙ ДЕНЬ -->
+        <div class="section">
+            <h2>Промпты на каждый день — готовые команды</h2>
+            <p>Просто копируй и отправляй в чат. Claude поймёт что делать.</p>
+
+            <div class="prompt-block">
+                <div class="prompt-header">
+                    <span class="prompt-label">Написать новую главу</span>
+                    <button class="prompt-copy" onclick="copyPrompt('prompt2')">Скопировать</button>
+                </div>
+                <div class="prompt-body" id="prompt2">Напиши главу [НОМЕР] под названием "[НАЗВАНИЕ]".
+
+Вот план главы:
+- [пункт 1]
+- [пункт 2]
+- [пункт 3]
+
+Объём: примерно 2000-3000 слов.
+Начни с сильного крючка — первое предложение должно зацепить.
+Заканчивай главу так, чтобы хотелось читать дальше.</div>
+            </div>
+
+            <div class="prompt-block">
+                <div class="prompt-header">
+                    <span class="prompt-label">Отредактировать текст</span>
+                    <button class="prompt-copy" onclick="copyPrompt('prompt3')">Скопировать</button>
+                </div>
+                <div class="prompt-body" id="prompt3">Отредактируй мой текст. Сохрани мой стиль и голос.
+
+Что исправить:
+- Убери повторы и "воду"
+- Сделай предложения более ёмкими
+- Проверь логику повествования
+- Диалоги сделай живее
+- В конце напиши: что было слабым, что стало лучше
+
+Вот текст:
+[ВСТАВЬ СВОЙ ТЕКСТ]</div>
+            </div>
+
+            <div class="prompt-block">
+                <div class="prompt-header">
+                    <span class="prompt-label">Придумать структуру книги</span>
+                    <button class="prompt-copy" onclick="copyPrompt('prompt4')">Скопировать</button>
+                </div>
+                <div class="prompt-body" id="prompt4">Помоги составить структуру книги.
+
+Тема: [О ЧЁМ КНИГА]
+Для кого: [АУДИТОРИЯ]
+Главная мысль: [ЧТО ДОЛЖЕН ВЫНЕСТИ ЧИТАТЕЛЬ]
+
+Предложи:
+1. Название книги — 3 варианта (цепляющих, не банальных)
+2. Оглавление — 10-15 глав с кратким описанием каждой
+3. Структуру первой главы — с чего начать, чтобы сразу затянуло</div>
+            </div>
+
+            <div class="prompt-block">
+                <div class="prompt-header">
+                    <span class="prompt-label">Улучшить конкретный фрагмент</span>
+                    <button class="prompt-copy" onclick="copyPrompt('prompt5')">Скопировать</button>
+                </div>
+                <div class="prompt-body" id="prompt5">Вот фрагмент из моей книги. Он мне не нравится — [ОБЪЯСНИ ЧТО ИМЕННО НЕ ТАК].
+
+Перепиши его так, чтобы:
+- [что хочешь: было эмоциональнее / понятнее / короче / ярче]
+
+Дай 2 варианта — я выберу.
+
+Фрагмент:
+[ВСТАВЬ ТЕКСТ]</div>
+            </div>
+
+            <div class="prompt-block">
+                <div class="prompt-header">
+                    <span class="prompt-label">Написать диалог</span>
+                    <button class="prompt-copy" onclick="copyPrompt('prompt6')">Скопировать</button>
+                </div>
+                <div class="prompt-body" id="prompt6">Напиши диалог между [КТО] и [КТО].
+
+Ситуация: [ЧТО ПРОИСХОДИТ]
+Настроение: [НАПРЯЖЁННЫЙ / ВЕСЁЛЫЙ / СЕРЬЁЗНЫЙ]
+Цель диалога: [ЧТО ДОЛЖЕН ПОНЯТЬ ЧИТАТЕЛЬ]
+
+Сделай его живым — как реально говорят люди. Без литературных штампов. С паузами, перебиваниями, недосказанностями.</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 5: РАБОЧИЙ ПРОЦЕСС -->
+        <div class="section">
+            <h2>Как организовать работу над книгой</h2>
+
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="workflow-icon">💡</div>
+                    <div class="workflow-text"><strong>Утро:</strong> Расскажи Claude план на день — "Сегодня пишу главу 3 про..."</div>
+                </div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">📝</div>
+                    <div class="workflow-text"><strong>Черновик:</strong> Надиктуй или набросай текст как получится — не думай о качестве</div>
+                </div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">🤖</div>
+                    <div class="workflow-text"><strong>Редактура:</strong> Отправь черновик Claude — "Отредактируй, сохрани мой голос"</div>
+                </div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">✏️</div>
+                    <div class="workflow-text"><strong>Доработка:</strong> Прочитай результат, поправь что не нравится, отправь снова</div>
+                </div>
+                <div class="workflow-arrow">↓</div>
+                <div class="workflow-step">
+                    <div class="workflow-icon">✅</div>
+                    <div class="workflow-text"><strong>Финал:</strong> Когда доволен — копируй в Google Docs / Word и переходи к следующей главе</div>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="tip-title">Главный секрет</div>
+                <p>AI — это не автор. Это твой соавтор и редактор. Лучший результат: ты пишешь от себя (даже коряво), а Claude помогает сделать текст лучше. Книга останется ТВОЕЙ, а не "написанной роботом".</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 6: ДОПОЛНИТЕЛЬНЫЕ ИНСТРУМЕНТЫ -->
+        <div class="section">
+            <h2>Дополнительные инструменты</h2>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>Wispr Flow</h4>
+                    <p>Голосовой ввод — диктуй текст голосом, он переводится в текст. Удобно для черновиков.</p>
+                    <div class="price">Бесплатно</div>
+                    <a href="https://wispr.flow" target="_blank">wispr.flow →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Google Docs</h4>
+                    <p>Храни книгу здесь — бесплатно, доступ с любого устройства, история изменений.</p>
+                    <div class="price">Бесплатно</div>
+                    <a href="https://docs.google.com" target="_blank">docs.google.com →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Notion</h4>
+                    <p>Для планирования структуры: главы, персонажи, заметки, сроки — всё в одном месте.</p>
+                    <div class="price">Бесплатно</div>
+                    <a href="https://notion.so" target="_blank">notion.so →</a>
+                </div>
+                <div class="tool-card">
+                    <h4>Grammarly (RU)</h4>
+                    <p>Финальная проверка грамматики и пунктуации перед публикацией.</p>
+                    <div class="price">Бесплатно / $12/мес</div>
+                    <a href="https://languagetool.org" target="_blank">languagetool.org →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 7: ЧЕГО НЕ ДЕЛАТЬ -->
+        <div class="section">
+            <h2>Чего НЕ делать</h2>
+
+            <div class="warning">
+                <div class="warning-title">Не просить "напиши мне книгу целиком"</div>
+                <p>AI не может написать хорошую книгу одним запросом. Работай по главам. Каждая глава — отдельный разговор. Между главами давай контекст: "В прошлой главе мы остановились на..."</p>
+            </div>
+
+            <div class="warning">
+                <div class="warning-title">Не принимать первый вариант</div>
+                <p>Первый ответ — это черновик. Всегда просите: "Перепиши ярче", "Сделай короче", "Добавь эмоций". Лучший текст — на 2-3 итерации.</p>
+            </div>
+
+            <div class="warning">
+                <div class="warning-title">Не терять свой голос</div>
+                <p>Если AI написал что-то не в твоём стиле — скажи прямо: "Это звучит слишком формально. Перепиши как будто я рассказываю другу за чаем." Claude подстроится.</p>
+            </div>
+
+            <div class="warning">
+                <div class="warning-title">Не забывать про факты</div>
+                <p>AI может выдумать факты, даты и цитаты. Если пишешь нон-фикшн — проверяй все факты отдельно. Скажи Claude: "Если не уверен в факте — напиши [ПРОВЕРИТЬ]".</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- СЕКЦИЯ 8: ЛАЙФХАКИ -->
+        <div class="section">
+            <h2>5 лайфхаков от Дмитрия</h2>
+
+            <div class="step">
+                <div class="step-num" style="background:#EA580C;">1</div>
+                <div class="step-content">
+                    <h4>Загрузи предыдущие главы</h4>
+                    <p>Перед написанием новой главы загрузи в чат файл с предыдущей. Claude прочитает и выдержит стиль, тон и сюжетную линию.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num" style="background:#EA580C;">2</div>
+                <div class="step-content">
+                    <h4>Диктуй голосом через Wispr Flow</h4>
+                    <p>Установи Wispr Flow — диктуй мысли голосом, они превращаются в текст. Потом отправляй этот сырой текст Claude на редактуру. Быстрее в 5 раз.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num" style="background:#EA580C;">3</div>
+                <div class="step-content">
+                    <h4>Используй "роли"</h4>
+                    <p>Скажи Claude: "Представь что ты жёсткий литературный редактор. Найди 5 самых слабых мест в этом тексте." Или: "Ты — мой целевой читатель. Что тебе непонятно?" Разные роли дают разный фидбек.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num" style="background:#EA580C;">4</div>
+                <div class="step-content">
+                    <h4>Веди "файл стиля"</h4>
+                    <p>Создай текстовый файл: "Мой стиль: короткие предложения, разговорный тон, много примеров из жизни, юмор." Загружай его в начале каждого нового чата.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num" style="background:#EA580C;">5</div>
+                <div class="step-content">
+                    <h4>Бесплатного хватит для старта</h4>
+                    <p>Бесплатный Claude даёт ~30 сообщений в день. Этого хватит на 1-2 главы. Если затянет — бери Pro за $20/мес (безлимит + более умная модель).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer">
+            <p>Подготовлено для Евгения Бычковского</p>
+            <p>Автор: <a href="https://vda.vc">Дмитрий Васильев</a> × DEMI</p>
+            <p style="margin-top:8px;">Апрель 2026</p>
+        </div>
+
+    </div>
+
+    <script>
+        function copyPrompt(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                btn.textContent = 'Скопировано!';
+                btn.style.background = '#DCFCE7';
+                btn.style.color = '#16A34A';
+                setTimeout(() => {
+                    btn.textContent = 'Скопировать';
+                    btn.style.background = '#EFF6FF';
+                    btn.style.color = '#2563EB';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
